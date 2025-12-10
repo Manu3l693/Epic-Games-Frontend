@@ -15,11 +15,558 @@
     height: 100%;
 }
 .swiper_welcome_slide{
-    background-color: orange;
+    /* background-color: orange; */
     width: 100%;
     height: 100%;
     border-radius: 20px;
 }
+.swiper_game_content{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.swiper_game_content_texts{
+    /* background-color: blue; */
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.swiper_game_content_texts_1{
+    /* background-color: yellow; */
+    width: 95%;
+    height: 90%;
+    display: grid;
+    grid-template-rows: 62% 20% 18%;
+}
+.content_swiper_logo{
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+}
+.content_swiper_logo_1{
+    /* background-color: gold; */
+    width: 37%;
+    height: 100%;
+}
+.content_swiper_logo_1 > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+.content_swiper_texts{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 30% 70%;
+}
+.text_header{
+    /* background-color: #000; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.text_header > h4{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 9px;
+    font-family: Inter;
+}
+.texts_note{
+    /* background-color: pink; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* align-items: center; */
+}
+.texts_note > p{
+    color: #fff;
+    font-family: Inter;
+    margin-top: .5%;
+}
+.content_swiper_button{
+    /* background-color: indigo; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.content_swiper_button > button{
+    width: 17%;
+    height: 75%;
+    border-radius: 9px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 11px;
+    font-family: Inter;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+.content_swiper_button > button:hover{
+    opacity: 0.8;
+}
+.swiper_game_content_image{
+    /* background-color: green; */
+    width: 100%;
+    height: 100%;
+}
+.swiper_game_content_image > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.genshin_content{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.genshin_text_content{
+    /* background-color: red; */
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.genshin_text_content_1{
+    /* background-color: purple; */
+    width: 95%;
+    height: 90%;
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+}
+.genshin_logo{
+    /* background-color: yellow; */
+    width: 100%;
+    height: 100%;
+}
+.genshin_logo_image{
+    /* background-color: #000; */
+    width: 37%;
+    height: 100%;
+}
+.genshin_logo_image > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+.genshin_text_price{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 15% 70% 15%;
+}
+.genshin_text_header{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.genshin_text_header > h4{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 9px;
+    font-family: Inter;
+}
+.genshin_text_text{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+}
+.genshin_text_text_1{
+    /* background-color: yellow; */
+    width: 50%;
+    height: 100%;
+}
+.genshin_text_text_1 > p{
+    color: #fff;
+    font-size: 13px;
+    font-family: Inter;
+    margin-top: .5%;
+    line-height: 1.5;
+}
+.genshin_text_price_{
+    /* background-color: brown; */
+    width: 100%;
+    height: 100%;
+}
+.genshin_text_price_ > h4{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 9px;
+    font-family: Inter;
+}
+.genshin_button{
+    /* background-color: orange; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+.genshin_buttons{
+    /* background-color: aqua; */
+    width: 25%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.genshin_buttons > button{
+   width: 75%;
+    height: 100%;
+    border-radius: 9px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 11px;
+    font-family: Inter;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+.genshin_buttons > button:hover{
+    opacity: 0.8;
+}
+.genshin_buttons > button.gift_box{
+    background-color: rgba(228, 228, 228, 0.1);
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s;
+}
+.genshin_buttons > button.gift_box:hover{
+    background-color: rgba(228, 228, 228, 0.5);
+}
+.genshin_buttons > button.gift_box > .fa-gift{
+    color: #fff;
+    font-size: 12px;
+}
+.genshin_content_image{
+    background-color: green;
+    width: 100%;
+    height: 100%;
+}
+.genshin_content_image > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.ffc_content{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.ffc_text_content{
+    /* background-color: yellow; */
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ffc_text_content_1{
+    /* background-color: red; */
+    width: 95%;
+    height: 90%;
+    display: grid;
+    grid-template-rows: 25% 50% 25%;
+}
+.ffc_logo{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+}
+.ffc_logo_1{
+    /* background-color: #000; */
+    width: 37%;
+    height: 100%;
+}
+.ffc_logo_1 > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left;
+}
+.ffc_content_text{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 25% 75%;
+}
+.ffc_content_header{
+    /* background-color: brown; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.ffc_content_header > h4{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 9px;
+    font-family: Inter;
+}
+.ffc_text_text{
+    /* background-color: greenyellow; */
+    width: 100%;
+    height: 100%;
+}
+.ffc_text_text_1{
+    /* background-color: red; */
+    width: 50%;
+    height: 100%;
+}
+.ffc_text_text_1 > p{
+    color: #fff;
+    font-size: 13px;
+    font-family: Inter;
+    margin-top: .5%;
+    line-height: 1.5;
+}
+.ffc_text_text_1 > p > sup{
+    font-size: 7px;
+}
+.ffc_button{
+    /* background-color: orange; */
+    width: 100%;
+    height: 100%;
+}
+.ffc_button > button{
+    width: 17%;
+    height: 75%;
+    border-radius: 9px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 11px;
+    font-family: Inter;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.6s; 
+}
+.ffc_button > button:hover{
+    opacity: 0.8;
+}
+.ffc_image_content{
+    /* background-color: green; */
+    width: 100%;
+    height: 100%;
+}
+.ffc_image_content > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* arc_raiders */
+.arc_raiders{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.raiders_content_text{
+    /* background-color: yellow; */
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.raiders_content_text_1{
+    /* background-color: red; */
+    width: 95%;
+    height: 90%;
+    display: grid;
+    grid-template-rows: 35% 45% 20%;
+}
+.raider_logo{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+}
+.raider_logo_1{
+    /* background-color: #000; */
+    width: 37%;
+    height: 100%;
+}
+.raider_logo_1 > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+.raider_text_content{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+}
+.raider_text_content_1{
+    /* background-color: aqua; */
+    width: 50%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 25% 55% 20%;
+}
+.raider_header{
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.raider_header > h4{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 9px;
+    font-family: Inter;
+}
+.raider_text_content__{
+    /* background-color: #000; */
+    width: 100%;
+    height: 100%;
+}
+.raider_text_content__ > p{
+    color: #fff;
+    font-size: 13px;
+    font-family: Inter;
+    margin-top: .5%;
+    line-height: 1.5;
+}
+.raider_price{
+    /* background-color: indigo; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.raider_price > h4{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 11px;
+    font-family: Inter;
+}
+.raider_button{
+    /* background-color: orangered; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.raider_buttons_1{
+    /* background-color: aqua; */
+    width: 33%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.raider_buttons_1 > button{
+    width: 60%;
+    height: 100%;
+    border-radius: 9px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 11px;
+    font-family: Inter;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+.raider_buttons_1 > button:hover{
+    opacity: 0.8;
+}
+.raider_buttons_1 > button.gift-box{
+    background-color: rgba(228, 228, 228, 0.1);
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s;
+}
+.raider_buttons_1 > button.gift-box:hover{
+    background-color: rgba(228, 228, 228, 0.5);
+}
+.raider_buttons_1 > button.gift-box > .fa-gift{
+    color: #fff;
+    font-size: 12px;
+}
+.raider_buttons_1 > button.bookmark{
+    background-color: rgba(228, 228, 228, 0.1);
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s;
+}
+.raider_buttons_1 > button.bookmark:hover{
+    background-color: rgba(228, 228, 228, 0.5);
+}
+.raider_buttons_1 > button.bookmark > .fa-bookmark{
+    color: #fff;
+    font-size: 12px;
+}
+.raiders_content_image{
+    /* background-color: forestgreen; */
+    width: 100%;
+    height: 100%;
+}
+.raiders_content_image > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+
+
+
 .swiper_pagination_display{
     /* background-color: green; */
     width: 100%;
@@ -58,9 +605,10 @@
     /* background-color: yellow; */
     width: 40px;
     height: 50px;
+    border-radius: 10px;
     margin-left: 5%;
     margin-right: 5%;
-    border-radius: 2px;
+    border-radius: 4px;
     object-fit: cover;
     object-position: center;
     position: absolute;

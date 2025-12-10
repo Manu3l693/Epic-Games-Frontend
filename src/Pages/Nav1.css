@@ -283,7 +283,7 @@
 }
 
 .logo_dropdown_content{
-    background-color: rgba(0,0,0,.8);
+    background-color: rgb(36, 36, 36,.7);
     backdrop-filter: blur(8px);
     width: 35%;
     height: 380px;
@@ -421,7 +421,7 @@
     flex-direction: column;
 }
 .distribute_dropdown{
-    background-color: rgba(0,0,0,.8);
+    background-color: rgb(36, 36, 36,.7);
     backdrop-filter: blur(8px);
     width: 17%;
     height: 150px;
