@@ -1,6 +1,10 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom'
 
 import { Pagination, Autoplay, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { motion } from 'framer-motion'
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -20,7 +24,11 @@ import ARCImage from '../images/1401751.jpg'
 import ARCLogo from '../images/arc_raiders_logo.png'
 import ARCGrid from '../images/arc_grid.jpg'
 import DestinyImage from '../images/destiny_2_renegades.jpg'
+import DestinyLogo from '../images/destiny_2_logo.png'
+import DestinyGrid from '../images/Destiny_Grid.jpg'
 import CloudheimImage from '../images/cloudheim_image.jpg'
+import CloudheimLogo from '../images/cloudheim_logo.png'
+import CloudheimGrid from '../images/cloudheim_grid.webp'
 
 export const ImageSlider = () => {
 
@@ -30,17 +38,19 @@ export const ImageSlider = () => {
         {image: genshinGrid, texts: 'Genshin Impact', link: ''},
         {image: ffcGrid, texts: 'Fortnite FFC', link: ''},
         {image: ARCGrid, texts: 'ARC Raiders', link: ''},
-        {image: DestinyImage, texts: 'Destiny 2', link: ''},
-        {image: CloudheimImage, texts: 'Cloudheim', link: ''}
+        {image: DestinyGrid, texts: 'Destiny 2', link: ''},
+        {image: CloudheimGrid, texts: 'Cloudheim', link: ''}
 
     ]
+
+    const [activeIndex, setActiveIndex] = useState(0);
 
     return(
     <>
         <div className="welcome_image_slider">
             <div className="swiper_game_slide">
                 <Swiper
-                      // install Swiper modules
+                onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                 modules={[Pagination, Autoplay, A11y]}
                 spaceBetween={20}
                 slidesPerView={1}
@@ -72,9 +82,15 @@ export const ImageSlider = () => {
                         <div className="swiper_game_content_texts">
                             <div className="swiper_game_content_texts_1">
                                 <div className="content_swiper_logo">
-                                    <div className="content_swiper_logo_1">
+                                    <motion.div 
+                                    key={activeIndex}
+                                    className="content_swiper_logo_1"
+                                    initial={{ x: 100, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{ duration: 1, delay: 2 }}
+                                    >
                                         <img src={fortNiteReloadLogo} alt="" />
-                                    </div>
+                                    </motion.div>
                                 </div>
 
                                 <div className="content_swiper_texts">
@@ -88,7 +104,7 @@ export const ImageSlider = () => {
                                 </div>
 
                                 <div className="content_swiper_button">
-                                    <button>Play Now</button>
+                                    <button><Link to='/login'>Play Now</Link></button>
                                 </div>
                             </div>
                         </div>
@@ -104,9 +120,14 @@ export const ImageSlider = () => {
                         <div className="genshin_text_content">
                             <div className="genshin_text_content_1">
                                 <div className="genshin_logo">
-                                    <div className="genshin_logo_image">
+                                    <motion.div 
+                                    key={activeIndex}
+                                    className="genshin_logo_image"
+                                    initial={{ x: 100, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{ duration: 1, delay: 2 }}>
                                         <img src={genshinLogo} alt="" />
-                                    </div>
+                                    </motion.div>
                                 </div>
 
                                 <div className="genshin_text_price">
@@ -127,7 +148,7 @@ export const ImageSlider = () => {
 
                                 <div className="genshin_button">
                                     <div className="genshin_buttons">
-                                        <button>Play Now</button>
+                                        <button><Link to='/login'>Play Now</Link></button>
                                         <button className='gift_box'>
                                             <i class="fa-solid fa-gift"></i>
                                         </button>
@@ -147,9 +168,14 @@ export const ImageSlider = () => {
                         <div className="ffc_text_content">
                             <div className="ffc_text_content_1">
                                 <div className="ffc_logo">
-                                    <div className="ffc_logo_1">
+                                    <motion.div
+                                    key={activeIndex}
+                                    className="ffc_logo_1"
+                                    initial={{ x: 100, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{ duration: 1, delay: 2 }}>
                                         <img src={ffcLogo} alt="" />
-                                    </div>
+                                    </motion.div>
                                 </div>
 
                                 <div className="ffc_content_text">
@@ -165,7 +191,7 @@ export const ImageSlider = () => {
                                 </div>
 
                                 <div className="ffc_button">
-                                    <button>Learn More</button>
+                                    <button><Link to='/login'>Learn More</Link></button>
                                 </div>
                             </div>
                         </div>
@@ -181,9 +207,14 @@ export const ImageSlider = () => {
                         <div className="raiders_content_text">
                             <div className="raiders_content_text_1">
                                 <div className="raider_logo">
-                                    <div className="raider_logo_1">
+                                    <motion.div
+                                    key={activeIndex} 
+                                    className="raider_logo_1"
+                                    initial={{ x: 100, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{ duration: 1, delay: 2 }}>
                                         <img src={ARCLogo} alt="" />
-                                    </div>
+                                    </motion.div>
                                 </div>
 
                                 <div className="raider_text_content">
@@ -204,7 +235,7 @@ export const ImageSlider = () => {
 
                                 <div className="raider_button">
                                     <div className="raider_buttons_1">
-                                        <button className='buy_now'>Buy Now</button>
+                                        <button className='buy_now'><Link to='/login'>Buy Now</Link></button>
                                         <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
                                         <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
                                     </div>
@@ -218,8 +249,103 @@ export const ImageSlider = () => {
                     </div>
                 </SwiperSlide>
 
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
+                <SwiperSlide>
+                    <div className="arc_raiders">
+                        <div className="raiders_content_text">
+                            <div className="raiders_content_text_1">
+                                <div className="raider_logo">
+                                    <motion.div
+                                    key={activeIndex} 
+                                    className="raider_logo_1"
+                                    initial={{ x: 100, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{ duration: 1, delay: 2 }}>
+                                        <img src={DestinyLogo} alt="" />
+                                    </motion.div>
+                                </div>
+
+                                <div className="raider_text_content">
+                                    <div className="raider_text_content_1">
+                                        <div className="raider_header">
+                                            <h4>Out now</h4>
+                                        </div>
+
+                                        <div className="raider_text_content__">
+                                            <p>Rule the Lawless Frontier. Navigate a world of Syndicates and become the force that tips the balance.</p>
+                                        </div>
+
+                                        <div className="raider_price">
+                                            <h4>$35.99</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="raider_button">
+                                    <div className="raider_buttons_1">
+                                        <button className='buy_now'><Link to='/login'>Buy Now</Link></button>
+                                        <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
+                                        <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="raiders_content_image">
+                            <img src={DestinyImage} alt="" />
+                        </div>
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <div className="cloudheim">
+                        <div className="cloudheim_content_text">
+                            <div className="cloudheim_content_text_1">
+                                <div className="cloudheim_logo">
+                                    <motion.div
+                                    key={activeIndex} 
+                                    className="cloudheim_logo_1"
+                                    initial={{ x: 100, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{ duration: 1, delay: 2 }}>
+                                        <img src={CloudheimLogo} alt="" />
+                                    </motion.div>
+                                </div>
+
+                                <div className="cloudheim_text_text">
+                                    <div className="cloudheim_header">
+                                        <h4>early access available now</h4>
+                                    </div>
+
+                                    <div className="cloudheim_text__">
+                                        <div className="cloudheim_text___1">
+                                            <p>Team up in chaotic co-op combat, craft powerful gear, and restore a shattered realm in Cloudheim, out now!</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="cloudheim_price">
+                                        <div className="cloudheim_price_1">
+                                            <button>-10%</button>
+                                            <h4 className='cancel'>$13.49<sup>*</sup></h4>
+                                            <h4>$12.14</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="cloudheim_button">
+                                    <div className="raider_buttons_1">
+                                        <button className='buy_now'><Link to='/login'>Buy Now</Link></button>
+                                        <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
+                                        <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="cloudheim_image_content">
+                            <img src={CloudheimImage} alt="" />
+                        </div>
+                    </div>
+                </SwiperSlide>
                 ...
                 </Swiper>
             </div>

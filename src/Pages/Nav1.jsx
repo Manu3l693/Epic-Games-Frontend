@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import { motion } from 'framer-motion'
+
 import './Nav1.css'
 
 import ecpicLogo from '../images/Video-Game-Logo-Xbox-1--Streamline-Ultimate.png'
@@ -65,9 +67,17 @@ export const NavigationOne = () => {
                             <div className="logo_1_1">
                                 <div className="web_logo">
                                     <div className="web_logo_1" onMouseEnter={handleHoverLogo} >
-                                        <div className="logo_image">
+                                        <motion.div 
+                                        className="logo_image"
+                                        animate={{ rotate: 360 }}
+                                        transition={{ 
+                                            duration: 2, 
+                                            repeat: Infinity,
+                                            ease: "linear" 
+                                        }}
+                                        >
                                             <img src={ecpicLogo} alt="Epic Logo" />
-                                        </div>
+                                        </motion.div>
 
                                         <div className="logo_arrow">
                                             <div className="logo_arrow_1">

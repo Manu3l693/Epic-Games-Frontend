@@ -107,12 +107,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+.content_swiper_button > button > a{
     color: #000;
     font-size: 11px;
     font-family: Inter;
     font-weight: 500;
-    cursor: pointer;
-    transition: all 0.6s;
+    text-decoration: none;
 }
 .content_swiper_button > button:hover{
     opacity: 0.8;
@@ -241,12 +244,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+.genshin_buttons > button > a{
     color: #000;
     font-size: 11px;
     font-family: Inter;
     font-weight: 500;
-    cursor: pointer;
-    transition: all 0.6s;
+    text-decoration: none;
 }
 .genshin_buttons > button:hover{
     opacity: 0.8;
@@ -371,12 +377,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: all 0.6s; 
+}
+.ffc_button > button > a{
     color: #000;
     font-size: 11px;
     font-family: Inter;
     font-weight: 500;
-    cursor: pointer;
-    transition: all 0.6s; 
+    text-decoration: none;
 }
 .ffc_button > button:hover{
     opacity: 0.8;
@@ -508,12 +517,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+.raider_buttons_1 > button > a{
     color: #000;
     font-size: 11px;
     font-family: Inter;
     font-weight: 500;
-    cursor: pointer;
-    transition: all 0.6s;
+    text-decoration: none;
 }
 .raider_buttons_1 > button:hover{
     opacity: 0.8;
@@ -562,6 +574,136 @@
     object-position: center;
 }
 
+/*cloudheim*/
+
+.cloudheim{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.cloudheim_content_text{
+    /* background-color: green; */
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cloudheim_content_text_1{
+    /* background-color: red; */
+    width: 95%;
+    height: 90%;
+    display: grid;
+    grid-template-rows: 30% 50% 20%;
+}
+.cloudheim_logo{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+}
+.cloudheim_logo_1{
+    /* background-color: #000; */
+    width: 37%;
+    height: 100%;
+}
+.cloudheim_logo_1 > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+.cloudheim_text_text{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 18% 60% 22%;
+}
+.cloudheim_header{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.cloudheim_header > h4{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 11px;
+    font-family: Inter;
+}
+.cloudheim_text__{
+    /* background-color: yellow; */
+    width: 100%;
+    height: 100%;
+}
+.cloudheim_text___1{
+    /* background-color: #000; */
+    width: 50%;
+    height: 100%;
+}
+.cloudheim_text___1 > p{
+    color: #fff;
+    font-size: 13px;
+    font-family: Inter;
+    margin-top: .5%;
+    line-height: 1.5;
+}
+.cloudheim_price{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.cloudheim_price_1{
+    /* background-color: plum; */
+    width: 20%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cloudheim_price_1 > button{
+    background-color: aqua;
+    width: 30%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+}
+.cloudheim_price_1 > h4{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 11px;
+    font-family: Inter;
+}
+.cloudheim_price_1 > h4.cancel{
+    text-decoration: line-through;
+    color: rgb(197, 197, 197);
+}
+.cloudheim_button{
+    /* background-color: orange; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.cloudheim_image_content{
+    /* background-color: yellow; */
+    width: 100%;
+    height: 100%;
+}
+.cloudheim_image_content > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 
 
 
