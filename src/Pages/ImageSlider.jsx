@@ -11,9 +11,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './ImageSlider.css'
 
-import fortNiteReloadImage from '../images/1326038.jpeg'
+import fortNiteReloadImage from '../images/1373237.jpeg'
 import fortNiteReloadLogo from '../images/fortnite_reload_logo.png'
-import fortNiteReloadGrid from '../images/fortnite_reload_grid.jpg'
+import fortNiteReloadGrid from '../images/fortnite_reload_grid.png'
 import genshinImage from '../images/1242486.jpg'
 import genshinLogo from '../images/genshin_impact_logo.png'
 import genshinGrid from '../images/genshin_impact_grid.jpg'
@@ -23,12 +23,12 @@ import ffcGrid from '../images/ffc_grid.jpg'
 import ARCImage from '../images/1401751.jpg'
 import ARCLogo from '../images/arc_raiders_logo.png'
 import ARCGrid from '../images/arc_grid.jpg'
-import DestinyImage from '../images/destiny_2_renegades.jpg'
+import DestinyImage from '../images/1399403.jpg'
 import DestinyLogo from '../images/destiny_2_logo.png'
 import DestinyGrid from '../images/Destiny_Grid.jpg'
-import CloudheimImage from '../images/cloudheim_image.jpg'
-import CloudheimLogo from '../images/cloudheim_logo.png'
-import CloudheimGrid from '../images/cloudheim_grid.webp'
+import CloudheimImage from '../images/1398943.jpg'
+import CloudheimLogo from '../images/battle_field_logo.png'
+import CloudheimGrid from '../images/battle_field_grid.png'
 
 export const ImageSlider = () => {
 
@@ -39,8 +39,17 @@ export const ImageSlider = () => {
         {image: ffcGrid, texts: 'Fortnite FFC', link: ''},
         {image: ARCGrid, texts: 'ARC Raiders', link: ''},
         {image: DestinyGrid, texts: 'Destiny 2', link: ''},
-        {image: CloudheimGrid, texts: 'Cloudheim', link: ''}
+        {image: CloudheimGrid, texts: 'Battlefield 6', link: ''}
 
+    ]
+
+    const slideContent = [
+        {logo: fortNiteReloadLogo, header: 'out now', text: 'Reload is back with the new Surf City map!', price: '', image: fortNiteReloadImage, grid: fortNiteReloadGrid},
+        {logo: genshinLogo, header: 'new update!', text: 'Genshin Impact Version Luna "III" introduces Durin a dragon with dual forms, and continues the story of Nod-Krai into its next chapter.', price: 'Free', image: genshinImage, grid: genshinGrid},
+        {logo: ffcLogo, header: 'available now', text: 'Geta an Outfit in Fortnite when you buy EA SPORTS FC 26, REMATCH, or Football Manager 26 now until August 8, 2026.', price: '', image: ffcImage, grid: ffcGrid},
+        {logo: ARCLogo, header: 'the surface is calling; your adventure starts now', text: 'Survival is an option, but thriving? That takes courage. Are you ready to build a new home in the ruins?', price: '$39.99', image: ARCImage, grid: ARCGrid},
+        {logo: DestinyLogo, header: 'Out now', text: 'Rule the Lawless Frontier. Navigate a world of Syndicates and become the force that tips the balance.', price: '$35.99', image: DestinyImage, grid: DestinyGrid},
+        {logo: CloudheimLogo, header: 'saving during holiday sale', text: 'Enter the ultimate all out ware-fare experience. Earn 20% back in Epic Rewards with your purchase.', price: '$12.14', image: CloudheimImage, grid: CloudheimGrid}
     ]
 
     const [activeIndex, setActiveIndex] = useState(0);
@@ -89,17 +98,17 @@ export const ImageSlider = () => {
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ duration: 1, delay: 2 }}
                                     >
-                                        <img src={fortNiteReloadLogo} alt="" />
+                                        <img src={slideContent[0].logo} alt="" />
                                     </motion.div>
                                 </div>
 
                                 <div className="content_swiper_texts">
                                     <div className="text_header">
-                                        <h4>out now</h4>
+                                        <h4>{slideContent[0].header}</h4>
                                     </div>
 
                                     <div className="texts_note">
-                                        <p>Reload is back with the new Surf City map!</p>
+                                        <p>{slideContent[0].text}</p>
                                     </div>
                                 </div>
 
@@ -110,7 +119,7 @@ export const ImageSlider = () => {
                         </div>
 
                         <div className="swiper_game_content_image">
-                            <img src={fortNiteReloadImage} alt="" />
+                            <img src={slideContent[0].image} alt="" />
                         </div>
                     </div>
                 </SwiperSlide>
@@ -126,23 +135,23 @@ export const ImageSlider = () => {
                                     initial={{ x: 100, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ duration: 1, delay: 2 }}>
-                                        <img src={genshinLogo} alt="" />
+                                        <img src={slideContent[1].logo} alt="" />
                                     </motion.div>
                                 </div>
 
                                 <div className="genshin_text_price">
                                     <div className="genshin_text_header">
-                                        <h4>new update!</h4>
+                                        <h4>{slideContent[1].header}</h4>
                                     </div>
 
                                     <div className="genshin_text_text">
                                         <div className="genshin_text_text_1">
-                                            <p>Genshin Impact Version Luna "III" introduces Durin a dragon with dual forms, and continues the story of Nod-Krai into its next chapter.  </p>
+                                            <p>{slideContent[1].text}</p>
                                         </div>
                                     </div>
 
                                     <div className="genshin_text_price_">
-                                        <h4>Free</h4>
+                                        <h4>{slideContent[1].price}</h4>
                                     </div>
                                 </div>
 
@@ -158,7 +167,7 @@ export const ImageSlider = () => {
                         </div>
 
                         <div className="genshin_content_image">
-                            <img src={genshinImage} alt="" />
+                            <img src={slideContent[1].image} alt="" />
                         </div>
                     </div>
                 </SwiperSlide>
@@ -174,18 +183,18 @@ export const ImageSlider = () => {
                                     initial={{ x: 100, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ duration: 1, delay: 2 }}>
-                                        <img src={ffcLogo} alt="" />
+                                        <img src={slideContent[2].logo} alt="" />
                                     </motion.div>
                                 </div>
 
                                 <div className="ffc_content_text">
                                     <div className="ffc_content_header">
-                                        <h4>available now</h4>
+                                        <h4>{slideContent[2].header}</h4>
                                     </div>
 
                                     <div className="ffc_text_text">
                                        <div className="ffc_text_text_1">
-                                         <p>Geta an Outfit in Fortnite when you buy EA SPORTS FC <sup>TM</sup> 26, REMATCH, or Football Manager 26 now until August 8, 2026.</p>
+                                         <p>{slideContent[2].text}</p>
                                        </div>
                                     </div>
                                 </div>
@@ -197,7 +206,7 @@ export const ImageSlider = () => {
                         </div>
 
                         <div className="ffc_image_content">
-                            <img src={ffcImage} alt="" />
+                            <img src={slideContent[2].image} alt="" />
                         </div>
                      </div>
                 </SwiperSlide>
@@ -213,22 +222,22 @@ export const ImageSlider = () => {
                                     initial={{ x: 100, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ duration: 1, delay: 2 }}>
-                                        <img src={ARCLogo} alt="" />
+                                        <img src={slideContent[3].logo} alt="" />
                                     </motion.div>
                                 </div>
 
                                 <div className="raider_text_content">
                                     <div className="raider_text_content_1">
                                         <div className="raider_header">
-                                            <h4>the surface is calling; your adventure starts now</h4>
+                                            <h4>{slideContent[3].header}</h4>
                                         </div>
 
                                         <div className="raider_text_content__">
-                                            <p>Survival is an option, but thriving? That takes courage. Are you ready to build a new home in the ruins?</p>
+                                            <p>{slideContent[3].text}</p>
                                         </div>
 
                                         <div className="raider_price">
-                                            <h4>$39.99</h4>
+                                            <h4>{slideContent[3].price}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -244,7 +253,7 @@ export const ImageSlider = () => {
                         </div>
 
                         <div className="raiders_content_image">
-                            <img src={ARCImage} alt="" />
+                            <img src={slideContent[3].image} alt="" />
                         </div>
                     </div>
                 </SwiperSlide>
@@ -260,22 +269,22 @@ export const ImageSlider = () => {
                                     initial={{ x: 100, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ duration: 1, delay: 2 }}>
-                                        <img src={DestinyLogo} alt="" />
+                                        <img src={slideContent[4].logo} alt="" />
                                     </motion.div>
                                 </div>
 
                                 <div className="raider_text_content">
                                     <div className="raider_text_content_1">
                                         <div className="raider_header">
-                                            <h4>Out now</h4>
+                                            <h4>{slideContent[4].header}</h4>
                                         </div>
 
                                         <div className="raider_text_content__">
-                                            <p>Rule the Lawless Frontier. Navigate a world of Syndicates and become the force that tips the balance.</p>
+                                            <p>{slideContent[4].text}</p>
                                         </div>
 
                                         <div className="raider_price">
-                                            <h4>$35.99</h4>
+                                            <h4>{slideContent[4].price}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -291,7 +300,7 @@ export const ImageSlider = () => {
                         </div>
 
                         <div className="raiders_content_image">
-                            <img src={DestinyImage} alt="" />
+                            <img src={slideContent[4].image} alt="" />
                         </div>
                     </div>
                 </SwiperSlide>
@@ -307,18 +316,18 @@ export const ImageSlider = () => {
                                     initial={{ x: 100, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ duration: 1, delay: 2 }}>
-                                        <img src={CloudheimLogo} alt="" />
+                                        <img src={slideContent[5].logo} alt="" />
                                     </motion.div>
                                 </div>
 
                                 <div className="cloudheim_text_text">
                                     <div className="cloudheim_header">
-                                        <h4>early access available now</h4>
+                                        <h4>{slideContent[5].header}</h4>
                                     </div>
 
                                     <div className="cloudheim_text__">
                                         <div className="cloudheim_text___1">
-                                            <p>Team up in chaotic co-op combat, craft powerful gear, and restore a shattered realm in Cloudheim, out now!</p>
+                                            <p>{slideContent[5].text}</p>
                                         </div>
                                     </div>
 
@@ -326,7 +335,7 @@ export const ImageSlider = () => {
                                         <div className="cloudheim_price_1">
                                             <button>-10%</button>
                                             <h4 className='cancel'>$13.49<sup>*</sup></h4>
-                                            <h4>$12.14</h4>
+                                            <h4>{slideContent[5].price}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -342,7 +351,7 @@ export const ImageSlider = () => {
                         </div>
 
                         <div className="cloudheim_image_content">
-                            <img src={CloudheimImage} alt="" />
+                            <img src={slideContent[5].image} alt="" />
                         </div>
                     </div>
                 </SwiperSlide>

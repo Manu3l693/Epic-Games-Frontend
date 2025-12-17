@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.card5_card{
+    /* background-color: aqua; */
+    width: 18.5%;
+    height: 100%;
+}
+.card5_card > a{
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+.car5_card_{
+    /* background-color: #000; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 80% 20%;
+}
+.card5_image{
+    /* background-color: orange; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.hidden_container5{
+    background-color: rgba(187, 187, 187, 0.2);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.bookmark_hidden5{
+    background-color: #000;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    right: 6%;
+    top: 5%;
+    border: 1px solid #646464;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bookmark_hidden5 > i.fa-bookmark{
+    color: #c0c0c0;
+    font-size: 0px;
+    font-weight: 0;
+    text-align: center;
+    position: relative;
+}
+.card5_image > img{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+.car5_details{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% 55% 25%;
+}
+.car5_details > .genre{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.car5_details > .genre > h4{
+    color: grey;
+    font-family: Inter;
+    font-size: 9px;
+}
+.car5_details > .game_name{
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.car5_details > .game_name > p{
+    color: #fff;
+    font-size: 11.5px;
+    font-family: Inter;
+    font-weight: 500;
+}
+.car5_details > .game_name > h4{
+    color: grey;
+    font-family: Inter;
+    font-size: 11px;
+    /* font-weight: 500; */
+}
+.car5_details > .game_price{
+    /* background-color: indigo; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.car5_details > .game_price > p{
+    color: #fff;
+    font-family: Inter;
+    font-size: 10px;
+}

@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.discoverr_content{
+    background-color: rgb(16, 16, 20);
+    width: 100%;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.discover_something_new{
+    /* background-color: blue; */
+    width: 75%;
+    height: 95%;
+}
+.discover_something_new_1{
+    /* background-color: yellow; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 7% 93%;
+}
+.discover_something_new_header{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.discover_something_new_header > a{
+    color: #fff;
+    font-family: Inter;
+    font-size: 14.5px;
+    font-weight: 500;
+    text-decoration: none;
+}
+.discover_something_new_header > a > i.fa-greater-than{
+    color: #fff;
+    font-size: 10.5px;
+}
+.discover_something_new_slide{
+    /* background-color: green; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 12% 88%;
+}
+.discover_something_new_navigation{
+    /* background-color: yellow; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.discover_sum_nav_1{
+    /* background-color: blue; */
+    width: 8%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.discover_sum_nav_1 > button{
+    background-color: rgb(58, 58, 58);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s;
+    cursor: pointer;
+}
+.discover_sum_nav_1 > button:hover{
+    background-color: rgb(107, 107, 107);
+}
+.discover_sum_nav_1 > button > i.fa-less-than, i.fa-greater-than{
+    font-size: 8px;
+}
+.discover_something_new_swiper_slide{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.discov_somethin_neww{
+    /* background-color: greenyellow; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.swiper_items_{
+    /* background-color: pink; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

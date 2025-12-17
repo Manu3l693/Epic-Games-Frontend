@@ -1,0 +1,61 @@
+import { Link } from 'react-router-dom'
+import { useState } from 'react'
+
+import './Card3.css'
+
+export const Card3 = (props) => {
+        const id = props.id
+        const image = props.image
+        const genre = props.genre
+        const name = props.name
+        const link = props.link
+        const available = props.available
+
+
+    const [cardHover, setCardHover] = useState('none')
+    
+        const handleHoverCard = () => {
+            setCardHover('block')
+        }
+    
+        const handleHoverLeave = () => {
+            setCardHover('none')
+        }
+    return(
+        <>
+           <div className="card3_card" key={id}>
+                    <Link to={link}>
+                        <div className="car3_card_">
+                            <div className="card3_image" onMouseEnter={handleHoverCard} onMouseLeave={handleHoverLeave}>
+                                <div className="hidden_container3" style={{display: cardHover}}>
+                                    <div className="bookmark_hidden3"><i class="fa-regular fa-bookmark"></i></div>
+                                </div>
+
+                                <img src={image} alt=""/>
+                            </div>
+
+                            <div className="car3_details">
+                                <div className="genre">
+                                    <h4>{genre}</h4>
+                                </div>
+
+                                <div className="game_name">
+                                    <p>{name}</p>
+
+                                    <h4>{available}</h4>
+                                </div>
+
+                                <div className="game_price">
+                                    <div className="game_price_1">
+                                        {/* <button>{discount}</button>
+                                        <p className='stroke'>{stroke}</p>
+                                        <p>{price}</p> */}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
+            </div>
+        </>
+    )
+}
