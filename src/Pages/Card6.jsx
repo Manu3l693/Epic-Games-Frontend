@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
-import './Card4.css'
+import './Card6.css'
 
-export const Card4 = (props) => {
+export const Card6 = (props) => {
+
         const id = props.key
         const image = props.image
         const genre = props.genre
@@ -26,26 +27,30 @@ export const Card4 = (props) => {
         }
     return(
         <>
-           <div className="card4_card" key={id}>
+           <div className="card6_card" key={id}>
                     <Link to={link}>
-                        <div className="car4_card_">
-                            <div className="card4_image" onMouseEnter={handleHoverCard} onMouseLeave={handleHoverLeave}>
-                                <div className="hidden_container4" style={{display: cardHover}}>
-                                    <div className="bookmark_hidden4"><i class="fa-regular fa-bookmark"></i></div>
+                        <div className="car6_card_">
+                            <div className="card6_image" onMouseEnter={handleHoverCard} onMouseLeave={handleHoverLeave}>
+                                <div className="hidden_container6" style={{display: cardHover}}>
+                                    <div className="bookmark_hidden6"><i class="fa-regular fa-bookmark"></i></div>
                                 </div>
 
                                 <img src={image} alt=""/>
                             </div>
 
-                            <div className="car4_details">
+                            <div className="car6_details">
                                 <div className="genre">
                                     <h4>{genre}</h4>
                                 </div>
 
                                 <div className="game_name">
-                                    <p>{name}</p>
+                                    <div className="game_name_1">
+                                        <p>{name}</p>
+                                    </div>
 
-                                    <h4>{available}</h4>
+                                    <div className="available">
+                                        <button>{available}</button>
+                                    </div>
                                 </div>
 
                                 <div className="game_price">

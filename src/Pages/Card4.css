@@ -17,7 +17,7 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 80% 20%;
+    grid-template-rows: 75% 25%;
 }
 .card4_image{
     /* background-color: orange; */
@@ -118,8 +118,8 @@
 }
 .car4_details > .game_price > .game_price_1 > button{
     background-color: aqua;
-    width: 27%;
-    height: 90%;
+    width: 30%;
+    height: 70%;
     border: none;
     border-radius: 10px;
 }

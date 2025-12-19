@@ -4,6 +4,8 @@ import { FirstSlide } from "./FirstSlide"
 import { DiscoverSlide } from "./DiscoverSlide"
 import { WeekCard } from "./WeekCard"
 import { FreeGame } from "./FreeGame"
+import { EpicExtra } from "./EpicExtra"
+import { TopReleases } from "./TopReleases"
 
 import './Home.css'
 
@@ -17,6 +19,8 @@ export const WelcomePage = () => {
             <DiscoverSlide />
             <WeekCard />
             <FreeGame />
+            <EpicExtra />
+            <TopReleases />
         </>
     )
 }
