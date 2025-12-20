@@ -6,6 +6,8 @@ import { WeekCard } from "./WeekCard"
 import { FreeGame } from "./FreeGame"
 import { EpicExtra } from "./EpicExtra"
 import { TopReleases } from "./TopReleases"
+import { WeekCard2 } from "./WeekCard2"
+import { TopSellers } from "./TopSellers"
 
 import './Home.css'
 
@@ -21,6 +23,8 @@ export const WelcomePage = () => {
             <FreeGame />
             <EpicExtra />
             <TopReleases />
+            <WeekCard2 />
+            <TopSellers />
         </>
     )
 }

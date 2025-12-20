@@ -66,7 +66,7 @@ export const TopReleases = () => {
             {id: 1, image: battlefield1, genre: 'Base Game', name: 'EA SPORTS FC 26 Standard Edition', available: 'Trial Available', discount: '-60%', stroke: '$69.99', price: '$27.99', link: '/login'},
             {id: 2, image: windsMeet,    genre: 'Base Game', name: 'ARC Raiders',                                                    discount: '-20%', stroke: '$39.99', price: '$31.99', link: '/login'},
             {id: 3, image: warFrame,     genre: 'Base Game', name: 'Battlefield 6',                                                  discount: '-30%', stroke: '$69.99', price: '$48.99', link: '/login'},
-            {id: 4, image: starTrek,     genre: 'Base Game', name: 'REMATCH',                                                        discount: '-33%', stroke: '$14,99', price: '$10.04', link: '/login'},
+            {id: 4, image: starTrek,     genre: 'Base Game', name: 'REMATCH',                                                        discount: '-33%', stroke: '$14.99', price: '$10.04', link: '/login'},
             {id: 5, image: morsel,       genre: 'Base Game', name: 'EA SPORTS Madden NFL 26',          available: 'Trial Available', discount: '-60%', stroke: '$69.99', price: '$27.99', link: '/login'},
         ]
     

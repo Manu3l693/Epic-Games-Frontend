@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.top_sellers{
+    background-color: rgb(16, 16, 20);
+    width: 100%;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.top_sellers_1{
+    /* background-color: aqua; */
+    width: 75%;
+    height: 95%;
+    display: flex;
+}
+.topSellers{
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #2e2e2e;
+}
+.topSeller_header{
+    /* background-color: rgb(240, 6, 240); */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.topSeller_header > h2{
+    color: #fff;
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 700;
+}
+.top_Seller_content{
+    /* background-color: rgb(255, 136, 0); */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+
+
+.most_played{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #2e2e2e;
+}
+.most_played_1{
+    /* background-color: red; */
+    width: 92%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    
+}
+.topUpcoming{
+    /* background-color: green; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #2e2e2e;
+}

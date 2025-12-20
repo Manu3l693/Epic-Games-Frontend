@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.topCont1{
+    /* background-color: red; */
+    width: 95%;
+    height: 19%;
+    border-radius: 5px;
+    transition: all 0.6s;
+    cursor: pointer;
+}
+.topCont1:hover{
+    background-color: rgb(46, 46, 46);
+}
+.topCont1 > a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+.top_cont1{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 21% 79%;
+}
+.topContImage{
+    /* background-color: yellow; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topCont_image{
+    /* background-color: red; */
+    width: 75%;
+    height: 75%;
+    border-radius: 5px;
+    position: relative;
+}
+.topHidden{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    border-radius: 5px;
+}
+.topHidden_1{
+    background-color: #000;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    border-radius: 50%;
+}
+.topCont_image > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+.topContContent{
+    /* background-color: green; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topContent_11{
+    /* background-color: blue; */
+    width: 95%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.topContDetails{
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.topContDetails > h2{
+    color: #fff;
+    font-family: Inter;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 11px;
+}
+.topContButton{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.topContButton > button{
+    background-color: rgb(83, 83, 83);
+    width: 33%;
+    height: 80%;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+}
+.topContPrice{
+    /* background-color: greenyellow; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.topContPrice_1{
+    /* background-color: purple; */
+    width: 65%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.topContPrice_1 > button{
+    background-color: aqua;
+    width: 27%;
+    height: 58%;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    font-weight: 100;
+}
+.topContPrice_1 > p{
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    font-family: Inter;
+}
+.topContPrice_1 > p.stroke{
+    color: grey;
+    text-decoration: line-through;
+}
