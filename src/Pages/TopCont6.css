@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
 }
-.topCont2{
+.topCont1{
     /* background-color: red; */
     width: 95%;
     height: 19%;
@@ -10,22 +10,22 @@
     transition: all 0.6s;
     cursor: pointer;
 }
-.topCont2:hover{
+.topCont1:hover{
     background-color: rgb(46, 46, 46);
 }
-.topCont2 > a{
+.topCont1 > a{
     width: 100%;
     height: 100%;
     text-decoration: none;
 }
-.top_cont2{
+.top_cont1{
     /* background-color: blue; */
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: 21% 79%;
 }
-.topContImage2{
+.topContImage{
     /* background-color: yellow; */
     width: 100%;
     height: 100%;
@@ -33,14 +33,14 @@
     align-items: center;
     justify-content: center;
 }
-.topCont_image2{
+.topCont_image{
     /* background-color: red; */
     width: 75%;
     height: 75%;
     border-radius: 5px;
     position: relative;
 }
-.topHidden2{
+.topHidden{
     background-color: rgba(187, 187, 187, 0.4);
     width: 100%;
     height: 100%;
@@ -48,7 +48,7 @@
     z-index: 2;
     border-radius: 5px;
 }
-.topHidden_2{
+.topHidden_1{
     background-color: #000;
     width: 10px;
     height: 10px;
@@ -57,14 +57,14 @@
     right: 5%;
     border-radius: 50%;
 }
-.topCont_image2 > img{
+.topCont_image > img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     border-radius: 5px;
 }
-.topContContent2{
+.topContContent{
     /* background-color: green; */
     width: 100%;
     height: 100%;
@@ -72,35 +72,56 @@
     align-items: center;
     justify-content: center;
 }
-.topContent_22{
+.topContent_11{
     /* background-color: blue; */
     width: 95%;
-    height: 70%;
+    height: 80%;
     display: flex;
     flex-direction: column;
 }
-.topContDetails2{
+.topContDetails{
     /* background-color: red; */
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
 }
-.topContDetails2 > h2{
+.topContDetails > h2{
     color: #fff;
     font-family: Inter;
     font-weight: 600;
     text-decoration: none;
     font-size: 11px;
 }
-.topContPrice2{
+.topContButton{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.topContButton > button{
+    background-color: rgb(83, 83, 83);
+    width: 33%;
+    height: 80%;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.topContButton > button > .fa-crown{
+    color: gold;
+}
+.topContPrice{
     /* background-color: greenyellow; */
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
 }
-.topContPrice_2{
+.topContPrice_1{
     /* background-color: purple; */
     width: 65%;
     height: 100%;
@@ -108,22 +129,9 @@
     align-items: center;
     justify-content: space-between;
 }
-.topContPrice_2 > button{
-    background-color: aqua;
-    width: 27%;
-    height: 50%;
-    border: none;
-    border-radius: 10px;
-    color: #000;
-    font-weight: 100;
-}
-.topContPrice_2 > p{
+.topContPrice_1 > p{
     color: #fff;
     font-size: 10px;
     font-weight: 600;
     font-family: Inter;
-}
-.topContPrice_2 > p.stroke{
-    color: grey;
-    text-decoration: line-through;
 }

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import './freegameCard.css'
 
@@ -11,6 +12,7 @@ export const FreeGameCard = (props) => {
     const color = props.color
     const h3 = props.h3
     const p = props.p
+    const link = props.link
 
     const [display, setDisplay] = useState('none')
 
@@ -25,7 +27,9 @@ export const FreeGameCard = (props) => {
     return(
         <>
            <div className="freeGameCard">
-                <div className="free_game_image" onMouseEnter={HandleHover} onMouseLeave={HandleLeave}>
+                <Link to={link}>
+                    <div className="freeGameCard_1">
+                        <div className="free_game_image" onMouseEnter={HandleHover} onMouseLeave={HandleLeave}>
                     <div className="freeGame_hover" style={{display: display}}><div className="free_game_dot"></div></div>
 
                     <div className="free_now" style={{backgroundColor: backgroundColor}}>
@@ -33,14 +37,16 @@ export const FreeGameCard = (props) => {
                     </div>
 
                     <img src={image} alt="" />
-                </div>
+                        </div>
 
-                <div className="free_game_content">
-                    <div className="free_game_content_1">
-                        <h3>{h3}</h3>
-                        <p>{p}</p>
+                        <div className="free_game_content">
+                            <div className="free_game_content_1">
+                                <h3>{h3}</h3>
+                                <p>{p}</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </Link>
            </div>
         </>
     )

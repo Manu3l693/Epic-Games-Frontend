@@ -11,6 +11,7 @@ export const Card1 = (props) => {
     const name = props.name
     const price = props.price
     const link = props.link
+    const color = props.color
 
     const [cardHover, setCardHover] = useState('none')
 
@@ -46,7 +47,7 @@ export const Card1 = (props) => {
                                 </div>
 
                                 <div className="game_price">
-                                    <p>{price}</p>
+                                    <p style={{color: color}}>{price}</p>
                                 </div>
                             </div>
                         </div>

@@ -1,0 +1,142 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.knightCard{
+    /* background-color: yellow; */
+    width: 49%;
+    height: 100%;
+}
+.knightCard > a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+.knightCard_1{
+    /* background-color: green; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 65% 35%;
+}
+.knightCard_image{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+}
+.KnightCard_hover{
+    background-color: rgba(187, 187, 187, 0.1);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+}
+.KnightCard_dot{
+    background-color: #000;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    position: absolute;
+    top: 5%;
+    right: 4%;
+}
+.knightCard_image > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+.knightCard_texts{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 25% 25% 20% 30%;
+}
+.sevenKnight_header{
+    /* background-color: orange; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.sevenKnight_header > h2{
+    color: #fff;
+    font-size: 15.5px;
+    font-family: Inter;
+    font-weight: 600;
+}
+.sevenKnight_text{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+}
+.sevenKnight_text_1{
+    /* background-color: aqua; */
+    width: 92%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.sevenKnight_text_1 > p{
+    color: grey;
+    font-size: 11px;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: 1.6;
+}
+.sevenKnight_firstButton{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.sevenKnight_firstButton > button{
+    background-color: rgb(58, 58, 58);
+    width: 16%;
+    height: 70%;
+    color: #fff;
+    font-size: 9px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.6s;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.sevenKnight_firstButton > button:hover{
+    background-color: grey;
+}
+.sevenKnight_firstButton > button > .fa-crown{
+    color: gold;
+}
+.sevenKnight_secondButton{
+    /* background-color: indigo; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.sevenKnight_secondButton > button{
+    background-color: rgb(58, 58, 58);
+    width: 20%;
+    height: 58%;
+    color: #fff;
+    font-size: 11px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.6s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sevenKnight_secondButton > button:hover{
+    background-color: grey;
+}
