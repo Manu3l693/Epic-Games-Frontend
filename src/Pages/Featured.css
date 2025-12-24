@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.Featured{
+    background-color: rgb(16, 16, 20);
+    /* background-color: red; */
+    width: 100%;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Featured_stories{
+    /* background-color: green; */
+    width: 75%;
+    height: 90%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+.featured_header{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+}
+.featured_header > h2{
+    color: white;
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 600;
+}
+.feature_cards{
+    /* background-color: green; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

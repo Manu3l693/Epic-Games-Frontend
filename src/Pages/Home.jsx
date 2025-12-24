@@ -11,6 +11,10 @@ import { TopSellers } from "./TopSellers"
 import { SevenKnight } from "./SevenKnight"
 import { Trending } from "./Trending"
 import { NewReleases } from "./NewReleases"
+import { Featured } from "./Featured"
+import { FirstRun } from "./FirstRun"
+import { TopAdd } from "./TopAdd"
+import { MostPopular } from "./MostPopular"
 
 import './Home.css'
 
@@ -31,6 +35,10 @@ export const WelcomePage = () => {
             <SevenKnight />
             <Trending />
             <NewReleases />
+            <Featured />
+            <FirstRun />
+            <TopAdd />
+            <MostPopular />
         </>
     )
 }

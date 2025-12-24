@@ -2,8 +2,8 @@ import { KnightCard } from './KnightCard'
 
 import './SevenKnight.css'
 
-import sevenKnight from '../images/1250206.jpg'
-import raven2 from '../images/654110.jpg'
+import sevenKnight from '../images/995123.jpg'
+import raven2 from '../images/1386595.jpg'
 
 export const SevenKnight = () => {
 

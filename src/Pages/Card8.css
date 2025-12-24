@@ -1,0 +1,137 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.card8_card{
+    /* background-color: aqua; */
+    width: 18.5%;
+    height: 100%;
+}
+.card8_card > a{
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+.car8_card_{
+    /* background-color: #000; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 75% 25%;
+}
+.card8_image{
+    /* background-color: orange; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.hidden_container8{
+    background-color: rgba(187, 187, 187, 0.2);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.bookmark_hidden8{
+    background-color: #000;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    right: 6%;
+    top: 5%;
+    border: 1px solid #646464;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bookmark_hidden8 > i.fa-bookmark{
+    color: #c0c0c0;
+    font-size: 0px;
+    font-weight: 0;
+    text-align: center;
+    position: relative;
+}
+.card8_image > img{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+.car8_details{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% 55% 25%;
+}
+.car8_details > .genre{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.car8_details > .genre > h4{
+    color: grey;
+    font-family: Inter;
+    font-size: 9px;
+}
+.car8_details > .game_name{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.car8_details > .game_name > p{
+    color: #fff;
+    font-size: 11.5px;
+    font-family: Inter;
+    font-weight: 500;
+}
+.car8_details > .game_name > button{
+    background-color: rgb(65, 65, 65);
+    width: 40%;
+    height: 44%;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-family: Inter;
+    font-size: 9px;
+    font-weight: 200;
+    transition: all 0.6s;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.car8_details > .game_name > button:hover{
+    background-color: grey;
+}
+.car8_details > .game_name > button > .fa-crown{
+    color: gold;
+}
+.car8_details > .game_price{
+    /* background-color: indigo; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.car8_details > .game_price > .game_price_1{
+    /* background-color: red; */
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.car8_details > .game_price > .game_price_1 > p{
+    color: #fff;
+    font-family: Inter;
+    font-size: 10px;
+    font-weight: 500;
+}

@@ -205,7 +205,7 @@ export const TopReleases = () => {
                                    </div>
                                </div>
                            </div>
-                       </div>
+           </div>
         </>
     )
 }

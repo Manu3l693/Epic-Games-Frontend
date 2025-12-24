@@ -157,7 +157,7 @@ export const EpicExtra = () => {
                         </div>
                     </div>
                 </div>
-            </div> 
+          </div> 
         </>
     )
 }

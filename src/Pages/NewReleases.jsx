@@ -101,7 +101,7 @@ export const NewReleases = () => {
                          </div>
                     </div>
                 </div>
-            </div>
+           </div>
         </>
     )
 }
