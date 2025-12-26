@@ -11,9 +11,9 @@
     justify-content: center;
 }
 .trending_1{
-    /* background-color: blue; */
+    /* background-color: yellow; */
     width: 75%;
-    height: 95%;
+    height: 90%;
 }
 .trending_11{
     /* background-color: purple; */
@@ -50,7 +50,7 @@
 .trending_button > button{
     background-color: transparent;
     width: 17%;
-    height: 70%;
+    height: 80%;
     display: flex;
     align-items: center;
     justify-content: center;

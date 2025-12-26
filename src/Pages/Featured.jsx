@@ -2,16 +2,16 @@ import { WeeklyCard1 } from './weeklyCard1'
 
 import './Featured.css'
 
-import weekFort from '../images/903573.jpg'
-import hogwarts from '../images/Hogwarts_Legacy_Is_Free_on_Epic_Games_Store_caa9eda4d7.webp'
-import prowler from '../images/937844.png'
+import weekFort from '../images/SILENTT.jpg'
+import hogwarts from '../images/WhereWindHero.jpg'
+import prowler from '../images/EGS_SonicRacingCrossWorlds_SonicTeam_S1_2560x1440-6fa12a0e93ef5d4cb81a806a6fd2fbc0.jpg'
 
 export const Featured = () => {
 
     const weeklyCards = [
-        {id: 1, image: weekFort, header: 'This Week in Fortnite', text: "Check out the latest updates in fortnite from classic Battle Royale to Blitz and Delulu. There's always something new in Fortnite!", button: 'Read More', link: '/login'},
-        {id: 2, image: hogwarts, header: 'Hogwarts Legacy is Free', text: "Play two hours of Hogwarts Legacy by December 18 to unlock the Chocolate Frog Back Bling in Fortnite!", button: 'Read More', link: '/login'},
-        {id: 3, image: prowler, header: 'Fortnite', text: 'Just try and keep up! Prowler comes to Fortnite with customizable Outfits and more.', button: "Read More", link: '/login'},
+        {id: 1, image: weekFort, header: 'SILENT HILL f',            text: "Find the beauty in terror in this new Japanese psychological horror.", button: 'Read More', link: '/login'},
+        {id: 2, image: hogwarts, header: 'Where Winds Meet',         text: "Write your own wuxia legend in the winds of a fractured dynasty as you explore an epic open world RPG.", button: 'Play For Free', link: '/login'},
+        {id: 3, image: prowler, header: 'Sonic Racing: crossWorlds', text: 'Take your race across dimensions and invite your friends with online crossplay! Sonic Racing: CrossWorlds is out now!', button: "Read More", link: '/login'},
     ]
 
     return(

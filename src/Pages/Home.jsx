@@ -15,6 +15,9 @@ import { Featured } from "./Featured"
 import { FirstRun } from "./FirstRun"
 import { TopAdd } from "./TopAdd"
 import { MostPopular } from "./MostPopular"
+import { RecentlyUpdated } from "./RecentlyUpdated"
+import { GameStore } from "./GameStore"
+import { SalesAndSpecial } from "./SalesAndSpecial"
 
 import './Home.css'
 
@@ -39,6 +42,9 @@ export const WelcomePage = () => {
             <FirstRun />
             <TopAdd />
             <MostPopular />
+            <RecentlyUpdated />
+            <GameStore />
+            <SalesAndSpecial />
         </>
     )
 }

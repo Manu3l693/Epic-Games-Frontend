@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.card10_card{
+    /* background-color: aqua; */
+    width: 18.5%;
+    height: 100%;
+}
+.card10_card > a{
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+.car10_card_{
+    /* background-color: #000; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 75% 25%;
+}
+.card10_image{
+    /* background-color: orange; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.hidden_container10{
+    background-color: rgba(187, 187, 187, 0.2);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.bookmark_hidden10{
+    background-color: #000;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    right: 6%;
+    top: 5%;
+    border: 1px solid #646464;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bookmark_hidden10 > i.fa-bookmark{
+    color: #c0c0c0;
+    font-size: 0px;
+    font-weight: 0;
+    text-align: center;
+    position: relative;
+}
+.card10_image > img{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+.car10_details{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% 55% 25%;
+}
+.car10_details > .genre{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.car10_details > .genre > h4{
+    color: grey;
+    font-family: Inter;
+    font-size: 9px;
+}
+.car10_details > .game_name{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-evenly;
+}
+.car10_details > .game_name > .game_name_1{
+    /* background-color: orange; */
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.car10_details > .game_name > .game_name_1 > p{
+    color: #fff;
+    font-size: 10px;
+    font-family: Inter;
+    font-weight: 500;
+}
+.car10_details > .game_name > .available{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.car10_details > .game_name > .available > button{
+    background-color: rgb(32, 32, 32);
+    width: 42%;
+    height: 72%;
+    border-radius: 2px;
+    border: none;
+    color: #fff;
+    font-family: Inter;
+    font-size: 9px;
+    font-weight: 200;
+}
+
+.car10_details > .game_price{
+    /* background-color: indigo; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.car10_details > .game_price > .game_price_1{
+    /* background-color: red; */
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.car10_details > .game_price > .game_price_1 > p{
+    color: #fff;
+    font-family: Inter;
+    font-size: 10px;
+    font-weight: 500;
+}
