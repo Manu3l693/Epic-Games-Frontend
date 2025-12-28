@@ -44,14 +44,17 @@
     border: 1px solid #646464;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
-.bookmark_hidden9 > i.fa-bookmark{
+.bookmark_hidden9 > p{
     color: #c0c0c0;
+    font-family: Inter;
     font-size: 0px;
-    font-weight: 0;
-    text-align: center;
-    position: relative;
+    font-weight: 700;
+    transition: all 0.7s;
+}
+.fa-cart-arrow-down{
+    color: #c0c0c0;
 }
 .card9_image > img{
     /* background-color: blue; */

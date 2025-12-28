@@ -44,14 +44,17 @@
     border: 1px solid #646464;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
-.bookmark_hidden6 > i.fa-bookmark{
+.bookmark_hidden6 > p{
     color: #c0c0c0;
+    font-family: Inter;
     font-size: 0px;
-    font-weight: 0;
-    text-align: center;
-    position: relative;
+    font-weight: 700;
+    transition: all 0.7s;
+}
+.fa-cart-arrow-down{
+    color: #c0c0c0;
 }
 .card6_image > img{
     /* background-color: blue; */
@@ -111,14 +114,14 @@
 }
 .car6_details > .game_name > .available > button{
     background-color: rgb(32, 32, 32);
-    width: 42%;
-    height: 72%;
+    width: 40%;
+    height: 75%;
     border-radius: 2px;
     border: none;
     color: #fff;
     font-family: Inter;
     font-size: 9px;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .car6_details > .game_price{
