@@ -17,9 +17,9 @@ import fortNiteReloadGrid from '../images/fortnite_reload_grid.png'
 import genshinImage from '../images/1242486.jpg'
 import genshinLogo from '../images/genshin_impact_logo.png'
 import genshinGrid from '../images/genshin_impact_grid.jpg'
-import ffcImage from '../images/1393355.jpg'
-import ffcLogo from '../images/ffc_logo.png'
-import ffcGrid from '../images/ffc_grid.jpg'
+import ffcImage from '../images/1366758.jpeg'
+import ffcLogo from '../images/Expedition_logo.png'
+import ffcGrid from '../images/Expedition_grid.jpg'
 import ARCImage from '../images/1401751.jpg'
 import ARCLogo from '../images/arc_raiders_logo.png'
 import ARCGrid from '../images/arc_grid.jpg'
@@ -36,7 +36,7 @@ export const ImageSlider = () => {
 
         {image: fortNiteReloadGrid, texts: 'Fortnite Reload', link: '/login'},
         {image: genshinGrid, texts: 'Genshin Impact', link: '/login'},
-        {image: ffcGrid, texts: 'Fortnite FFC', link: '/login'},
+        {image: ffcGrid, texts: 'Expedition 33', link: '/login'},
         {image: ARCGrid, texts: 'ARC Raiders', link: '/login'},
         {image: DestinyGrid, texts: 'Destiny 2', link: '/login'},
         {image: CloudheimGrid, texts: 'Battlefield 6', link: '/login'}
@@ -46,10 +46,10 @@ export const ImageSlider = () => {
     const slideContent = [
         {logo: fortNiteReloadLogo, header: 'out now', text: 'Reload is back with the new Surf City map!', price: '', image: fortNiteReloadImage, grid: fortNiteReloadGrid},
         {logo: genshinLogo, header: 'new update!', text: 'Genshin Impact Version Luna "III" introduces Durin a dragon with dual forms, and continues the story of Nod-Krai into its next chapter.', price: 'Free', image: genshinImage, grid: genshinGrid},
-        {logo: ffcLogo, header: 'available now', text: 'Geta an Outfit in Fortnite when you buy EA SPORTS FC 26, REMATCH, or Football Manager 26 now until August 8, 2026.', price: '', image: ffcImage, grid: ffcGrid},
+        {logo: ffcLogo, header: 'available now', text: 'Join Expedition 33 on their mission to destroy th paintress in this innovative reactive turn-based RPG.', discount: '-20%', stroke: '$34.99', price: '27.99', image: ffcImage, grid: ffcGrid},
         {logo: ARCLogo, header: 'the surface is calling; your adventure starts now', text: 'Survival is an option, but thriving? That takes courage. Are you ready to build a new home in the ruins?', price: '$39.99', image: ARCImage, grid: ARCGrid},
         {logo: DestinyLogo, header: 'Out now', text: 'Rule the Lawless Frontier. Navigate a world of Syndicates and become the force that tips the balance.', price: '$35.99', image: DestinyImage, grid: DestinyGrid},
-        {logo: CloudheimLogo, header: 'saving during holiday sale', text: 'Enter the ultimate all out ware-fare experience. Earn 20% back in Epic Rewards with your purchase.', price: '$12.14', image: CloudheimImage, grid: CloudheimGrid}
+        {logo: CloudheimLogo, header: 'saving during holiday sale', text: 'Enter the ultimate all out ware-fare experience. Earn 20% back in Epic Rewards with your purchase.', discount: '-10%', stroke: '$13.49', price: '$12.14', image: CloudheimImage, grid: CloudheimGrid}
     ]
 
     const [activeIndex, setActiveIndex] = useState(0);
@@ -173,13 +173,13 @@ export const ImageSlider = () => {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                     <div className="ffc_content">
-                        <div className="ffc_text_content">
-                            <div className="ffc_text_content_1">
-                                <div className="ffc_logo">
+                     <div className="cloudheim">
+                        <div className="cloudheim_content_text">
+                            <div className="cloudheim_content_text_1">
+                                <div className="cloudheim_logo">
                                     <motion.div
-                                    key={activeIndex}
-                                    className="ffc_logo_1"
+                                    key={activeIndex} 
+                                    className="cloudheim_logo_1"
                                     initial={{ x: 100, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ duration: 1, delay: 2 }}>
@@ -187,28 +187,40 @@ export const ImageSlider = () => {
                                     </motion.div>
                                 </div>
 
-                                <div className="ffc_content_text">
-                                    <div className="ffc_content_header">
+                                <div className="cloudheim_text_text">
+                                    <div className="cloudheim_header">
                                         <h4>{slideContent[2].header}</h4>
                                     </div>
 
-                                    <div className="ffc_text_text">
-                                       <div className="ffc_text_text_1">
-                                         <p>{slideContent[2].text}</p>
-                                       </div>
+                                    <div className="cloudheim_text__">
+                                        <div className="cloudheim_text___1">
+                                            <p>{slideContent[2].text}</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="cloudheim_price">
+                                        <div className="cloudheim_price_1">
+                                            <button>{slideContent[2].discount}</button>
+                                            <h4 className='cancel'>{slideContent[2].stroke}<sup>*</sup></h4>
+                                            <h4>{slideContent[2].price}</h4>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div className="ffc_button">
-                                    <button><Link to='/login'>Learn More</Link></button>
+                                <div className="cloudheim_button">
+                                    <div className="raider_buttons_1">
+                                        <button className='buy_now'><Link to='/login'>Buy Now</Link></button>
+                                        <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
+                                        <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="ffc_image_content">
+                        <div className="cloudheim_image_content">
                             <img src={slideContent[2].image} alt="" />
                         </div>
-                     </div>
+                    </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
@@ -333,8 +345,8 @@ export const ImageSlider = () => {
 
                                     <div className="cloudheim_price">
                                         <div className="cloudheim_price_1">
-                                            <button>-10%</button>
-                                            <h4 className='cancel'>$13.49<sup>*</sup></h4>
+                                            <button>{slideContent[5].discount}</button>
+                                            <h4 className='cancel'>{slideContent[5].stroke}<sup>*</sup></h4>
                                             <h4>{slideContent[5].price}</h4>
                                         </div>
                                     </div>
