@@ -34,12 +34,12 @@ export const ImageSlider = () => {
 
     const paginationData = [
 
-        {image: fortNiteReloadGrid, texts: 'Fortnite Reload', link: ''},
-        {image: genshinGrid, texts: 'Genshin Impact', link: ''},
-        {image: ffcGrid, texts: 'Fortnite FFC', link: ''},
-        {image: ARCGrid, texts: 'ARC Raiders', link: ''},
-        {image: DestinyGrid, texts: 'Destiny 2', link: ''},
-        {image: CloudheimGrid, texts: 'Battlefield 6', link: ''}
+        {image: fortNiteReloadGrid, texts: 'Fortnite Reload', link: '/login'},
+        {image: genshinGrid, texts: 'Genshin Impact', link: '/login'},
+        {image: ffcGrid, texts: 'Fortnite FFC', link: '/login'},
+        {image: ARCGrid, texts: 'ARC Raiders', link: '/login'},
+        {image: DestinyGrid, texts: 'Destiny 2', link: '/login'},
+        {image: CloudheimGrid, texts: 'Battlefield 6', link: '/login'}
 
     ]
 

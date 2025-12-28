@@ -18,6 +18,8 @@ import { MostPopular } from "./MostPopular"
 import { RecentlyUpdated } from "./RecentlyUpdated"
 import { GameStore } from "./GameStore"
 import { SalesAndSpecial } from "./SalesAndSpecial"
+import { Lowest } from "./Lowest"
+import { Footer } from "./Footer"
 
 import './Home.css'
 
@@ -45,6 +47,8 @@ export const WelcomePage = () => {
             <RecentlyUpdated />
             <GameStore />
             <SalesAndSpecial />
+            <Lowest />
+            <Footer />
         </>
     )
 }

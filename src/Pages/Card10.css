@@ -112,13 +112,16 @@
 .car10_details > .game_name > .available > button{
     background-color: rgb(32, 32, 32);
     width: 42%;
-    height: 72%;
+    height: 75%;
     border-radius: 2px;
     border: none;
     color: #fff;
     font-family: Inter;
     font-size: 9px;
     font-weight: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .car10_details > .game_price{

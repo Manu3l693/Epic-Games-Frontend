@@ -53,7 +53,7 @@ export const GameStore = () => {
                     {id: 2, image: windsMeet,    genre: 'Base Game', name: 'Bloodstained: Ritual of the Night',             available: 'Now On Epic', price: '$13.99', link: '/login'},
                     {id: 3, image: warFrame,     genre: 'Base Game', name: 'Wild West Saga',                                available: 'Now On Epic', price: 'Free', link: '/login'},
                     {id: 4, image: starTrek,     genre: 'Base Game', name: 'The Pedestrian',                                available: 'Now On Epic', discount: '-40%', stroke:'$8.99', price: '$5.39', link: '/login'},
-                    {id: 5, image: morsel,       genre: 'Base Game', name: "Rise of the Penguins 2: Penguin's Dark Ascent", available: 'Now On Epic',                         price: '$1.29', link: '/login'},
+                    {id: 5, image: morsel,       genre: 'Base Game', name: "Rise of the Penguins 2", available: 'Now On Epic',                         price: '$1.29', link: '/login'},
                 ]
             
                 const product4 = [

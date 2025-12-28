@@ -9,9 +9,9 @@ export const NavigationBarTwo = (props) => {
     const color3 = props.color3
 
     const navPage2 = [
-        {page: 'Discover', Link: '', color: color1, weight: '400'},
-        {page: 'Browse', Link: '', color: color2, weight: '500'},
-        {page: 'News', Link: '', color: color3, weight: '500'}
+        {page: 'Discover', Link: '/login', color: color1, weight: '400'},
+        {page: 'Browse', Link: '/login', color: color2, weight: '500'},
+        {page: 'News', Link: '/login', color: color3, weight: '500'}
     ]
 
     return(
