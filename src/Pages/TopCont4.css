@@ -56,6 +56,13 @@
     top: 5%;
     right: 5%;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topHidden_4 > .fa-plus{
+    color: #fff;
+    font-size: 2px;
 }
 .topCont_image4 > img{
     width: 100%;

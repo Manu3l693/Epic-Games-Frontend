@@ -41,6 +41,19 @@
     position: absolute;
     top: 5%;
     right: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.free_game_dot > p{
+    color: #c0c0c0;
+    font-family: Inter;
+    font-size: 0px;
+    font-weight: 700;
+    transition: all 0.7s;
+}
+.fa-cart-arrow-down{
+    color: #c0c0c0;
 }
 .free_now{
     /* background-color: aqua; */
