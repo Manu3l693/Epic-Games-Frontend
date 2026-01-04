@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 import { motion } from 'framer-motion'
 
@@ -23,6 +24,43 @@ import dcEntIcon from '../images/Dcentertainment--Streamline-Simple-Icons.svg'
 import drizzleIcon from '../images/Drizzle--Streamline-Simple-Icons.svg'
 
 export const NavigationOne = () => {
+
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
+    const [user, setUser] = useState(null)
+    const navigate = useNavigate()
+
+    useEffect(()=>{
+        checkAuth()
+    }, [])
+
+    const checkAuth = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/api/auth/verify', {withCredentials: true})
+            if(response.data.success && response.data.user.isVerified){
+                setIsAuthenticated(true)
+                setUser(response.data.user.firstname)
+            }else{
+                setIsAuthenticated(false)
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const handleLogOut = async (e) => {
+        e.preventDefault()
+
+        try {
+            await axios.post('http://localhost:5000/api/auth/logout', {}, {
+                withCredentials: true
+            })
+            setIsAuthenticated(false)
+            setUser(null)
+            navigate('/')
+        } catch (error) {
+            console.error(error); 
+        }
+    }
 
     const [arrow, setArrow] = useState("fa-solid fa-arrow-down")
     const [display, setDisplay] = useState('none')
@@ -57,6 +95,7 @@ export const NavigationOne = () => {
         {page: 'Documentation', links: ''},
         {page: 'Learning', links: ''}
     ]
+
 
     return(
         <>
@@ -116,19 +155,41 @@ export const NavigationOne = () => {
                     <div className="sign_up_download">
                         <div className="sign_up_download_1">
                             <div className="sign_up_download_1_1">
-                                <div className="world-logo">
-                                    <div className="world_logo_1">
-                                        <i class="fa-solid fa-globe"></i>
-                                    </div>
-                                </div>
+                                {isAuthenticated ? (
+                                    <>
+                                        <div className="world-logo">
+                                            <div className="world_logo_1">
+                                                <i class="fa-solid fa-globe"></i>
+                                            </div>
+                                        </div>
 
-                                <div className="sign_in_button">
-                                    <button><Link to='/login'>Sign in</Link></button>
-                                </div>
+                                        <div className="sign_in_button">
+                                            <button><Link to='/profile'>Profile</Link></button>
+                                        </div>
 
-                                <div className="sign_up_button">
-                                    <button><Link to='/signup'>Sign up</Link></button>
-                                </div>
+                                        <div className="sign_up_button">
+                                            <form onSubmit={handleLogOut}>
+                                                <button>Logout</button>
+                                            </form>
+                                        </div>                                    
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="world-logo">
+                                            <div className="world_logo_1">
+                                                <i class="fa-solid fa-globe"></i>
+                                            </div>
+                                        </div>
+
+                                        <div className="sign_in_button">
+                                            <button><Link to='/login'>Sign in</Link></button>
+                                        </div>
+
+                                        <div className="sign_up_button">
+                                            <button><Link to='/signup'>Sign up</Link></button>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </div>

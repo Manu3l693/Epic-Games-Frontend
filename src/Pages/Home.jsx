@@ -24,7 +24,7 @@ import { Footer } from "./Footer"
 import './Home.css'
 
 
-export const WelcomePage = () => {
+export const Home = () => {
     return(
         <>
             <NavigationOne />
