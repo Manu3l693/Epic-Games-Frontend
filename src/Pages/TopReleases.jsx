@@ -1,6 +1,7 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import axios from 'axios'
 
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -46,6 +47,26 @@ import HOL2 from '../images/4a1078ce981d070a72c248936b468b30.jpg'
 
 
 export const TopReleases = () => {
+        const [isAuthenticated, setIsAuthenticated] = useState(false)
+        const navigate = useNavigate()
+
+        useEffect(()=>{
+            checkAuth()
+        },[])
+
+        const checkAuth = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/api/auth/verify', {withCredentials: true})
+                if(response.data.success && response.data.user.isVerified){
+                    setIsAuthenticated(true)
+                } else{
+                    setIsAuthenticated(false)
+                    navigate('/login')
+                }
+            } catch (error) {
+                console.error(error)
+            }
+        }
 
         const prevRef = useRef(null);
         const nextRef = useRef(null);
@@ -71,35 +92,35 @@ export const TopReleases = () => {
         ]
     
         const product2 = [
-            {id: 1, image: blood,        genre: 'Base Game', name: 'Ready or Not',           discount: '-40%', stroke: '$19.99', price: '$11.99', link: '/login'},
-            {id: 2, image: gigaSword,    genre: 'Base Game', name: 'Dying Light: The Beast', discount: '-20%', stroke: '$44.99', price: '$35.99', link: '/login'},
-            {id: 3, image: callOfDuty,   genre: 'Base Game', name: 'Football Manager 26',    discount: '-10%', stroke: '$49.99', price: '$44.99', link: '/login'},
-            {id: 4, image: mortalKombat, genre: 'Base Game', name: 'Borderlands 4',          discount: '-20%', stroke: '$69.99', price: '$55.99', link: '/login'},
-            {id: 5, image: Anno,         genre: 'Base Game', name: 'Stellar Blade',          discount: '-20%', stroke: '$49.99', price: '$39.99', link: '/login'},
+            {id: 1, image: blood,        genre: 'Base Game', name: 'Ready or Not',           discount: '-40%', stroke: '$19.99', price: '$11.99', link: '/Hello'},
+            {id: 2, image: gigaSword,    genre: 'Base Game', name: 'Dying Light: The Beast', discount: '-20%', stroke: '$44.99', price: '$35.99', link: '/Hello'},
+            {id: 3, image: callOfDuty,   genre: 'Base Game', name: 'Football Manager 26',    discount: '-10%', stroke: '$49.99', price: '$44.99', link: '/Hello'},
+            {id: 4, image: mortalKombat, genre: 'Base Game', name: 'Borderlands 4',          discount: '-20%', stroke: '$69.99', price: '$55.99', link: '/Hello'},
+            {id: 5, image: Anno,         genre: 'Base Game', name: 'Stellar Blade',          discount: '-20%', stroke: '$49.99', price: '$39.99', link: '/Hello'},
         ]
     
         const product3 = [
-            {id: 1, image: FortFestival,   genre: 'Base Game', name: 'Dying Light: Essential Edition', discount: '-85%', stroke: '$18.00', price: '$2.70',  link: '/login'},
-            {id: 2, image: Rue,            genre: 'Base Game', name: 'Jurassic World Evolution 3',     discount: '-20%', stroke: '$31.99', price: '$25.59', link: '/login'},
-            {id: 3, image: SurvivingMars,  genre: 'Base Game', name: 'Anno 117: Pax Romana',           discount: '-10%', stroke: '$59.99', price: '$53.99', link: '/login'},
-            {id: 4, image: PMR,            genre: 'Base Game', name: 'Escape from Duckov',             discount: '-12%', stroke: '$12.99', price: '$11.43', link: '/login'},
-            {id: 5, image: Wallworld2,     genre: 'Base Game', name: 'PowerWash Simulator 2',          discount: '-15%', stroke: '$9.99',  price: '$8.49',  link: '/login'},
+            {id: 1, image: FortFestival,   genre: 'Base Game', name: 'Dying Light: Essential Edition', discount: '-85%', stroke: '$18.00', price: '$2.70',  link: '/Hello'},
+            {id: 2, image: Rue,            genre: 'Base Game', name: 'Jurassic World Evolution 3',     discount: '-20%', stroke: '$31.99', price: '$25.59', link: '/Hello'},
+            {id: 3, image: SurvivingMars,  genre: 'Base Game', name: 'Anno 117: Pax Romana',           discount: '-10%', stroke: '$59.99', price: '$53.99', link: '/Hello'},
+            {id: 4, image: PMR,            genre: 'Base Game', name: 'Escape from Duckov',             discount: '-12%', stroke: '$12.99', price: '$11.43', link: '/Hello'},
+            {id: 5, image: Wallworld2,     genre: 'Base Game', name: 'PowerWash Simulator 2',          discount: '-15%', stroke: '$9.99',  price: '$8.49',  link: '/Hello'},
         ]
     
         const product4 = [
-            {id: 1, image: beachBuggy,  genre: 'Base Game', name: 'Titan Quest II',                         discount: '-20%', stroke: '$17.99', price: '$14.39', link: '/login'},
-            {id: 2, image: pubG,        genre: 'Base Game', name: 'Vampire: The Masquerade - Bloodlines 2', discount: '-20%', stroke: '$35.99', price: '$28.79', link: '/login'},
-            {id: 3, image: letThemCome, genre: 'Base Game', name: 'Terminator 2D: NO FATE',                                                     price: '$11.99', link: '/login'},
-            {id: 4, image: skyForge,    genre: 'Base Game', name: 'The Last Caretaker',                     discount: '-15%', stroke: '$14.49', price: '$12.31', link: '/login'},
-            {id: 5, image: Mk11,        genre: 'Base Game', name: 'Cronos: The New Dawn',                   discount: '-25%', stroke: '$23.99', price: '$17.99', link: '/login'},
+            {id: 1, image: beachBuggy,  genre: 'Base Game', name: 'Titan Quest II',                         discount: '-20%', stroke: '$17.99', price: '$14.39', link: '/Hello'},
+            {id: 2, image: pubG,        genre: 'Base Game', name: 'Vampire: The Masquerade - Bloodlines 2', discount: '-20%', stroke: '$35.99', price: '$28.79', link: '/Hello'},
+            {id: 3, image: letThemCome, genre: 'Base Game', name: 'Terminator 2D: NO FATE',                                                     price: '$11.99', link: '/Hello'},
+            {id: 4, image: skyForge,    genre: 'Base Game', name: 'The Last Caretaker',                     discount: '-15%', stroke: '$14.49', price: '$12.31', link: '/Hello'},
+            {id: 5, image: Mk11,        genre: 'Base Game', name: 'Cronos: The New Dawn',                   discount: '-25%', stroke: '$23.99', price: '$17.99', link: '/Hello'},
         ]
     
         const product5 = [
-            {id: 1, image: residentEvil,  genre: 'Base Game', name: 'Cronos: The New Dawn',           discount: '-25%', stroke: '$23.99', price: '$17.99', link: '/login'},
-            {id: 2, image: reAnimal,      genre: 'Base Game', name: 'ARK: Survival Ascended',                                             price: '$44.99', link: '/login'},
-            {id: 3, image: FightLight007, genre: 'Base Game', name: 'DAVE THE DIVER',                 discount: '-45%', stroke: '$12.99', price: '$7.14',  link: '/login'},
-            {id: 4, image: MIO,           genre: 'Base Game', name: 'Plants vs. Zombies : Replanted', discount: '-20%', stroke: '$19.99', price: '$15.99', link: '/login'},
-            {id: 5, image: HOL2,          genre: 'Base Game', name: 'Fortnite',                                                           price: '$13.49', link: '/login'},
+            {id: 1, image: residentEvil,  genre: 'Base Game', name: 'Cronos: The New Dawn',           discount: '-25%', stroke: '$23.99', price: '$17.99', link: '/Hello'},
+            {id: 2, image: reAnimal,      genre: 'Base Game', name: 'ARK: Survival Ascended',                                             price: '$44.99', link: '/Hello'},
+            {id: 3, image: FightLight007, genre: 'Base Game', name: 'DAVE THE DIVER',                 discount: '-45%', stroke: '$12.99', price: '$7.14',  link: '/Hello'},
+            {id: 4, image: MIO,           genre: 'Base Game', name: 'Plants vs. Zombies : Replanted', discount: '-20%', stroke: '$19.99', price: '$15.99', link: '/Hello'},
+            {id: 5, image: HOL2,          genre: 'Base Game', name: 'Fortnite',                                                           price: '$13.49', link: '/Hello'},
         ]
 
     return(
@@ -108,7 +129,15 @@ export const TopReleases = () => {
                            <div className="discover_something_new">
                                <div className="discover_something_new_1">
                                    <div className="discover_something_new_header">
-                                      <Link to='/login'> Top New Releases <i class="fa-solid fa-greater-than"></i> </Link> 
+                                      {isAuthenticated ? (
+                                        <>
+                                            <Link to='/Hello'> Top New Releases <i class="fa-solid fa-greater-than"></i> </Link> 
+                                        </>
+                                      ) : (
+                                        <>
+                                            <Link to='/login'> Top New Releases <i class="fa-solid fa-greater-than"></i> </Link> 
+                                        </>
+                                      )}
                                    </div>
            
                                    <div className="discover_something_new_slide">
@@ -136,67 +165,151 @@ export const TopReleases = () => {
                                                    className='discov_somethin_neww'
                                                    >
                                                    <SwiperSlide>
-                                                       <div className="swiper_items_">
-                                                          <Card6 key={product1[0].id} image={product1[0].image} genre={product1[0].genre} name={product1[0].name} available={product1[0].available} discount={product1[0].discount} stroke={product1[0].stroke} price={product1[0].price} link={product1[0].link}/>
-                                                          <Card2 key={product1[1].id} image={product1[1].image} genre={product1[1].genre} name={product1[1].name} discount={product1[1].discount} stroke={product1[1].stroke} price={product1[1].price} link={product1[1].link}/>
-                                                          <Card2 key={product1[2].id} image={product1[2].image} genre={product1[2].genre} name={product1[2].name} discount={product1[2].discount} stroke={product1[2].stroke} price={product1[2].price} link={product1[2].link}/>
-                                                          <Card2 key={product1[3].id} image={product1[3].image} genre={product1[3].genre} name={product1[3].name} discount={product1[3].discount} stroke={product1[3].stroke} price={product1[3].price} link={product1[3].link}/>
-                                                          <Card6 key={product1[4].id} image={product1[4].image} genre={product1[4].genre} name={product1[4].name} available={product1[4].available} discount={product1[4].discount} stroke={product1[4].stroke} price={product1[4].price} link={product1[4].link}/>
-                                                       </div>
+                                                       {isAuthenticated ? (
+                                                        <>
+                                                            <div className="swiper_items_">
+                                                                <Card6 key={product1[0].id} image={product1[0].image} genre={product1[0].genre} name={product1[0].name} available={product1[0].available} discount={product1[0].discount} stroke={product1[0].stroke} price={product1[0].price} link={product1[0].link}/>
+                                                                <Card2 key={product1[1].id} image={product1[1].image} genre={product1[1].genre} name={product1[1].name} discount={product1[1].discount} stroke={product1[1].stroke} price={product1[1].price} link={product1[1].link}/>
+                                                                <Card2 key={product1[2].id} image={product1[2].image} genre={product1[2].genre} name={product1[2].name} discount={product1[2].discount} stroke={product1[2].stroke} price={product1[2].price} link={product1[2].link}/>
+                                                                <Card2 key={product1[3].id} image={product1[3].image} genre={product1[3].genre} name={product1[3].name} discount={product1[3].discount} stroke={product1[3].stroke} price={product1[3].price} link={product1[3].link}/>
+                                                                <Card6 key={product1[4].id} image={product1[4].image} genre={product1[4].genre} name={product1[4].name} available={product1[4].available} discount={product1[4].discount} stroke={product1[4].stroke} price={product1[4].price} link={product1[4].link}/>
+                                                            </div>
+                                                        </>
+                                                       ) : (
+                                                        <>
+                                                            <div className="swiper_items_">
+                                                                <Card6 key={product1[0].id} image={product1[0].image} genre={product1[0].genre} name={product1[0].name} available={product1[0].available} discount={product1[0].discount} stroke={product1[0].stroke} price={product1[0].price} link='/login'/>
+                                                                <Card2 key={product1[1].id} image={product1[1].image} genre={product1[1].genre} name={product1[1].name} discount={product1[1].discount} stroke={product1[1].stroke} price={product1[1].price} link='/login'/>
+                                                                <Card2 key={product1[2].id} image={product1[2].image} genre={product1[2].genre} name={product1[2].name} discount={product1[2].discount} stroke={product1[2].stroke} price={product1[2].price} link='/login'/>
+                                                                <Card2 key={product1[3].id} image={product1[3].image} genre={product1[3].genre} name={product1[3].name} discount={product1[3].discount} stroke={product1[3].stroke} price={product1[3].price} link='/login'/>
+                                                                <Card6 key={product1[4].id} image={product1[4].image} genre={product1[4].genre} name={product1[4].name} available={product1[4].available} discount={product1[4].discount} stroke={product1[4].stroke} price={product1[4].price} link='/login'/>
+                                                            </div>
+                                                        </>
+                                                       )}
                                                    </SwiperSlide>
            
                                                    <SwiperSlide>
-                                                       <div className="swiper_items_">
-                                                           {product2.map((product) => 
-                                                                <Card2
-                                                                    key={product.id}
-                                                                    image={product.image}
-                                                                    genre={product.genre}
-                                                                    name={product.name}
-                                                                    discount={product.discount}
-                                                                    stroke={product.stroke}
-                                                                    price={product.price}
-                                                                    link={product.link}
-                                                                 />
-                                                        )}
-                                                       </div>
+                                                       {isAuthenticated ? (
+                                                        <>
+                                                            <div className="swiper_items_">
+                                                                {product2.map((product) => 
+                                                                        <Card2
+                                                                            key={product.id}
+                                                                            image={product.image}
+                                                                            genre={product.genre}
+                                                                            name={product.name}
+                                                                            discount={product.discount}
+                                                                            stroke={product.stroke}
+                                                                            price={product.price}
+                                                                            link={product.link}
+                                                                        />
+                                                                )}
+                                                            </div>
+                                                        </>
+                                                       ) : (
+                                                        <>
+                                                            <div className="swiper_items_">
+                                                                {product2.map((product) => 
+                                                                        <Card2
+                                                                            key={product.id}
+                                                                            image={product.image}
+                                                                            genre={product.genre}
+                                                                            name={product.name}
+                                                                            discount={product.discount}
+                                                                            stroke={product.stroke}
+                                                                            price={product.price}
+                                                                            link='/login'
+                                                                        />
+                                                                )}
+                                                            </div>
+                                                        </>
+                                                       )}
                                                    </SwiperSlide>
            
                                                    <SwiperSlide>
-                                                       <div className="swiper_items_">
-                                                           {product3.map((product) => 
-                                                                <Card2
-                                                                    key={product.id}
-                                                                    image={product.image}
-                                                                    genre={product.genre}
-                                                                    name={product.name}
-                                                                    discount={product.discount}
-                                                                    stroke={product.stroke}
-                                                                    price={product.price}
-                                                                    link={product.link}
-                                                                 />
-                                                        )}
-                                                       </div>
+                                                       {isAuthenticated ? (
+                                                        <>
+                                                            <div className="swiper_items_">
+                                                                {product3.map((product) => 
+                                                                        <Card2
+                                                                            key={product.id}
+                                                                            image={product.image}
+                                                                            genre={product.genre}
+                                                                            name={product.name}
+                                                                            discount={product.discount}
+                                                                            stroke={product.stroke}
+                                                                            price={product.price}
+                                                                            link={product.link}
+                                                                        />
+                                                                )}
+                                                            </div>
+                                                        </>
+                                                       ) : (
+                                                        <>
+                                                            <div className="swiper_items_">
+                                                                {product3.map((product) => 
+                                                                        <Card2
+                                                                            key={product.id}
+                                                                            image={product.image}
+                                                                            genre={product.genre}
+                                                                            name={product.name}
+                                                                            discount={product.discount}
+                                                                            stroke={product.stroke}
+                                                                            price={product.price}
+                                                                            link='/login'
+                                                                        />
+                                                                )}
+                                                            </div>
+                                                        </>
+                                                       )}
                                                    </SwiperSlide>
            
                                                    <SwiperSlide>
-                                                       <div className="swiper_items_">
-                                                           <Card2 key={product4[0].id} image={product4[0].image} genre={product4[0].genre} name={product4[0].name} discount={product4[0].discount} stroke={product4[0].stroke} price={product4[0].price} link={product4[0].link}/>   
-                                                           <Card2 key={product4[1].id} image={product4[1].image} genre={product4[1].genre} name={product4[1].name} discount={product4[1].discount} stroke={product4[1].stroke} price={product4[1].price} link={product4[1].link}/>                                                        
-                                                           <Card1 key={product4[2].id} image={product4[2].image} genre={product4[2].genre} name={product4[2].name} price={product4[2].price} link={product4[2].link}/>
-                                                           <Card2 key={product4[3].id} image={product4[3].image} genre={product4[3].genre} name={product4[3].name} discount={product4[3].discount} stroke={product4[3].stroke} price={product4[3].price} link={product4[3].link}/>
-                                                           <Card2 key={product4[4].id} image={product4[4].image} genre={product4[4].genre} name={product4[4].name} discount={product4[4].discount} stroke={product4[0].stroke} price={product4[4].price} link={product4[4].link}/>
-                                                       </div>
+                                                       {isAuthenticated ? (
+                                                        <>
+                                                            <div className="swiper_items_">
+                                                                <Card2 key={product4[0].id} image={product4[0].image} genre={product4[0].genre} name={product4[0].name} discount={product4[0].discount} stroke={product4[0].stroke} price={product4[0].price} link={product4[0].link}/>   
+                                                                <Card2 key={product4[1].id} image={product4[1].image} genre={product4[1].genre} name={product4[1].name} discount={product4[1].discount} stroke={product4[1].stroke} price={product4[1].price} link={product4[1].link}/>                                                        
+                                                                <Card1 key={product4[2].id} image={product4[2].image} genre={product4[2].genre} name={product4[2].name} price={product4[2].price} link={product4[2].link}/>
+                                                                <Card2 key={product4[3].id} image={product4[3].image} genre={product4[3].genre} name={product4[3].name} discount={product4[3].discount} stroke={product4[3].stroke} price={product4[3].price} link={product4[3].link}/>
+                                                                <Card2 key={product4[4].id} image={product4[4].image} genre={product4[4].genre} name={product4[4].name} discount={product4[4].discount} stroke={product4[0].stroke} price={product4[4].price} link={product4[4].link}/>
+                                                            </div>
+                                                        </>
+                                                       ) : (
+                                                        <>
+                                                            <div className="swiper_items_">
+                                                                <Card2 key={product4[0].id} image={product4[0].image} genre={product4[0].genre} name={product4[0].name} discount={product4[0].discount} stroke={product4[0].stroke} price={product4[0].price} link='/login'/>   
+                                                                <Card2 key={product4[1].id} image={product4[1].image} genre={product4[1].genre} name={product4[1].name} discount={product4[1].discount} stroke={product4[1].stroke} price={product4[1].price} link='/login'/>                                                        
+                                                                <Card1 key={product4[2].id} image={product4[2].image} genre={product4[2].genre} name={product4[2].name} price={product4[2].price} link='/login'/>
+                                                                <Card2 key={product4[3].id} image={product4[3].image} genre={product4[3].genre} name={product4[3].name} discount={product4[3].discount} stroke={product4[3].stroke} price={product4[3].price} link='/login'/>
+                                                                <Card2 key={product4[4].id} image={product4[4].image} genre={product4[4].genre} name={product4[4].name} discount={product4[4].discount} stroke={product4[0].stroke} price={product4[4].price} link='/login'/>
+                                                            </div>
+                                                        </>
+                                                       )}
                                                    </SwiperSlide>
            
                                                    <SwiperSlide>
-                                                       <div className="swiper_items_">
-                                                           <Card2 key={product5[0].id} image={product5[0].image} genre={product5[0].genre} name={product5[0].name} discount={product5[0].discount} stroke={product5[0].stroke} price={product5[0].price} link={product5[0].link}/>
-                                                           <Card1 key={product5[1].id} image={product5[1].image} genre={product5[1].genre} name={product5[1].name} price={product5[1].price} link={product5[1].link}/>
-                                                           <Card2 key={product5[2].id} image={product5[2].image} genre={product5[2].genre} name={product5[2].name} discount={product5[2].discount} stroke={product5[2].stroke} price={product5[2].price} link={product5[2].link}/>
-                                                           <Card2 key={product5[3].id} image={product5[3].image} genre={product5[3].genre} name={product5[3].name} discount={product5[3].discount} stroke={product5[3].stroke} price={product5[3].price} link={product5[3].link}/>
-                                                           <Card1 key={product5[4].id} image={product5[4].image} genre={product5[4].genre} name={product5[4].name} price={product5[4].price} link={product5[4].link}/>
-                                                       </div>
+                                                       {isAuthenticated ? (
+                                                        <>
+                                                            <div className="swiper_items_">
+                                                                <Card2 key={product5[0].id} image={product5[0].image} genre={product5[0].genre} name={product5[0].name} discount={product5[0].discount} stroke={product5[0].stroke} price={product5[0].price} link={product5[0].link}/>
+                                                                <Card1 key={product5[1].id} image={product5[1].image} genre={product5[1].genre} name={product5[1].name} price={product5[1].price} link={product5[1].link}/>
+                                                                <Card2 key={product5[2].id} image={product5[2].image} genre={product5[2].genre} name={product5[2].name} discount={product5[2].discount} stroke={product5[2].stroke} price={product5[2].price} link={product5[2].link}/>
+                                                                <Card2 key={product5[3].id} image={product5[3].image} genre={product5[3].genre} name={product5[3].name} discount={product5[3].discount} stroke={product5[3].stroke} price={product5[3].price} link={product5[3].link}/>
+                                                                <Card1 key={product5[4].id} image={product5[4].image} genre={product5[4].genre} name={product5[4].name} price={product5[4].price} link={product5[4].link}/>
+                                                            </div>
+                                                        </>
+                                                       ) : (
+                                                        <>
+                                                            <div className="swiper_items_">
+                                                                <Card2 key={product5[0].id} image={product5[0].image} genre={product5[0].genre} name={product5[0].name} discount={product5[0].discount} stroke={product5[0].stroke} price={product5[0].price} link='/login'/>
+                                                                <Card1 key={product5[1].id} image={product5[1].image} genre={product5[1].genre} name={product5[1].name} price={product5[1].price} link='/login'/>
+                                                                <Card2 key={product5[2].id} image={product5[2].image} genre={product5[2].genre} name={product5[2].name} discount={product5[2].discount} stroke={product5[2].stroke} price={product5[2].price} link='/login'/>
+                                                                <Card2 key={product5[3].id} image={product5[3].image} genre={product5[3].genre} name={product5[3].name} discount={product5[3].discount} stroke={product5[3].stroke} price={product5[3].price} link='/login'/>
+                                                                <Card1 key={product5[4].id} image={product5[4].image} genre={product5[4].genre} name={product5[4].name} price={product5[4].price} link='/login'/>
+                                                            </div>
+                                                        </>
+                                                       )}
                                                    </SwiperSlide>
                                                    ...
                                                    </Swiper>

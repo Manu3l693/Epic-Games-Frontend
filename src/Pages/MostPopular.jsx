@@ -1,6 +1,8 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
-import {Link} from 'react-router-dom'
+import axios from 'axios'
+
+import {Link, useNavigate} from 'react-router-dom'
 
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -33,6 +35,28 @@ import Wallworld2 from '../images/2985345d049f10ab8f5a81d9b4707a28.jpg'
 
 
 export const MostPopular = () => {
+
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
+            const navigate = useNavigate()
+    
+            useEffect(()=>{
+                checkAuth()
+            },[])
+    
+            const checkAuth = async () => {
+                try {
+                    const response = await axios.get('http://localhost:5000/api/auth/verify', {withCredentials: true})
+                    if(response.data.success && response.data.user.isVerified){
+                        setIsAuthenticated(true)
+                    } else{
+                        setIsAuthenticated(false)
+                        navigate('/login')
+                    }
+                } catch (error) {
+                    console.error(error)
+                }
+            }
+
             const prevRef = useRef(null);
             const nextRef = useRef(null);
         
@@ -49,27 +73,27 @@ export const MostPopular = () => {
             }
         
             const product1 = [
-                {id: 1, image: battlefield1, genre: 'Base Game', name: 'Grand Theft Auto V Enhanced',           discount: '-50%', stroke: '$29.99', price: '$14.99', link: '/login'},
-                {id: 2, image: windsMeet,    genre: 'Base Game', name: 'Jotunnslayer: Hordes of Hel',           discount: '-25%', stroke: '$5.99', price: '$4.49', link: '/login'},
-                {id: 3, image: warFrame,     genre: 'Base Game', name: 'Valorant',                              price: 'Free', link: '/login'},
-                {id: 4, image: starTrek,     genre: 'Base Game', name: 'Marvel Rivals',                         price: 'Free', link: '/login'},
-                {id: 5, image: morsel,       genre: 'Base Game', name: 'Crosshair X',                           price: '$1.99', link: '/login'},
+                {id: 1, image: battlefield1, genre: 'Base Game', name: 'Grand Theft Auto V Enhanced',           discount: '-50%', stroke: '$29.99', price: '$14.99', link: '/Hello'},
+                {id: 2, image: windsMeet,    genre: 'Base Game', name: 'Jotunnslayer: Hordes of Hel',           discount: '-25%', stroke: '$5.99', price: '$4.49', link: '/Hello'},
+                {id: 3, image: warFrame,     genre: 'Base Game', name: 'Valorant',                              price: 'Free', link: '/Hello'},
+                {id: 4, image: starTrek,     genre: 'Base Game', name: 'Marvel Rivals',                         price: 'Free', link: '/Hello'},
+                {id: 5, image: morsel,       genre: 'Base Game', name: 'Crosshair X',                           price: '$1.99', link: '/Hello'},
             ]
         
             const product4 = [
-                {id: 1, image: blood,        genre: 'Base Game', name: 'Crosshair V2',             price: 'Free',                 link: '/login'},
-                {id: 2, image: gigaSword,    genre: 'Base Game', name: 'Red Dead Redemption 2',    discount: '-75%',              stroke: '$59.99', price: '$14.99', link: '/login'},
-                {id: 3, image: callOfDuty,   genre: 'Base Game', name: 'EA SPORTS FC 26 Standard', available: 'Trial Available',  discount: '-60%', stroke: '$69.99', price: '$27.99', link: '/login'},
-                {id: 4, image: mortalKombat, genre: 'Base Game', name: 'Where Winds Meet',         price: 'Free', link: '/login'},
-                {id: 5, image: Anno,         genre: 'Base Game', name: 'Among Us',                 discount: '-40%', stroke: '$0.99', price: '$0.59', link: '/login'},
+                {id: 1, image: blood,        genre: 'Base Game', name: 'Crosshair V2',             price: 'Free',                 link: '/Hello'},
+                {id: 2, image: gigaSword,    genre: 'Base Game', name: 'Red Dead Redemption 2',    discount: '-75%',              stroke: '$59.99', price: '$14.99', link: '/Hello'},
+                {id: 3, image: callOfDuty,   genre: 'Base Game', name: 'EA SPORTS FC 26 Standard', available: 'Trial Available',  discount: '-60%', stroke: '$69.99', price: '$27.99', link: '/Hello'},
+                {id: 4, image: mortalKombat, genre: 'Base Game', name: 'Where Winds Meet',         price: 'Free', link: '/Hello'},
+                {id: 5, image: Anno,         genre: 'Base Game', name: 'Among Us',                 discount: '-40%', stroke: '$0.99', price: '$0.59', link: '/Hello'},
             ]
         
             const product5 = [
-                {id: 1, image: FortFestival,   genre: 'Base Game', name: 'NAKARA: BLADEPOINT',              price: 'Free',    link: '/login'},
-                {id: 2, image: Rue,            genre: 'Base Game', name: "Sid Meier's Civilization VI",     discount: '-90%', stroke: '$59.99',  price: '$5.99', link: '/login'},
-                {id: 3, image: SurvivingMars,  genre: 'Base Game', name: 'Farming Simulator 22',            price: '$29.99',  link: '/login'},
-                {id: 4, image: PMR,            genre: 'Base Game', name: 'Battlefield 6',                   discount: '-30%', stroke: '$69.99',  price: '$48.99', link: '/login'},
-                {id: 5, image: Wallworld2,     genre: 'Base Game', name: 'Dead Island 2',                   discount: '-80%', stroke: '$37.49',  price: '$7.49',  link: '/login'},
+                {id: 1, image: FortFestival,   genre: 'Base Game', name: 'NAKARA: BLADEPOINT',              price: 'Free',    link: '/Hello'},
+                {id: 2, image: Rue,            genre: 'Base Game', name: "Sid Meier's Civilization VI",     discount: '-90%', stroke: '$59.99',  price: '$5.99', link: '/Hello'},
+                {id: 3, image: SurvivingMars,  genre: 'Base Game', name: 'Farming Simulator 22',            price: '$29.99',  link: '/Hello'},
+                {id: 4, image: PMR,            genre: 'Base Game', name: 'Battlefield 6',                   discount: '-30%', stroke: '$69.99',  price: '$48.99', link: '/Hello'},
+                {id: 5, image: Wallworld2,     genre: 'Base Game', name: 'Dead Island 2',                   discount: '-80%', stroke: '$37.49',  price: '$7.49',  link: '/Hello'},
             ]
     return(
         <>
@@ -77,7 +101,15 @@ export const MostPopular = () => {
                            <div className="discover_something_new">
                                <div className="discover_something_new_1">
                                    <div className="discover_something_new_header">
-                                      <Link to='/login'> Most Popular <i class="fa-solid fa-greater-than"></i> </Link> 
+                                      {isAuthenticated ? (
+                                        <>
+                                            <Link to='/Hello'> Most Popular <i class="fa-solid fa-greater-than"></i> </Link> 
+                                        </>
+                                      ) : (
+                                        <>
+                                            <Link to='/login'> Most Popular <i class="fa-solid fa-greater-than"></i> </Link> 
+                                        </>
+                                      )}
                                    </div>
            
                                    <div className="discover_something_new_slide">
@@ -106,31 +138,67 @@ export const MostPopular = () => {
                                                    >
                                                    <SwiperSlide>
                                                        <div className="swiper_items_">
-                                                          <Card2 key={product1[0].id} image={product1[0].image} genre={product1[0].genre} name={product1[0].name} discount={product1[0].discount} stroke={product1[0].stroke} price={product1[0].price} link={product1[0].link}/>
-                                                          <Card2 key={product1[1].id} image={product1[1].image} genre={product1[1].genre} name={product1[1].name} discount={product1[1].discount} stroke={product1[1].stroke} price={product1[1].price} link={product1[1].link}/>
-                                                          <Card1 key={product1[2].id} image={product1[2].image} genre={product1[2].genre} name={product1[2].name} discount={product1[2].discount} stroke={product1[2].stroke} price={product1[2].price} link={product1[2].link}/>
-                                                          <Card1 key={product1[3].id} image={product1[3].image} genre={product1[3].genre} name={product1[3].name} discount={product1[3].discount} stroke={product1[3].stroke} price={product1[3].price} link={product1[3].link}/>
-                                                          <Card1 key={product1[4].id} image={product1[4].image} genre={product1[4].genre} name={product1[4].name} available={product1[4].available} discount={product1[4].discount} stroke={product1[4].stroke} price={product1[4].price} link={product1[4].link}/>
+                                                          {isAuthenticated ? (
+                                                            <>
+                                                                <Card2 key={product1[0].id} image={product1[0].image} genre={product1[0].genre} name={product1[0].name} discount={product1[0].discount} stroke={product1[0].stroke} price={product1[0].price} link={product1[0].link}/>
+                                                                <Card2 key={product1[1].id} image={product1[1].image} genre={product1[1].genre} name={product1[1].name} discount={product1[1].discount} stroke={product1[1].stroke} price={product1[1].price} link={product1[1].link}/>
+                                                                <Card1 key={product1[2].id} image={product1[2].image} genre={product1[2].genre} name={product1[2].name} discount={product1[2].discount} stroke={product1[2].stroke} price={product1[2].price} link={product1[2].link}/>
+                                                                <Card1 key={product1[3].id} image={product1[3].image} genre={product1[3].genre} name={product1[3].name} discount={product1[3].discount} stroke={product1[3].stroke} price={product1[3].price} link={product1[3].link}/>
+                                                                <Card1 key={product1[4].id} image={product1[4].image} genre={product1[4].genre} name={product1[4].name} available={product1[4].available} discount={product1[4].discount} stroke={product1[4].stroke} price={product1[4].price} link={product1[4].link}/>
+                                                            </>
+                                                          ) : (
+                                                            <>
+                                                                <Card2 key={product1[0].id} image={product1[0].image} genre={product1[0].genre} name={product1[0].name} discount={product1[0].discount} stroke={product1[0].stroke} price={product1[0].price} link='/login'/>
+                                                                <Card2 key={product1[1].id} image={product1[1].image} genre={product1[1].genre} name={product1[1].name} discount={product1[1].discount} stroke={product1[1].stroke} price={product1[1].price} link='/login'/>
+                                                                <Card1 key={product1[2].id} image={product1[2].image} genre={product1[2].genre} name={product1[2].name} discount={product1[2].discount} stroke={product1[2].stroke} price={product1[2].price} link='/login'/>
+                                                                <Card1 key={product1[3].id} image={product1[3].image} genre={product1[3].genre} name={product1[3].name} discount={product1[3].discount} stroke={product1[3].stroke} price={product1[3].price} link='/login'/>
+                                                                <Card1 key={product1[4].id} image={product1[4].image} genre={product1[4].genre} name={product1[4].name} available={product1[4].available} discount={product1[4].discount} stroke={product1[4].stroke} price={product1[4].price} link='/login'/>
+                                                            </>
+                                                          )}
                                                        </div>
                                                    </SwiperSlide>
            
                                                    <SwiperSlide>
                                                        <div className="swiper_items_">
-                                                           <Card1 key={product4[0].id} image={product4[0].image} genre={product4[0].genre} name={product4[0].name} discount={product4[0].discount} stroke={product4[0].stroke} price={product4[0].price} link={product4[0].link}/>   
-                                                           <Card2 key={product4[1].id} image={product4[1].image} genre={product4[1].genre} name={product4[1].name} discount={product4[1].discount} stroke={product4[1].stroke} price={product4[1].price} link={product4[1].link}/>                                                        
-                                                           <Card6 key={product4[2].id} image={product4[2].image} genre={product4[2].genre} name={product4[2].name} available={product4[2].available} discount={product4[2].discount} stroke={product4[2].stroke} price={product4[2].price} link={product4[2].link}/>
-                                                           <Card1 key={product4[3].id} image={product4[3].image} genre={product4[3].genre} name={product4[3].name} discount={product4[3].discount} stroke={product4[3].stroke} price={product4[3].price} link={product4[3].link}/>
-                                                           <Card2 key={product4[4].id} image={product4[4].image} genre={product4[4].genre} name={product4[4].name} discount={product4[4].discount} stroke={product4[4].stroke} price={product4[4].price} link={product4[4].link}/>
+                                                          {isAuthenticated ? (
+                                                            <>
+                                                                <Card1 key={product4[0].id} image={product4[0].image} genre={product4[0].genre} name={product4[0].name} discount={product4[0].discount} stroke={product4[0].stroke} price={product4[0].price} link={product4[0].link}/>   
+                                                                <Card2 key={product4[1].id} image={product4[1].image} genre={product4[1].genre} name={product4[1].name} discount={product4[1].discount} stroke={product4[1].stroke} price={product4[1].price} link={product4[1].link}/>                                                        
+                                                                <Card6 key={product4[2].id} image={product4[2].image} genre={product4[2].genre} name={product4[2].name} available={product4[2].available} discount={product4[2].discount} stroke={product4[2].stroke} price={product4[2].price} link={product4[2].link}/>
+                                                                <Card1 key={product4[3].id} image={product4[3].image} genre={product4[3].genre} name={product4[3].name} discount={product4[3].discount} stroke={product4[3].stroke} price={product4[3].price} link={product4[3].link}/>
+                                                                <Card2 key={product4[4].id} image={product4[4].image} genre={product4[4].genre} name={product4[4].name} discount={product4[4].discount} stroke={product4[4].stroke} price={product4[4].price} link={product4[4].link}/>
+                                                            </>
+                                                          ) : (
+                                                            <>
+                                                                <Card1 key={product4[0].id} image={product4[0].image} genre={product4[0].genre} name={product4[0].name} discount={product4[0].discount} stroke={product4[0].stroke} price={product4[0].price} link='/login'/>   
+                                                                <Card2 key={product4[1].id} image={product4[1].image} genre={product4[1].genre} name={product4[1].name} discount={product4[1].discount} stroke={product4[1].stroke} price={product4[1].price} link='/login'/>                                                        
+                                                                <Card6 key={product4[2].id} image={product4[2].image} genre={product4[2].genre} name={product4[2].name} available={product4[2].available} discount={product4[2].discount} stroke={product4[2].stroke} price={product4[2].price} link='/login'/>
+                                                                <Card1 key={product4[3].id} image={product4[3].image} genre={product4[3].genre} name={product4[3].name} discount={product4[3].discount} stroke={product4[3].stroke} price={product4[3].price} link='/login'/>
+                                                                <Card2 key={product4[4].id} image={product4[4].image} genre={product4[4].genre} name={product4[4].name} discount={product4[4].discount} stroke={product4[4].stroke} price={product4[4].price} link='/login'/>
+                                                            </>
+                                                          )}
                                                        </div>
                                                    </SwiperSlide>
            
                                                    <SwiperSlide>
                                                        <div className="swiper_items_">
-                                                           <Card1 key={product5[0].id} image={product5[0].image} genre={product5[0].genre} name={product5[0].name} price={product5[0].price} link={product5[0].link}/>
-                                                           <Card2 key={product5[1].id} image={product5[1].image} genre={product5[1].genre} name={product5[1].name} discount={product5[1].discount} stroke={product5[1].stroke} price={product5[1].price} link={product5[1].link}/>
-                                                           <Card1 key={product5[2].id} image={product5[2].image} genre={product5[2].genre} name={product5[2].name} price={product5[2].price} link={product5[2].link}/>
-                                                           <Card2 key={product5[3].id} image={product5[3].image} genre={product5[3].genre} name={product5[3].name} discount={product5[3].discount} stroke={product5[3].stroke} price={product5[3].price} link={product5[3].link}/>
-                                                           <Card2 key={product5[4].id} image={product5[4].image} genre={product5[4].genre} name={product5[4].name} discount={product5[4].discount} stroke={product5[4].stroke} price={product5[4].price} link={product5[4].link}/>
+                                                           {isAuthenticated ? (
+                                                            <>
+                                                                <Card1 key={product5[0].id} image={product5[0].image} genre={product5[0].genre} name={product5[0].name} price={product5[0].price} link={product5[0].link}/>
+                                                                <Card2 key={product5[1].id} image={product5[1].image} genre={product5[1].genre} name={product5[1].name} discount={product5[1].discount} stroke={product5[1].stroke} price={product5[1].price} link={product5[1].link}/>
+                                                                <Card1 key={product5[2].id} image={product5[2].image} genre={product5[2].genre} name={product5[2].name} price={product5[2].price} link={product5[2].link}/>
+                                                                <Card2 key={product5[3].id} image={product5[3].image} genre={product5[3].genre} name={product5[3].name} discount={product5[3].discount} stroke={product5[3].stroke} price={product5[3].price} link={product5[3].link}/>
+                                                                <Card2 key={product5[4].id} image={product5[4].image} genre={product5[4].genre} name={product5[4].name} discount={product5[4].discount} stroke={product5[4].stroke} price={product5[4].price} link={product5[4].link}/>
+                                                            </>
+                                                           ) : (
+                                                            <>
+                                                                <Card1 key={product5[0].id} image={product5[0].image} genre={product5[0].genre} name={product5[0].name} price={product5[0].price} link='/login'/>
+                                                                <Card2 key={product5[1].id} image={product5[1].image} genre={product5[1].genre} name={product5[1].name} discount={product5[1].discount} stroke={product5[1].stroke} price={product5[1].price} link='/login'/>
+                                                                <Card1 key={product5[2].id} image={product5[2].image} genre={product5[2].genre} name={product5[2].name} price={product5[2].price} link='/login'/>
+                                                                <Card2 key={product5[3].id} image={product5[3].image} genre={product5[3].genre} name={product5[3].name} discount={product5[3].discount} stroke={product5[3].stroke} price={product5[3].price} link='/login'/>
+                                                                <Card2 key={product5[4].id} image={product5[4].image} genre={product5[4].genre} name={product5[4].name} discount={product5[4].discount} stroke={product5[4].stroke} price={product5[4].price} link='/login'/>
+                                                            </>
+                                                           )}
                                                        </div>
                                                    </SwiperSlide>
                                                    ...

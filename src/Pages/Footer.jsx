@@ -1,74 +1,99 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
+import axios from 'axios'
+
+import {useState, useEffect} from 'react'
 
 import './Footer.css'
 
 export const Footer = () => {
 
+            const [isAuthenticated, setIsAuthenticated] = useState(false)
+            const navigate = useNavigate()
+    
+            useEffect(()=>{
+                checkAuth()
+            },[])
+    
+            const checkAuth = async () => {
+                try {
+                    const response = await axios.get('http://localhost:5000/api/auth/verify', {withCredentials: true})
+                    if(response.data.success && response.data.user.isVerified){
+                        setIsAuthenticated(true)
+                    } else{
+                        setIsAuthenticated(false)
+                        navigate('/login')
+                    }
+                } catch (error) {
+                    console.error(error)
+                }
+            }
+
     const GameLink = [
-        {id: 1, name: 'Fortnite', link: ''},
-        {id: 2, name: 'Fall Guys', link: ''},
-        {id: 3, name: 'Rocket League', link: ''},
-        {id: 4, name: 'Unreal Tournament', link: ''},
-        {id: 5, name: 'Infinity Blade', link: ''},
-        {id: 6, name: 'Shadow Complex', link: ''},
-        {id: 7, name: 'Robo Recall', link: ''},
+        {id: 1, name: 'Fortnite', link: '/Hello'},
+        {id: 2, name: 'Fall Guys', link: '/Hello'},
+        {id: 3, name: 'Rocket League', link: '/Hello'},
+        {id: 4, name: 'Unreal Tournament', link: '/Hello'},
+        {id: 5, name: 'Infinity Blade', link: '/Hello'},
+        {id: 6, name: 'Shadow Complex', link: '/Hello'},
+        {id: 7, name: 'Robo Recall', link: '/Hello'},
     ]
 
     const onlineServices = [
-        {id: 1, name: 'Epic Online Services', link: ''},
-        {id: 2, name: 'Kids Web Services', link: ''},
-        {id: 3, name: 'Services Agreement', link: ''},
-        {id: 4, name: 'Acceptable Use Policy', link: ''},
-        {id: 5, name: 'Trust Statement', link: ''},
-        {id: 6, name: 'Subprocessor List', link: ''},
+        {id: 1, name: 'Epic Online Services', link: '/Hello'},
+        {id: 2, name: 'Kids Web Services', link: '/Hello'},
+        {id: 3, name: 'Services Agreement', link: '/Hello'},
+        {id: 4, name: 'Acceptable Use Policy', link: '/Hello'},
+        {id: 5, name: 'Trust Statement', link: '/Hello'},
+        {id: 6, name: 'Subprocessor List', link: '/Hello'},
     ]
 
     const marketPlaces = [
-        {id: 1, name: 'Epic Games Store', link: ''},
-        {id: 2, name: 'Fab', link: ''},
-        {id: 3, name: 'Sketchfab', link: ''},
-        {id: 4, name: 'ArtStation', link: ''},
-        {id: 5, name: 'Store Refund Policy', link: ''},
-        {id: 6, name: 'Store EULA', link: ''},
+        {id: 1, name: 'Epic Games Store', link: '/Hello'},
+        {id: 2, name: 'Fab', link: '/Hello'},
+        {id: 3, name: 'Sketchfab', link: '/Hello'},
+        {id: 4, name: 'ArtStation', link: '/Hello'},
+        {id: 5, name: 'Store Refund Policy', link: '/Hello'},
+        {id: 6, name: 'Store EULA', link: '/Hello'},
     ]
 
     const company = [
-        {id: 1, name: 'About', link: ''},
-        {id: 2, name: 'Newsroom', link: ''},
-        {id: 3, name: 'Careers', link: ''},
-        {id: 4, name: 'Students', link: ''},
-        {id: 5, name: 'UX Research', link: ''},
+        {id: 1, name: 'About', link: '/Hello'},
+        {id: 2, name: 'Newsroom', link: '/Hello'},
+        {id: 3, name: 'Careers', link: '/Hello'},
+        {id: 4, name: 'Students', link: '/Hello'},
+        {id: 5, name: 'UX Research', link: '/Hello'},
     ]
 
     const tools = [
-        {id: 1, name: 'Unreal Engine', link: ''},
-        {id: 2, name: 'UEFN', link: ''},
-        {id: 3, name: 'MetaHuman', link: ''},
-        {id: 4, name: 'Twinmotion', link: ''},
-        {id: 5, name: 'Megascans', link: ''},
-        {id: 6, name: 'RealityScan', link: ''},
-        {id: 7, name: 'RAD Game Tools', link: ''},
+        {id: 1, name: 'Unreal Engine', link: '/Hello'},
+        {id: 2, name: 'UEFN', link: '/Hello'},
+        {id: 3, name: 'MetaHuman', link: '/Hello'},
+        {id: 4, name: 'Twinmotion', link: '/Hello'},
+        {id: 5, name: 'Megascans', link: '/Hello'},
+        {id: 6, name: 'RealityScan', link: '/Hello'},
+        {id: 7, name: 'RAD Game Tools', link: '/Hello'},
     ]
 
     const resources = [
-        {id: 1, name: 'Dev Community', link: ''},
-        {id: 2, name: 'MegaGrants', link: ''},
-        {id: 3, name: 'Support-A-Creator', link: ''},
-        {id: 4, name: 'Creator Agreement', link: ''},
-        {id: 5, name: 'Distribute on Epic Games', link: ''},
-        {id: 6, name: 'Unreal Engine Branding Guidelines', link: ''},
-        {id: 7, name: 'Fan Art Policy', link: ''},
-        {id: 8, name: 'Community Rules', link: ''},
-        {id: 9, name: 'EU Digital Services Act Inquiries', link: ''},
-        {id: 10, name: 'Epic Pro Support', link: ''},
+        {id: 1, name: 'Dev Community', link: '/Hello'},
+        {id: 2, name: 'MegaGrants', link: '/Hello'},
+        {id: 3, name: 'Support-A-Creator', link: '/Hello'},
+        {id: 4, name: 'Creator Agreement', link: '/Hello'},
+        {id: 5, name: 'Distribute on Epic Games', link: '/Hello'},
+        {id: 6, name: 'Unreal Engine Branding Guidelines', link: '/Hello'},
+        {id: 7, name: 'Fan Art Policy', link: '/Hello'},
+        {id: 8, name: 'Community Rules', link: '/Hello'},
+        {id: 9, name: 'EU Digital Services Act Inquiries', link: '/Hello'},
+        {id: 10, name: 'Epic Pro Support', link: '/Hello'},
     ]
 
     const termsOfServices = [
-        {id: 1, name: 'Terms of services', link: ''},
-        {id: 2, name: 'Privacy policy', link: ''},
-        {id: 3, name: 'Safety & security', link: ''},
-        {id: 4, name: 'Store refund policy', link: ''},
-        {id: 5, name: 'Publisher index', link: ''},
+        {id: 1, name: 'Terms of services', link: '/Hello'},
+        {id: 2, name: 'Privacy policy', link: '/Hello'},
+        {id: 3, name: 'Safety & security', link: '/Hello'},
+        {id: 4, name: 'Store refund policy', link: '/Hello'},
+        {id: 5, name: 'Publisher index', link: '/Hello'},
     ]
 
     return(
@@ -103,10 +128,22 @@ export const Footer = () => {
 
                                     <div className="games_fort_links">
                                         <ul>
-                                            {GameLink.map((game)=> 
-                                            <li key={game.id}>
-                                                <Link to={game.link}>{game.name}</Link>
-                                            </li>
+                                            {isAuthenticated ? (
+                                                <>
+                                                    {GameLink.map((game)=> 
+                                                        <li key={game.id}>
+                                                            <Link to={game.link}>{game.name}</Link>
+                                                        </li>
+                                                    )}
+                                                </>
+                                            ) : (
+                                                <>
+                                                    {GameLink.map((game)=> 
+                                                        <li key={game.id}>
+                                                            <Link to='/login'>{game.name}</Link>
+                                                        </li>
+                                                    )}
+                                                </>
                                             )}
                                         </ul>
                                     </div>
@@ -119,10 +156,22 @@ export const Footer = () => {
 
                                     <div className="games_fort_links">
                                         <ul>
-                                            {onlineServices.map((service)=> 
-                                            <li key={service.id}>
-                                                <Link to={service.link}>{service.name}</Link>
-                                            </li>
+                                            {isAuthenticated ? (
+                                                <>
+                                                    {onlineServices.map((service)=> 
+                                                        <li key={service.id}>
+                                                            <Link to={service.link}>{service.name}</Link>
+                                                        </li>
+                                                    )}
+                                                </>
+                                            ) : (
+                                                <>
+                                                    {onlineServices.map((service)=> 
+                                                        <li key={service.id}>
+                                                            <Link to='/login'>{service.name}</Link>
+                                                        </li>
+                                                    )}
+                                                </>
                                             )}
                                         </ul>
                                     </div>
@@ -139,11 +188,23 @@ export const Footer = () => {
 
                                     <div className="games_fort_links">
                                         <ul>
-                                            {marketPlaces.map((game)=> 
-                                            <li key={game.id}>
-                                                <Link to={game.link}>{game.name}</Link>
-                                            </li>
-                                            )}
+                                           {isAuthenticated ? (
+                                            <>
+                                                {marketPlaces.map((game)=> 
+                                                    <li key={game.id}>
+                                                        <Link to={game.link}>{game.name}</Link>
+                                                    </li>
+                                                )}
+                                            </>
+                                           ) : (
+                                            <>
+                                                {marketPlaces.map((game)=> 
+                                                    <li key={game.id}>
+                                                        <Link to='/login'>{game.name}</Link>
+                                                    </li>
+                                                )}
+                                            </>
+                                           )}
                                         </ul>
                                     </div>
                                 </div>
@@ -155,10 +216,22 @@ export const Footer = () => {
 
                                     <div className="games_fort_links">
                                         <ul>
-                                            {company.map((service)=> 
-                                            <li key={service.id}>
-                                                <Link to={service.link}>{service.name}</Link>
-                                            </li>
+                                            {isAuthenticated ? (
+                                                <>
+                                                    {company.map((service)=> 
+                                                        <li key={service.id}>
+                                                            <Link to={service.link}>{service.name}</Link>
+                                                        </li>
+                                                    )}
+                                                </>
+                                            ) : (
+                                                <>
+                                                    {company.map((service)=> 
+                                                        <li key={service.id}>
+                                                            <Link to='/login'>{service.name}</Link>
+                                                        </li>
+                                                    )}
+                                                </>
                                             )}
                                         </ul>
                                     </div>
@@ -175,10 +248,22 @@ export const Footer = () => {
 
                                     <div className="games_fort_links">
                                         <ul>
-                                            {tools.map((game)=> 
-                                            <li key={game.id}>
-                                                <Link to={game.link}>{game.name}</Link>
-                                            </li>
+                                            {isAuthenticated ? (
+                                                <>
+                                                    {tools.map((game)=> 
+                                                        <li key={game.id}>
+                                                            <Link to={game.link}>{game.name}</Link>
+                                                        </li>
+                                                    )}
+                                                </>
+                                            ) : (
+                                                <>
+                                                    {tools.map((game)=> 
+                                                        <li key={game.id}>
+                                                            <Link to='/login'>{game.name}</Link>
+                                                        </li>
+                                                    )}
+                                                </>
                                             )}
                                         </ul>
                                     </div>
@@ -191,10 +276,22 @@ export const Footer = () => {
 
                                     <div className="games_fort_links">
                                         <ul>
-                                            {resources.map((service)=> 
-                                            <li key={service.id}>
-                                                <Link to={service.link}>{service.name}</Link>
-                                            </li>
+                                            {isAuthenticated ? (
+                                                <>
+                                                    {resources.map((service)=> 
+                                                        <li key={service.id}>
+                                                            <Link to={service.link}>{service.name}</Link>
+                                                        </li>
+                                                    )}
+                                                </>
+                                            ) : (
+                                                <>
+                                                    {resources.map((service)=> 
+                                                        <li key={service.id}>
+                                                            <Link to='/login'>{service.name}</Link>
+                                                        </li>
+                                                    )}
+                                                </>
                                             )}
                                         </ul>
                                     </div>
@@ -212,10 +309,22 @@ export const Footer = () => {
 
                                 <div className="terms_service">
                                     <ul>
-                                        {termsOfServices.map((term)=> 
-                                        <li key={term.id}>
-                                            <Link to={term.link}>{term.name}</Link>
-                                        </li>
+                                        {isAuthenticated ? (
+                                            <>
+                                                {termsOfServices.map((term)=> 
+                                                    <li key={term.id}>
+                                                        <Link to={term.link}>{term.name}</Link>
+                                                    </li>
+                                                )}
+                                            </>
+                                        ) : (
+                                            <>
+                                                {termsOfServices.map((term)=> 
+                                                    <li key={term.id}>
+                                                        <Link to='/login'>{term.name}</Link>
+                                                    </li>
+                                                )}
+                                            </>
                                         )}
                                     </ul>
                                 </div>

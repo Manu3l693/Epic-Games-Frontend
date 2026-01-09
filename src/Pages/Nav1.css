@@ -260,6 +260,29 @@
     font-weight: 600;
     text-decoration: none;
 }
+
+.sign_in_button_1{
+    /* background-color: violet; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sign_in_button_1 > button{
+    background-color: transparent;
+    width: 100%;
+    height: 40%;
+    color: #fff;
+    font-size: 11px;
+    font-family: Inter;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.6s;
+    cursor: pointer;
+}
+
 .sign_up_button{
     /* background-color: indigo; */
     width: 100%;
@@ -501,4 +524,86 @@
     font-size: 11.5px;
     font-family: Inter;
     font-weight: 500;
+}
+.profileDropDown{
+    background-color: rgb(38, 38, 39);
+    width: 150px;
+    height: 120px;
+    position: absolute;
+    z-index: 100;
+    top: 90%;
+    right: 5%;
+    border-radius: 10px;
+}
+.profiledropdown_1{
+    /* background-color: yellow; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 55% 20% 25%;
+}
+.profile__{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile__ > .profile__1{
+    /* background-color: yellow; */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.profile__ > .profile__1 > img{
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.edit_profile{
+    /* background-color: green; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.edit_profile > a{
+    color: grey;
+    text-decoration: none;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 11px;
+    transition: all 0.6s;
+}
+.edit_profile > a:hover{
+    color: #fff;
+}
+.logout_container{
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logout_container > form{
+    /* background-color: #26bbff; */
+    width: 50%;
+    height: 70%;
+}
+.logout_container > form > button{
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-family: Inter;
+    color: grey;
+    font-size: 11px;
+    transition: all 0.6s;
+}
+.logout_container > form > button:hover{
+    color: #fff;
 }

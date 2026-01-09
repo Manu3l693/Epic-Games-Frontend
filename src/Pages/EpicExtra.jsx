@@ -1,6 +1,7 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import axios from 'axios'
 
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -30,8 +31,30 @@ import SurvivingMars from '../images/images (4).jpg'
 import PMR from '../images/images (5).jpg'
 import Wallworld2 from '../images/neverwinter-1y2gv.png'
 
+    
+
 
 export const EpicExtra = () => {
+        const [isAuthenticated, setIsAuthenticated] = useState(false)
+        const navigate = useNavigate()
+
+        useEffect(()=>{
+            checkAuth()
+        },[])
+
+        const checkAuth = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/api/auth/verify', {withCredentials: true})
+                if(response.data.success && response.data.user.isVerified){
+                    setIsAuthenticated(true)
+                } else{
+                    setIsAuthenticated(false)
+                    navigate('/login')
+                }
+            } catch (error) {
+                console.error(error)
+            }
+        }
         const prevRef = useRef(null);
         const nextRef = useRef(null);
     
@@ -48,27 +71,27 @@ export const EpicExtra = () => {
         }
     
         const product1 = [
-            {id: 1, image: battlefield1, genre: 'Add-On', name: 'Hollypaw Wrap', price: 'Free', link: '/login'},
-            {id: 2, image: windsMeet, genre: 'Add-On', name: 'Fall Guys - Fashionably Frosty', price: 'Free', link: '/login'},
-            {id: 3, image: warFrame, genre: 'Add-On', name: "Rocket League - TriTrim Crimson & Forest Green Wheels", price: 'Free', link: '/login'},
-            {id: 4, image: starTrek, genre: 'Add-On', name: 'Discord Nitro', price: 'Free', link: '/login'},
-            {id: 5, image: morsel, genre: 'Add-On', name: 'Infinity Nikki - Epic Extras Bundle', price: 'Free', link: '/login'},
+            {id: 1, image: battlefield1, genre: 'Add-On', name: 'Hollypaw Wrap', price: 'Free', link: '/Hello'},
+            {id: 2, image: windsMeet, genre: 'Add-On', name: 'Fall Guys - Fashionably Frosty', price: 'Free', link: '/Hello'},
+            {id: 3, image: warFrame, genre: 'Add-On', name: "Rocket League - TriTrim Crimson & Forest Green Wheels", price: 'Free', link: '/Hello'},
+            {id: 4, image: starTrek, genre: 'Add-On', name: 'Discord Nitro', price: 'Free', link: '/Hello'},
+            {id: 5, image: morsel, genre: 'Add-On', name: 'Infinity Nikki - Epic Extras Bundle', price: 'Free', link: '/Hello'},
         ]
     
         const product2 = [
-            {id: 1, image: blood, genre: 'Add-On', name: 'Cozy Dark Urge Party Pack', price: 'Free', link: '/login'},
-            {id: 2, image: gigaSword, genre: 'Add-On', name: 'Firestone Christmas Giveaway', price: 'Free', link: '/login'},
-            {id: 3, image: callOfDuty, genre: 'Add-On', name: "Worlld of Warships - Mikasas Pack", price: 'Free', link: '/login'},
-            {id: 4, image: mortalKombat, genre: 'Add-On', name: 'Asphalt Legends -- Decal Pack', price: 'Free', link: '/login'},
-            {id: 5, image: Anno, genre: 'Add-On', name: 'SMITE 2 Gingersnap Bundle', price: 'Free', link: '/login'},
+            {id: 1, image: blood, genre: 'Add-On', name: 'Cozy Dark Urge Party Pack', price: 'Free', link: '/Hello'},
+            {id: 2, image: gigaSword, genre: 'Add-On', name: 'Firestone Christmas Giveaway', price: 'Free', link: '/Hello'},
+            {id: 3, image: callOfDuty, genre: 'Add-On', name: "Worlld of Warships - Mikasas Pack", price: 'Free', link: '/Hello'},
+            {id: 4, image: mortalKombat, genre: 'Add-On', name: 'Asphalt Legends -- Decal Pack', price: 'Free', link: '/Hello'},
+            {id: 5, image: Anno, genre: 'Add-On', name: 'SMITE 2 Gingersnap Bundle', price: 'Free', link: '/Hello'},
         ]
     
         const product3 = [
-            {id: 1, image: FortFestival, genre: 'Add-On', name: 'Asphalt Legends -- Decal Pack', price: 'Free', link: '/login'},
-            {id: 2, image: Rue, genre: 'Add-On', name: 'SMITE 2 Gingersnap Bundle', price: 'Free', link: '/login'},
-            {id: 3, image: SurvivingMars, genre: 'Add-On', name: "Monochromatic Pack -- Racer Jack Skellington", price: 'Free', link: '/login'},
-            {id: 4, image: PMR, genre: 'Add-On', name: 'Epic Starter Pack Bundle', price: 'Free', link: '/login'},
-            {id: 5, image: Wallworld2, genre: 'Add-On', name: 'Legends Starter Pack', price: 'Free', link: '/login'},
+            {id: 1, image: FortFestival, genre: 'Add-On', name: 'Asphalt Legends -- Decal Pack', price: 'Free', link: '/Hello'},
+            {id: 2, image: Rue, genre: 'Add-On', name: 'SMITE 2 Gingersnap Bundle', price: 'Free', link: '/Hello'},
+            {id: 3, image: SurvivingMars, genre: 'Add-On', name: "Monochromatic Pack -- Racer Jack Skellington", price: 'Free', link: '/Hello'},
+            {id: 4, image: PMR, genre: 'Add-On', name: 'Epic Starter Pack Bundle', price: 'Free', link: '/Hello'},
+            {id: 5, image: Wallworld2, genre: 'Add-On', name: 'Legends Starter Pack', price: 'Free', link: '/Hello'},
         ]
     
         
@@ -79,7 +102,15 @@ export const EpicExtra = () => {
                 <div className="discover_something_new">
                     <div className="discover_something_new_1">
                         <div className="discover_something_new_header">
-                           <Link to='/login'> Epic Extras <i class="fa-solid fa-greater-than"></i> </Link> 
+                           {isAuthenticated ? (
+                            <>
+                                <Link to='/Hello'> Epic Extras <i class="fa-solid fa-greater-than"></i> </Link> 
+                            </>
+                           ) : (
+                            <>
+                                <Link to='/login'> Epic Extras <i class="fa-solid fa-greater-than"></i> </Link> 
+                            </>
+                           )}
                         </div>
 
                         <div className="discover_something_new_slide">
@@ -108,45 +139,96 @@ export const EpicExtra = () => {
                                         >
                                         <SwiperSlide>
                                             <div className="swiper_items_">
-                                                {product1.map((product) => 
-                                                    <Card1
-                                                        key={product.id} 
-                                                        image={product.image}
-                                                        genre={product.genre}
-                                                        name={product.name}
-                                                        price={product.price}
-                                                        link={product.link}
-                                                    />
+                                                {isAuthenticated ? (
+                                                    <>
+                                                        {product1.map((product) => 
+                                                            <Card1
+                                                                key={product.id} 
+                                                                image={product.image}
+                                                                genre={product.genre}
+                                                                name={product.name}
+                                                                price={product.price}
+                                                                link={product.link}
+                                                            />
+                                                        )}
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        {product1.map((product) => 
+                                                            <Card1
+                                                                key={product.id} 
+                                                                image={product.image}
+                                                                genre={product.genre}
+                                                                name={product.name}
+                                                                price={product.price}
+                                                                link='/login'
+                                                            />
+                                                        )}
+                                                    </>
                                                 )}
                                             </div>
                                         </SwiperSlide>
 
                                         <SwiperSlide>
                                             <div className="swiper_items_">
-                                               {product2.map((product) => 
-                                                    <Card1
-                                                        key={product.id} 
-                                                        image={product.image}
-                                                        genre={product.genre}
-                                                        name={product.name}
-                                                        price={product.price}
-                                                        link={product.link}
-                                                    />
-                                                )}
+                                               {isAuthenticated ? (
+                                                <>
+                                                    {product2.map((product) => 
+                                                        <Card1
+                                                            key={product.id} 
+                                                            image={product.image}
+                                                            genre={product.genre}
+                                                            name={product.name}
+                                                            price={product.price}
+                                                            link={product.link}
+                                                        />
+                                                    )}
+                                                </>
+                                               ) : (
+                                                <>
+                                                    {product2.map((product) => 
+                                                        <Card1
+                                                            key={product.id} 
+                                                            image={product.image}
+                                                            genre={product.genre}
+                                                            name={product.name}
+                                                            price={product.price}
+                                                            link='/login'
+                                                        />
+                                                    )}
+                                                </>
+                                               )}
                                             </div>
                                         </SwiperSlide>
 
                                         <SwiperSlide>
                                             <div className="swiper_items_">
-                                                {product3.map((prod3)=>
-                                                    <Card1 
-                                                        key={prod3.id}
-                                                        image={prod3.image}
-                                                        genre={prod3.genre}
-                                                        name={prod3.name}
-                                                        price={prod3.price}
-                                                        link={prod3.link}
-                                                    />
+                                                {isAuthenticated ? (
+                                                    <>
+                                                        {product3.map((prod3)=>
+                                                            <Card1 
+                                                                key={prod3.id}
+                                                                image={prod3.image}
+                                                                genre={prod3.genre}
+                                                                name={prod3.name}
+                                                                price={prod3.price}
+                                                                link={prod3.link}
+                                                            />
+                                                        )}
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        {product3.map((prod3)=>
+                                                            <Card1 
+                                                                key={prod3.id}
+                                                                image={prod3.image}
+                                                                genre={prod3.genre}
+                                                                name={prod3.name}
+                                                                price={prod3.price}
+                                                                link='/login'
+                                                            />
+                                                        )}
+                                                    </>
                                                 )}
                                             </div>
                                         </SwiperSlide>

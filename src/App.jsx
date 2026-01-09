@@ -4,6 +4,9 @@ import { Signup } from "./Pages/Signup"
 import { VerifyUser } from "./Pages/verifyUser"
 import { Login } from "./Pages/Login"
 import { Profile } from "./Pages/Profile"
+import { Discover } from "./Pages/Discover"
+
+import { Hello } from "./Pages/Hello"
 import ProtectedRoute from "./Pages/protectedRoute"
 
 function App() {
@@ -17,13 +20,10 @@ function App() {
           <Route path='/verify' element={<VerifyUser />}></Route>
           <Route path="/login"  element={<Login />}></Route>
 
-          <Route path='/profile'
-           element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          }
-          ></Route>
+          <Route path='/profile' element={<ProtectedRoute><Profile /></ProtectedRoute>}></Route>
+          <Route path='/discover' element={<ProtectedRoute><Discover /></ProtectedRoute>}></Route>
+
+          <Route path='/Hello' element={<ProtectedRoute><Hello /></ProtectedRoute>}></Route>
 
           
         </Routes>

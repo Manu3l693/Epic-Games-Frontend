@@ -1,17 +1,42 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useState, useEffect} from 'react'
+import axios from 'axios'
+
 
 import './Nav2.css'
 
 export const NavigationBarTwo = (props) => {
+
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
+    const navigate = useNavigate()
+
+    useEffect(()=> {
+        checkAuth()
+    }, [])
+
+    const checkAuth = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/api/auth/verify', {withCredentials: true})
+            if(response.data.success && response.data.user.isVerified){
+                setIsAuthenticated(true)
+            } else{
+                setIsAuthenticated(false)
+                navigate('/login')
+            }
+        } catch (error) {
+            console.error(error);
+            
+        }
+    }
 
     const color1 = props.color1
     const color2 = props.color2
     const color3 = props.color3
 
     const navPage2 = [
-        {page: 'Discover', Link: '/login', color: color1, weight: '400'},
-        {page: 'Browse', Link: '/login', color: color2, weight: '500'},
-        {page: 'News', Link: '/login', color: color3, weight: '500'}
+        {page: 'Discover', Link: '/', color: color1, weight: '400'},
+        {page: 'Browse', Link: '/browse', color: color2, weight: '500'},
+        {page: 'News', Link: '/news', color: color3, weight: '500'}
     ]
 
     return(
@@ -32,7 +57,15 @@ export const NavigationBarTwo = (props) => {
 
                             <div className="discover">
                                 <ul>
-                                    {navPage2.map((navPage, index) => <li key={index}><Link to={navPage.Link} style={{color: navPage.color, fontWeight: navPage.weight}}>{navPage.page}</Link></li>)}
+                                    {isAuthenticated ? (
+                                        <>
+                                            {navPage2.map((navPage, index) => <li key={index}><Link to={navPage.Link} style={{color: navPage.color, fontWeight: navPage.weight}}>{navPage.page}</Link></li>)}
+                                        </>
+                                    ) : (
+                                        <>
+                                            {navPage2.map((navPage, index) => <li key={index}><Link to='/login' style={{color: navPage.color, fontWeight: navPage.weight}}>{navPage.page}</Link></li>)}
+                                        </>
+                                    )}
                                 </ul>
                             </div>
 

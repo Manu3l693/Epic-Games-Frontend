@@ -1,5 +1,10 @@
 import './TopSellers.css'
 
+import axios from 'axios'
+
+import {useState, useEffect} from 'react'
+import {useNavigate} from 'react-router-dom'
+
 import { TopCont2 } from './TopCont2'
 import { TopCont3 } from './TopCont3'
 
@@ -22,28 +27,49 @@ import Saturday from '../images/WilderWorlds.jpg'
 
 export const TopAdd = () => {
 
+                const [isAuthenticated, setIsAuthenticated] = useState(false)
+                const navigate = useNavigate()
+        
+                useEffect(()=>{
+                    checkAuth()
+                },[])
+        
+                const checkAuth = async () => {
+                    try {
+                        const response = await axios.get('http://localhost:5000/api/auth/verify', {withCredentials: true})
+                        if(response.data.success && response.data.user.isVerified){
+                            setIsAuthenticated(true)
+                        } else{
+                            setIsAuthenticated(false)
+                            navigate('/login')
+                        }
+                    } catch (error) {
+                        console.error(error)
+                    }
+                }
+
             const product1 = [
-                {id: 1, image: EAsport,    header: 'Polar Legend Park',                 discount: '-50%', stroke: '$22.99',  price: '$11.49', link: '/login'},
-                {id: 2, image: ArcRaider,  header: 'Agency Renegades Pack',             discount: '-50%', stroke: '$20.99',   price: '$10.49', link: '/login'},
-                {id: 3, image: GTA,        header: "Shaka Surfin' Pack",                price: '$4.49',   link: '/login'},
-                {id: 4, image: Hogwart,    header: 'Oneiric Shard *6480',               price: '$99.99',    link: '/login'},
-                {id: 5, image: BattlField, header: 'Frozen Legends Pack',               discount: '-50%', stroke: '$16.99',   price: '$8.49',  link: '/login'},
+                {id: 1, image: EAsport,    header: 'Polar Legend Park',                 discount: '-50%', stroke: '$22.99',  price: '$11.49', link: '/Hello'},
+                {id: 2, image: ArcRaider,  header: 'Agency Renegades Pack',             discount: '-50%', stroke: '$20.99',   price: '$10.49', link: '/Hello'},
+                {id: 3, image: GTA,        header: "Shaka Surfin' Pack",                price: '$4.49',   link: '/Hello'},
+                {id: 4, image: Hogwart,    header: 'Oneiric Shard *6480',               price: '$99.99',    link: '/Hello'},
+                {id: 5, image: BattlField, header: 'Frozen Legends Pack',               discount: '-50%', stroke: '$16.99',   price: '$8.49',  link: '/Hello'},
             ]
         
             const product2 = [
-                {id: 1, image: fortNite,      header: 'Fortnite',            price: 'Free',    link: '/login'},
-                {id: 2, image: RocketLeagues, header: 'Rocket League',       price: 'Free',    link: '/login'},
-                {id: 3, image: jotunn,        header: 'Genshin Impact',      price: 'Free',    link: '/login'},
-                {id: 4, image: Mongil,        header: 'Honkai: Star Rail',   price: 'Free',    link: '/login'},
-                {id: 5, image: Tides,         header: 'Zenless Zone Zero',   price: 'Free',    link: '/login'},
+                {id: 1, image: fortNite,      header: 'Fortnite',            price: 'Free',    link: '/Hello'},
+                {id: 2, image: RocketLeagues, header: 'Rocket League',       price: 'Free',    link: '/Hello'},
+                {id: 3, image: jotunn,        header: 'Genshin Impact',      price: 'Free',    link: '/Hello'},
+                {id: 4, image: Mongil,        header: 'Honkai: Star Rail',   price: 'Free',    link: '/Hello'},
+                {id: 5, image: Tides,         header: 'Zenless Zone Zero',   price: 'Free',    link: '/Hello'},
             ]
         
             const product3 = [
-                {id: 1, image: SubNautica,       header: 'Half Sword Demo',                       price: '',        color: 'grey',        link: '/login'},
-                {id: 2, image: outOf,            header: 'Arise - Closed Paytest',                price: 'Free',    color: '#fff',      link: '/login'},
-                {id: 3, image: jurassic,         header: 'Truck World: Driving School',           price: '',        color: 'grey',        link: '/login'},
-                {id: 4, image: XDDL,             header: 'Calamity Beta', button: 'First Run',    price: '',        link: '/login'},
-                {id: 5, image: Saturday,         header: 'Wilder World - Super Early Access',     price: '',        color: 'grey',         link: '/login'},
+                {id: 1, image: SubNautica,       header: 'Half Sword Demo',                       price: '',        color: 'grey',        link: '/Hello'},
+                {id: 2, image: outOf,            header: 'Arise - Closed Paytest',                price: 'Free',    color: '#fff',      link: '/Hello'},
+                {id: 3, image: jurassic,         header: 'Truck World: Driving School',           price: '',        color: 'grey',        link: '/Hello'},
+                {id: 4, image: XDDL,             header: 'Calamity Beta', button: 'First Run',    price: '',        link: '/Hello'},
+                {id: 5, image: Saturday,         header: 'Wilder World - Super Early Access',     price: '',        color: 'grey',         link: '/Hello'},
             ]
     return(
         <>
@@ -56,11 +82,23 @@ export const TopAdd = () => {
                             </div>
 
                             <div className="top_Seller_content">
-                                <TopCont2 key={product1[0].id} image={product1[0].image} header={product1[0].header} discount={product1[0].discount} stroke={product1[0].stroke} price={product1[0].price} link={product1[0].link}/>
-                                <TopCont2 key={product1[1].id} image={product1[1].image} header={product1[1].header} discount={product1[1].discount} stroke={product1[1].stroke} price={product1[1].price} link={product1[1].link}/>
-                                <TopCont3 key={product1[2].id} image={product1[2].image} header={product1[2].header} price={product1[2].price} link={product1[2].link}/>
-                                <TopCont3 key={product1[3].id} image={product1[3].image} header={product1[3].header} price={product1[3].price} link={product1[3].link}/>
-                                <TopCont2 key={product1[4].id} image={product1[4].image} header={product1[4].header} discount={product1[4].discount} stroke={product1[4].stroke} price={product1[4].price} link={product1[4].link}/>
+                                {isAuthenticated ? (
+                                    <>
+                                        <TopCont2 key={product1[0].id} image={product1[0].image} header={product1[0].header} discount={product1[0].discount} stroke={product1[0].stroke} price={product1[0].price} link={product1[0].link}/>
+                                        <TopCont2 key={product1[1].id} image={product1[1].image} header={product1[1].header} discount={product1[1].discount} stroke={product1[1].stroke} price={product1[1].price} link={product1[1].link}/>
+                                        <TopCont3 key={product1[2].id} image={product1[2].image} header={product1[2].header} price={product1[2].price} link={product1[2].link}/>
+                                        <TopCont3 key={product1[3].id} image={product1[3].image} header={product1[3].header} price={product1[3].price} link={product1[3].link}/>
+                                        <TopCont2 key={product1[4].id} image={product1[4].image} header={product1[4].header} discount={product1[4].discount} stroke={product1[4].stroke} price={product1[4].price} link={product1[4].link}/>
+                                    </>
+                                ) : (
+                                    <>
+                                        <TopCont2 key={product1[0].id} image={product1[0].image} header={product1[0].header} discount={product1[0].discount} stroke={product1[0].stroke} price={product1[0].price} link='/login'/>
+                                        <TopCont2 key={product1[1].id} image={product1[1].image} header={product1[1].header} discount={product1[1].discount} stroke={product1[1].stroke} price={product1[1].price} link='/login'/>
+                                        <TopCont3 key={product1[2].id} image={product1[2].image} header={product1[2].header} price={product1[2].price} link='/login'/>
+                                        <TopCont3 key={product1[3].id} image={product1[3].image} header={product1[3].header} price={product1[3].price} link='/login'/>
+                                        <TopCont2 key={product1[4].id} image={product1[4].image} header={product1[4].header} discount={product1[4].discount} stroke={product1[4].stroke} price={product1[4].price} link='/login'/>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -72,14 +110,30 @@ export const TopAdd = () => {
                             </div>
 
                             <div className="top_Seller_content">
-                                {product2.map((product)=> 
-                                    <TopCont3 
-                                        Key={product.id}
-                                        image={product.image}
-                                        header={product.header}
-                                        price={product.price}
-                                        link={product.link}
-                                    />
+                                {isAuthenticated ? (
+                                    <>
+                                        {product2.map((product)=> 
+                                            <TopCont3 
+                                                Key={product.id}
+                                                image={product.image}
+                                                header={product.header}
+                                                price={product.price}
+                                                link={product.link}
+                                            />
+                                        )}
+                                    </>
+                                ) : (
+                                    <>
+                                        {product2.map((product)=> 
+                                            <TopCont3 
+                                                Key={product.id}
+                                                image={product.image}
+                                                header={product.header}
+                                                price={product.price}
+                                                link='/login'
+                                            />
+                                        )}
+                                    </>
                                 )}
                             </div>
                         </div>
@@ -92,15 +146,31 @@ export const TopAdd = () => {
                             </div>
 
                             <div className="top_Seller_content">
-                               {product3.map((product)=> 
-                                    <TopCont3 
-                                        Key={product.id}
-                                        image={product.image}
-                                        header={product.header}
-                                        price={product.price}
-                                        link={product.link}
-                                    />
-                                )}
+                               {isAuthenticated ? (
+                                <>
+                                    {product3.map((product)=> 
+                                        <TopCont3 
+                                            Key={product.id}
+                                            image={product.image}
+                                            header={product.header}
+                                            price={product.price}
+                                            link={product.link}
+                                        />
+                                    )}
+                                </>
+                               ) : (
+                                <>
+                                    {product3.map((product)=> 
+                                        <TopCont3 
+                                            Key={product.id}
+                                            image={product.image}
+                                            header={product.header}
+                                            price={product.price}
+                                            link='/login'
+                                        />
+                                    )}
+                                </>
+                               )}
                             </div>
                          </div>
                     </div>

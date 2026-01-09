@@ -23,6 +23,8 @@ import concourseIcon from '../images/Concourse--Streamline-Simple-Icons.svg'
 import dcEntIcon from '../images/Dcentertainment--Streamline-Simple-Icons.svg'
 import drizzleIcon from '../images/Drizzle--Streamline-Simple-Icons.svg'
 
+import userDefaultImage from '../images/account.png'
+
 export const NavigationOne = () => {
 
     const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -54,6 +56,7 @@ export const NavigationOne = () => {
             await axios.post('http://localhost:5000/api/auth/logout', {}, {
                 withCredentials: true
             })
+            alert('Are you sure you want to logout?')
             setIsAuthenticated(false)
             setUser(null)
             navigate('/')
@@ -90,11 +93,17 @@ export const NavigationOne = () => {
     }
 
     const distributeLinks = [
-        {page: 'Distribute on Epic Games Store', links: ''},
-        {page: 'Developer  Forums', links: ''},
-        {page: 'Documentation', links: ''},
-        {page: 'Learning', links: ''}
+        {page: 'Distribute on Epic Games Store', links: '/distributed'},
+        {page: 'Developer  Forums', links: '/developer'},
+        {page: 'Documentation', links: '/documentation'},
+        {page: 'Learning', links: '/learning'}
     ]
+
+    const [profileDisplay, setProfileDisplay] = useState('none')
+
+    const handleProfileDisplay = () => {
+        setProfileDisplay(p => p === 'none' ? 'block' : 'none' )
+    }
 
 
     return(
@@ -163,15 +172,36 @@ export const NavigationOne = () => {
                                             </div>
                                         </div>
 
-                                        <div className="sign_in_button">
-                                            <button><Link to='/profile'>Profile</Link></button>
+                                        <div className="sign_in_button_1">
+                                            <button onClick={handleProfileDisplay}>{user}</button>
                                         </div>
 
                                         <div className="sign_up_button">
                                             <form onSubmit={handleLogOut}>
                                                 <button>Logout</button>
                                             </form>
-                                        </div>                                    
+                                        </div>  
+
+
+                                        <div className="profileDropDown" style={{display: profileDisplay}}>
+                                            <div className="profiledropdown_1">
+                                                <div className="profile__">
+                                                   <div className="profile__1">
+                                                        <img src={userDefaultImage} alt="" />
+                                                   </div>
+                                                </div>
+
+                                                <div className="edit_profile">
+                                                    <Link to="/editprofile">Edit Profile</Link>
+                                                </div>
+
+                                                <div className="logout_container">
+                                                    <form onSubmit={handleLogOut}>
+                                                        <button>Logout</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>                                  
                                     </>
                                 ) : (
                                     <>
@@ -201,115 +231,234 @@ export const NavigationOne = () => {
                     <div className="play">
                         <div className="play_1">
                             <div className="play_1_1">
-                                <div className="play_header">
-                                    <h3>Play</h3>
-                                </div>
+                                {isAuthenticated ? (
+                                    <>
+                                        <div className="play_header">
+                                            <h3>Play</h3>
+                                        </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={fortniteIcon} alt="fortnight" />
+                                        <div className="fortnight">
+                                            <div className="fortnight_1">
+                                                <div className="icon_image">
+                                                    <div className="icon_image_1">
+                                                        <img src={fortniteIcon} alt="fortnight" />
+                                                    </div>
+                                                </div>
+                                            
+                                                <div className="icon_name">
+                                                    <Link to='/fortnite'>Fortnite</Link>
+                                                </div>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>Fortnite</Link>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={rocketIcon } alt="" />
+                                        <div className="fortnight">
+                                            <div className="fortnight_1">
+                                                <div className="icon_image">
+                                                    <div className="icon_image_1">
+                                                        <img src={rocketIcon } alt="" />
+                                                    </div>
+                                                </div>
+                                            
+                                                <div className="icon_name">
+                                                    <Link to='/android'>Android</Link>
+                                                </div>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>Android</Link>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={fallGuy} alt="" />
+                                        <div className="fortnight">
+                                            <div className="fortnight_1">
+                                                <div className="icon_image">
+                                                    <div className="icon_image_1">
+                                                        <img src={fallGuy} alt="" />
+                                                    </div>
+                                                </div>
+                                            
+                                                <div className="icon_name">
+                                                    <Link to='/fallguy'>Fall Guys</Link>
+                                                </div>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>Fall Guys</Link>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="play_header">
+                                            <h3>Play</h3>
                                         </div>
-                                    </div>
-                                </div>
+
+                                        <div className="fortnight">
+                                            <div className="fortnight_1">
+                                                <div className="icon_image">
+                                                    <div className="icon_image_1">
+                                                        <img src={fortniteIcon} alt="fortnight" />
+                                                    </div>
+                                                </div>
+                                            
+                                                <div className="icon_name">
+                                                    <Link to='/login'>Fortnite</Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="fortnight">
+                                            <div className="fortnight_1">
+                                                <div className="icon_image">
+                                                    <div className="icon_image_1">
+                                                        <img src={rocketIcon } alt="" />
+                                                    </div>
+                                                </div>
+                                            
+                                                <div className="icon_name">
+                                                    <Link to='/login'>Android</Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="fortnight">
+                                            <div className="fortnight_1">
+                                                <div className="icon_image">
+                                                    <div className="icon_image_1">
+                                                        <img src={fallGuy} alt="" />
+                                                    </div>
+                                                </div>
+                                            
+                                                <div className="icon_name">
+                                                    <Link to='/login'>Fall Guys</Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </div>
 
                         <div className="discover">
                             <div className="play_1_1">
-                                <div className="play_header">
-                                    <h3>Discover</h3>
-                                </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={epicGamesIcon} alt="fortnight" />
+                                {isAuthenticated ? (
+                                    <>
+                                        <div className="play_header">
+                                            <h3>Discover</h3>
+                                        </div>
+
+                                        <div className="fortnight">
+                                            <div className="fortnight_1">
+                                                <div className="icon_image">
+                                                    <div className="icon_image_1">
+                                                        <img src={epicGamesIcon} alt="fortnight" />
+                                                    </div>
+                                                </div>
+                                            
+                                                <div className="icon_name">
+                                                    <Link to='/epicgamestore'>Epic Games Store</Link>
+                                                </div>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>Epic Games Store</Link>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={alienWareIcon} alt="" />
+                                        <div className="fortnight">
+                                            <div className="fortnight_1">
+                                                <div className="icon_image">
+                                                    <div className="icon_image_1">
+                                                        <img src={alienWareIcon} alt="" />
+                                                    </div>
+                                                </div>
+                                            
+                                                <div className="icon_name">
+                                                    <Link to='/alienware'>Alien Ware</Link>
+                                                </div>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>Alien Ware</Link>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={sketchFabIcon} alt="" />
+                                        <div className="fortnight">
+                                            <div className="fortnight_1">
+                                                <div className="icon_image">
+                                                    <div className="icon_image_1">
+                                                        <img src={sketchFabIcon} alt="" />
+                                                    </div>
+                                                </div>
+                                            
+                                                <div className="icon_name">
+                                                    <Link to='/sketchfab'>Sketchfab</Link>
+                                                </div>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>Sketchfab</Link>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={artStationIcon} alt="" />
+                                        <div className="fortnight">
+                                            <div className="fortnight_1">
+                                                <div className="icon_image">
+                                                    <div className="icon_image_1">
+                                                        <img src={artStationIcon} alt="" />
+                                                    </div>
+                                                </div>
+                                            
+                                                <div className="icon_name">
+                                                    <Link to='/artstation'>ArtStation</Link>
+                                                </div>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>ArtStation</Link>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="play_header">
+                                            <h3>Discover</h3>
+                                         </div>
+
+                                        <div className="fortnight">
+                                            <div className="fortnight_1">
+                                                <div className="icon_image">
+                                                    <div className="icon_image_1">
+                                                        <img src={epicGamesIcon} alt="fortnight" />
+                                                    </div>
+                                                </div>
+                                            
+                                                <div className="icon_name">
+                                                    <Link to='/login'>Epic Games Store</Link>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
+
+                                        <div className="fortnight">
+                                            <div className="fortnight_1">
+                                                <div className="icon_image">
+                                                    <div className="icon_image_1">
+                                                        <img src={alienWareIcon} alt="" />
+                                                    </div>
+                                                </div>
+                                            
+                                                <div className="icon_name">
+                                                    <Link to='/login'>Alien Ware</Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="fortnight">
+                                            <div className="fortnight_1">
+                                                <div className="icon_image">
+                                                    <div className="icon_image_1">
+                                                        <img src={sketchFabIcon} alt="" />
+                                                    </div>
+                                                </div>
+                                            
+                                                <div className="icon_name">
+                                                    <Link to='/login'>Sketchfab</Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="fortnight">
+                                            <div className="fortnight_1">
+                                                <div className="icon_image">
+                                                    <div className="icon_image_1">
+                                                        <img src={artStationIcon} alt="" />
+                                                    </div>
+                                                </div>
+                                            
+                                                <div className="icon_name">
+                                                    <Link to='/login'>ArtStation</Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -317,136 +466,272 @@ export const NavigationOne = () => {
 
                     <div className="create">
                         <div className="create_play">
-                                <div className="play_header">
-                                    <h3>Create</h3>
-                                </div>
+                            {isAuthenticated ? (
+                                <>
+                                    <div className="play_header">
+                                        <h3>Create</h3>
+                                    </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={unrealEngineIcon} alt="fortnight" />
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={unrealEngineIcon} alt="fortnight" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/unrealengine'>Unreal Engine</Link>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>Unreal Engine</Link>
-                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={fortniteIcon} alt="" />
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={fortniteIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/createafortnite'>Create in Fortnite</Link>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>Create in Fortnite</Link>
-                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={steamIcon} alt="" />
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={steamIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/steam'>Steam</Link>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>Steam</Link>
-                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={twimMotionIcon} alt="" />
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={twimMotionIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/twinmotion'>Twinmotion</Link>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>Twinmotion</Link>
-                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={apachecordovaIcon} alt="" />
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={apachecordovaIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/apachecordova'>Apachecordova</Link>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>Apachecordova</Link>
-                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={asepriteIcon} alt="" />
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={asepriteIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/aseprite'>Aseprite</Link>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>Aseprite</Link>
-                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={concourseIcon} alt="" />
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={concourseIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/concourse'>Concourse</Link>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>Concourse</Link>
-                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={dcEntIcon} alt="" />
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={dcEntIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/dcentertainment'>Dcentertainment</Link>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>Dcentertainment</Link>
-                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="fortnight">
-                                    <div className="fortnight_1">
-                                        <div className="icon_image">
-                                            <div className="icon_image_1">
-                                                <img src={drizzleIcon} alt="" />
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={drizzleIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/drizzle'>Drizzle</Link>
                                             </div>
                                         </div>
-                                    
-                                        <div className="icon_name">
-                                            <Link to=''>Drizzle</Link>
+                                    </div>
+                                </>
+                            ) : (
+                                <>
+                                    <div className="play_header">
+                                        <h3>Create</h3>
+                                    </div>
+
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={unrealEngineIcon} alt="fortnight" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/login'>Unreal Engine</Link>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={fortniteIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/login'>Create in Fortnite</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={steamIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/login'>Steam</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={twimMotionIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/login'>Twinmotion</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={apachecordovaIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/login'>Apachecordova</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={asepriteIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/login'>Aseprite</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={concourseIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/login'>Concourse</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={dcEntIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/login'>Dcentertainment</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="fortnight">
+                                        <div className="fortnight_1">
+                                            <div className="icon_image">
+                                                <div className="icon_image_1">
+                                                    <img src={drizzleIcon} alt="" />
+                                                </div>
+                                            </div>
+                                        
+                                            <div className="icon_name">
+                                                <Link to='/login'>Drizzle</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -454,10 +739,20 @@ export const NavigationOne = () => {
             <div className="distribute_dropdown" style={{display: disDisplay}} onMouseLeave={handleDisLeaveDropdown}>
                 <div className="distribute_dropdown_1">
                     <div className="dis_drop_menu">
-                        {distributeLinks.map((dis, index) => <div className='drop_dis_menu'><div className="dis_down_pages" key={index}><Link to={dis.links}>{dis.page}</Link></div></div>)}
+                        {isAuthenticated ? (
+                            <>
+                                {distributeLinks.map((dis, index) => <div className='drop_dis_menu'><div className="dis_down_pages" key={index}><Link to={dis.links}>{dis.page}</Link></div></div>)}
+                            </>
+                        ) : (
+                            <>
+                                {distributeLinks.map((dis, index) => <div className='drop_dis_menu'><div className="dis_down_pages" key={index}><Link to='login'>{dis.page}</Link></div></div>)}
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
+
+            
         </>
     )
 }

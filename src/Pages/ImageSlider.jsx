@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 import { Pagination, Autoplay, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -30,7 +31,29 @@ import CloudheimImage from '../images/1398943.jpg'
 import CloudheimLogo from '../images/battle_field_logo.png'
 import CloudheimGrid from '../images/battle_field_grid.png'
 
+
 export const ImageSlider = () => {
+
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        checkAuth()
+    }, [])
+
+    const checkAuth = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/api/auth/verify', {withCredentials: true})
+            if (response.data.success && response.data.user.isVerified) {
+                setIsAuthenticated(true)
+            } else {
+                setIsAuthenticated(false)
+                navigate('/login')
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
     const paginationData = [
 
@@ -67,12 +90,12 @@ export const ImageSlider = () => {
                     el: '.vertical_pagination',
                     clickable: true, 
                     renderBullet: function (index, className) {
-                    return `
+                    return`
                         <div class="${className} custom-bullet">
                             <img src="${paginationData[index].image}" alt="" />
                             <a href="${paginationData[index].link}">${paginationData[index].texts}</a>
                         </div>
-                    `;
+                    `
                     },
                 }}
 
@@ -112,9 +135,20 @@ export const ImageSlider = () => {
                                     </div>
                                 </div>
 
-                                <div className="content_swiper_button">
-                                    <button><Link to='/login'>Play Now</Link></button>
-                                </div>
+                                {isAuthenticated ? (
+                                    <>
+                                        <div className="content_swiper_button">
+                                            <button><Link to='/Hello'>Play Now</Link></button>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="content_swiper_button">
+                                            <button><Link to='/login'>Play Now</Link></button>
+                                        </div>
+                                    </>
+                                )}
+
                             </div>
                         </div>
 
@@ -155,14 +189,31 @@ export const ImageSlider = () => {
                                     </div>
                                 </div>
 
-                                <div className="genshin_button">
-                                    <div className="genshin_buttons">
-                                        <button><Link to='/login'>Play Now</Link></button>
-                                        <button className='gift_box'>
-                                            <i class="fa-solid fa-gift"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                                {isAuthenticated ? (
+                                    <>
+                                       <div className="genshin_button">
+                                            <div className="genshin_buttons">
+                                                <button><Link to='/Hello'>Play Now</Link></button>
+                                                <button className='gift_box'>
+                                                    <i class="fa-solid fa-gift"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                       <div className="genshin_button">
+                                            <div className="genshin_buttons">
+                                                <button><Link to='/login'>Play Now</Link></button>
+                                                <button className='gift_box'>
+                                                    <i class="fa-solid fa-gift"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+
+                                
                             </div>
                         </div>
 
@@ -207,13 +258,27 @@ export const ImageSlider = () => {
                                     </div>
                                 </div>
 
-                                <div className="cloudheim_button">
-                                    <div className="raider_buttons_1">
-                                        <button className='buy_now'><Link to='/login'>Buy Now</Link></button>
-                                        <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
-                                        <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
-                                    </div>
-                                </div>
+                                {isAuthenticated ? (
+                                    <>
+                                       <div className="cloudheim_button">
+                                            <div className="raider_buttons_1">
+                                                <button className='buy_now'><Link to='/Hello'>Buy Now</Link></button>
+                                                <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
+                                                <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
+                                            </div>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                       <div className="cloudheim_button">
+                                            <div className="raider_buttons_1">
+                                                <button className='buy_now'><Link to='/login'>Buy Now</Link></button>
+                                                <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
+                                                <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </div>
 
@@ -254,13 +319,31 @@ export const ImageSlider = () => {
                                     </div>
                                 </div>
 
-                                <div className="raider_button">
-                                    <div className="raider_buttons_1">
-                                        <button className='buy_now'><Link to='/login'>Buy Now</Link></button>
-                                        <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
-                                        <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
-                                    </div>
-                                </div>
+                                
+
+                                {isAuthenticated ? (
+                                    <>
+                                       <div className="raider_button">
+                                            <div className="raider_buttons_1">
+                                                <button className='buy_now'><Link to='/Hello'>Buy Now</Link></button>
+                                                <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
+                                                <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
+                                            </div>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                       <div className="raider_button">
+                                            <div className="raider_buttons_1">
+                                                <button className='buy_now'><Link to='/login'>Buy Now</Link></button>
+                                                <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
+                                                <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+
+                                
                             </div>
                         </div>
 
@@ -301,13 +384,27 @@ export const ImageSlider = () => {
                                     </div>
                                 </div>
 
-                                <div className="raider_button">
-                                    <div className="raider_buttons_1">
-                                        <button className='buy_now'><Link to='/login'>Buy Now</Link></button>
-                                        <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
-                                        <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
-                                    </div>
-                                </div>
+                                {isAuthenticated ? (
+                                    <>
+                                       <div className="raider_button">
+                                            <div className="raider_buttons_1">
+                                                <button className='buy_now'><Link to='/Hello'>Buy Now</Link></button>
+                                                <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
+                                                <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
+                                            </div>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                       <div className="raider_button">
+                                            <div className="raider_buttons_1">
+                                                <button className='buy_now'><Link to='/login'>Buy Now</Link></button>
+                                                <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
+                                                <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </div>
 
@@ -352,13 +449,27 @@ export const ImageSlider = () => {
                                     </div>
                                 </div>
 
-                                <div className="cloudheim_button">
-                                    <div className="raider_buttons_1">
-                                        <button className='buy_now'><Link to='/login'>Buy Now</Link></button>
-                                        <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
-                                        <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
-                                    </div>
-                                </div>
+                                {isAuthenticated ? (
+                                    <>
+                                      <div className="cloudheim_button">
+                                            <div className="raider_buttons_1">
+                                                <button className='buy_now'><Link to='/Hello'>Buy Now</Link></button>
+                                                <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
+                                                <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
+                                            </div>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                       <div className="cloudheim_button">
+                                            <div className="raider_buttons_1">
+                                                <button className='buy_now'><Link to='/login'>Buy Now</Link></button>
+                                                <button className='gift-box'><i class="fa-solid fa-gift"></i></button>
+                                                <button className='bookmark'><i class="fa-regular fa-bookmark"></i></button>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </div>
 
