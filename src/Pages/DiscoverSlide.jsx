@@ -128,7 +128,15 @@ export const DiscoverSlide = () => {
                 <div className="discover_something_new">
                     <div className="discover_something_new_1">
                         <div className="discover_something_new_header">
-                           <Link to='/login'> Discover Something New <i class="fa-solid fa-greater-than"></i> </Link> 
+                          {isAuthorized ? (
+                            <>
+                                <Link to='/Hello'> Discover Something New <i class="fa-solid fa-greater-than"></i> </Link>
+                            </>
+                          ) : (
+                            <>
+                                <Link to='/login'> Discover Something New <i class="fa-solid fa-greater-than"></i> </Link>
+                            </>
+                          )} 
                         </div>
 
                         <div className="discover_something_new_slide">
@@ -295,7 +303,7 @@ export const DiscoverSlide = () => {
                                             )}
                                         </SwiperSlide>
                                         ...
-                                        </Swiper>
+                                    </Swiper>
 
                             </div>
                         </div>

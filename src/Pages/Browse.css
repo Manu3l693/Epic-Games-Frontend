@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.popular_genre{
+    background-color:rgb(16, 16, 20);
+    /* background-color: red; */
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.popularGenre{
+    /* background-color: blue; */
+    width: 75%;
+    height: 91%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+.popularGenre_header{
+    /* background-color: yellow; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.popularGenre_header > h2{
+    color: #fff;
+    font-family: Inter;
+    font-size: 21px;
+    font-weight: 800;
+}
+.popularGenreSwiper{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%; 
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+.popular_genre_button{
+    /* background-color: rgb(255, 0, 119); */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.popular_genre_swiper{
+    /* background-color: green; */
+    width: 100%;
+    height: 100%;
+}
+.popular_genre_swiper__{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.swiper_items_1{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
