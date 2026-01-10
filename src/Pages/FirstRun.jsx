@@ -18,7 +18,7 @@ import { Card9 } from './Card9';
 import battlefield1 from '../images/CountryTale.jpg'
 import windsMeet from '../images/heirloom.jpg'
 import warFrame from '../images/4715809_1.avif'
-import starTrek from '../images/atlas.jpg'
+import starTrek from '../images/prophunt.jpg'
 import morsel from '../images/optics.jpg'
 
 import blood from '../images/farcana-12z7m.png'
@@ -71,7 +71,7 @@ export const FirstRun = () => {
                 {id: 1, image: battlefield1, genre: 'Base Game', name: 'Countrytale 2010',          button:'First Run',     discount: '-95%', stroke:'$7.99*', price: '$0.39', link: '/Hello'},
                 {id: 2, image: windsMeet,    genre: 'Base Game', name: 'The Heirloom',              button: 'First Run',    price: 'Free',    link: '/Hello'},
                 {id: 3, image: warFrame,     genre: 'Base Game', name: "RAVEN2",                    button:'First Run',     discount: '-95%', stroke:'$7.99*', price: '$0.39', link: '/Hello'},
-                {id: 4, image: starTrek,     genre: 'Base Game', name: 'Atlas War',                 button: 'First Run',    price: 'Free',    link: '/Hello'},
+                {id: 4, image: starTrek,     genre: 'Base Game', name: 'PROPHUNT: Early Access',                 button: 'First Run',    price: 'Free',    link: '/Hello'},
                 {id: 5, image: morsel,       genre: 'Base Game', name: 'Scientific project: Optic', button:'First Run',     discount: '-95%', stroke:'$7.99*', price: '$0.39', link: '/Hello'},
             ]
         

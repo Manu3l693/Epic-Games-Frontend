@@ -7,8 +7,8 @@ import axios from 'axios'
 import {useState, useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 
-import sevenKnight from '../images/995123.jpg'
-import raven2 from '../images/1386595.jpg'
+import sevenKnight from '../images/1314377.jpg'
+import raven2 from '../images/1300483.jpg'
 
 export const SevenKnight = () => {
 
@@ -34,8 +34,8 @@ export const SevenKnight = () => {
                 }
 
     const products = [
-        {id: 1, image: sevenKnight, header: "Assassin's Creed", text: "A Legacy Reborn! Auto turn-based battles, bold skill action, and the story of The Evan Expedition's adventure.", firstButton: 'First Run', secondButton: 'Wishlist Now', link: 'Hello'},
-        {id: 2, image: raven2, header: 'Delta Force',                 text: 'The Holiday Event is here! Claim your "Snowy Night" Holy Garment for free - only on Epic Games Store!',          firstButton: 'First Run', secondButton: 'Play For Free', link: 'Hello'},
+        {id: 1, image: sevenKnight, header: "Arknights: Endfield",                    text: "Over the Frontier, into the Front - Arknights: Endfield is officially set for its worldwide release on January 22nd, 2027", firstButton: 'First Run', secondButton: 'Wishlist Now', link: 'Hello'},
+        {id: 2, image: raven2,      header: 'Lords of the Fallen II',                 text: 'Behold the official gameplay trailer for Lords of the Fallen II, the bolder, braver and bloodier sequel!',          firstButton: 'First Run', secondButton: 'Wishlist Now', link: 'Hello'},
     ]
     return(
         <>

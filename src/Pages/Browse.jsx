@@ -51,6 +51,36 @@ import fiveNight from '../images/fiveNightInSaranks.jpg'
 
 import badCheese from '../images/badCheese.jpg'
 
+import superWash from '../images/superwash.jpg'
+
+import rise from '../images/Rise2.jpg'
+
+import bloodlines from '../images/bloodlnesOfTheEternal.jpg'
+import dremca from '../images/dremica.jpg'
+
+import endlessDungeon from '../images/endlessDungeon.jpg'
+import jurassic from '../images/38847c52741da2c4590ab936fe3cb3dd.jpg'
+import battlefields from '../images/battle_field_grid.png'
+
+import lightBreak from '../images/lightBreak.jpg'
+import totallyNormal from '../images/totallyNormal.jpg'
+import infected from '../images/infected mushroom.jpg'
+
+import bult from '../images/bult.jpg'
+
+import biped from '../images/bipe.jpg'
+import hotseat from '../images/hotseat.jpg'
+import backfire from '../images/backfireBrigade.jpg'
+
+import trine2 from '../images/trine2.jpg'
+
+import brainRot from '../images/brainRot.jpg'
+import motorRacing from '../images/60430e7c14ee874f2e8710964a82541e.jpg'
+
+import hyper from '../images/hyperEchelon.jpg'
+
+import stormLancer from '../images/stormLancers.jpg'
+import OTXO from '../images/otxo.jpg'
 
 export const Browse = () => {
 
@@ -86,29 +116,29 @@ export const Browse = () => {
         const product3 = [
             {id: 1, image1: casted,         image2: thePromise,         image3: wanted, header: 'Exploration Games', link:'/Hello'},
             {id: 2, image1: bloodStained,   image2: cultivation,        image3: endless, header: 'Fantasy Games', link:'/Hello'},
-            {id: 3, image1: wanted,         image2: serke,              image3: yakuza, header: 'Fighting Games', link:'/Hello'},
-            {id: 4, image1: goToSleep,      image2: propHunter,          image3: fiveNight, header: 'Horror Games', link:'/Hello'}
+            {id: 3, image1: wanted,         image2: yakuza,             image3: serke, header: 'Fighting Games', link:'/Hello'},
+            {id: 4, image1: goToSleep,      image2: propHunter,         image3: fiveNight, header: 'Horror Games', link:'/Hello'}
         ]
 
         const product4 = [
-            {id: 1, image1: '', image2: '', image3: '', header: 'Indie Games', link:'/Hello'},
-            {id: 2, image1: '', image2: '', image3: '', header: 'Mac Games', link:'/Hello'},
-            {id: 3, image1: '', image2: '', image3: '', header: 'MMO Games', link:'/Hello'},
-            {id: 4, image1: '', image2: '', image3: '', header: 'Multiplayer Games', link:'/Hello'}
+            {id: 1, image1: badCheese,      image2: superWash,  image3: cultivation,    header: 'Indie Games', link:'/Hello'},
+            {id: 2, image1: wanted,         image2: goToSleep,  image3: rise,           header: 'Mac Games', link:'/Hello'},
+            {id: 3, image1: bloodlines,     image2: dremca,     image3: badCheese,      header: 'MMO Games', link:'/Hello'},
+            {id: 4, image1: endlessDungeon, image2: jurassic,   image3: battlefields,   header: 'Multiplayer Games', link:'/Hello'}
         ]
 
         const product5 = [
-            {id: 1, image1: '', image2: '', image3: '', header: 'Music Games', link:'/Hello'},
-            {id: 2, image1: '', image2: '', image3: '', header: 'Open World Games', link:'/Hello'},
-            {id: 3, image1: '', image2: '', image3: '', header: 'Party Games', link:'/Hello'},
-            {id: 4, image1: '', image2: '', image3: '', header: 'Platformer Games', link:'/Hello'}
+            {id: 1, image1: lightBreak, image2: totallyNormal,  image3: infected, header: 'Music Games', link:'/Hello'},
+            {id: 2, image1: wanted,     image2: superWash,      image3: bult, header: 'Open World Games', link:'/Hello'},
+            {id: 3, image1: backfire,   image2: biped,          image3: hotseat, header: 'Party Games', link:'/Hello'},
+            {id: 4, image1: trine,      image2: balor,          image3: trine2, header: 'Platformer Games', link:'/Hello'}
         ]
 
         const product6 = [
-            {id: 1, image1: '', image2: '', image3: '', header: 'Puzzle Games', link:'/Hello'},
-            {id: 2, image1: '', image2: '', image3: '', header: 'Racing Games', link:'/Hello'},
-            {id: 3, image1: '', image2: '', image3: '', header: 'Retro Games', link:'/Hello'},
-            {id: 4, image1: '', image2: '', image3: '', header: 'Rogue-Lite Games', link:'/Hello'}
+            {id: 1, image1: trine,          image2: tiny,           image3: trine2, header: 'Puzzle Games', link:'/Hello'},
+            {id: 2, image1: brainRot,       image2: motorRacing,    image3: wanted, header: 'Racing Games', link:'/Hello'},
+            {id: 3, image1: rise,           image2: casted,         image3: hyper, header: 'Retro Games', link:'/Hello'},
+            {id: 4, image1: stormLancer,    image2: questionnaire,  image3: OTXO, header: 'Rogue-Lite Games', link:'/Hello'}
         ]
 
         const product7 = [

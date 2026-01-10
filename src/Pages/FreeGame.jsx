@@ -6,14 +6,14 @@ import axios from 'axios'
 
 import './FreeGame.css'
 
-import hogwarts from '../images/981489.jpg'
-import mystery from '../images/1397426.jpg'
+import hogwarts from '../images/Bloons TD6.png'
+import mystery from '../images/STYX.jpg'
 
 
 export const FreeGame = () => {
     const texts = [
-        {image: hogwarts, backgroundColor: 'goldenrod', free: 'free now', color: '#000', h3: 'Mortal Kombat 11', p: 'Free Now - Dec 18 at 05:00 PM', link: '/Hello'},
-        {image: mystery, backgroundColor: '#000', free: 'mystery game', color: '#fff', h3: 'Red Dead Redemption', p: 'Available 2026', link: '/Hello'}
+        {image: hogwarts, backgroundColor: 'aqua', free: 'free now', color: '#000', h3: 'Bloons TD 6', p: 'Free Now - Dec 18 at 05:00 PM', link: '/Hello'},
+        {image: mystery, backgroundColor: '#000', free: 'Coming Soon', color: '#fff', h3: 'Styx: Shards oof Darkness', p: 'Available 2026', link: '/Hello'}
     ]
 
     const [isAuthenticated, setIsAuthenticated] = useState(false)
