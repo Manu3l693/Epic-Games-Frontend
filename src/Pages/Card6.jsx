@@ -14,6 +14,7 @@ export const Card6 = (props) => {
         const link = props.link
         const discount = props.discount
         const stroke = props.stroke
+        const widthSize = props.widthSize
 
 
         const [cardHover, setCardHover] = useState('none')
@@ -55,7 +56,7 @@ export const Card6 = (props) => {
         }
     return(
         <>
-           <div className="card6_card" key={id}>
+           <div className="card6_card" key={id} style={{width: widthSize}}>
                     <Link to={link}>
                         <div className="car6_card_">
                             <div className="card6_image" onMouseEnter={handleHoverCard} onMouseLeave={handleHoverLeave}>
