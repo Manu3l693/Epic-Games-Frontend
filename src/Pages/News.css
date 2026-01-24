@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.epicGameNews{
+    background-color: rgb(16, 16, 20);
+    width: 100%;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.epicGameNews_1{
+    /* background-color: blue; */
+    width: 75%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 9% 91%;
+}
+.epicNewsHeader{
+    /* background-color: green; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.epicNewsHeader > h2{
+    color: #fff;
+    font-family: Inter;
+    font-size: 17px;
+    font-weight: 600;
+}
+.epicNewsCard{
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.epicNewsCard_{
+    /* background-color: blue; */
+    width: 49%;
+    height: 100%;
+}
+.otherCards{
+    background-color: rgb(16, 16, 20);
+    width: 100%;
+    height: 2000px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+.otherCard_1{
+    /* background-color: blue; */
+    width: 75%;
+    height: 94%;
+}

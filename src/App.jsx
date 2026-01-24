@@ -5,6 +5,7 @@ import { VerifyUser } from "./Pages/verifyUser"
 import { Login } from "./Pages/Login"
 import { Profile } from "./Pages/Profile"
 import { Browse } from "./Pages/Browse"
+import { NewsPage } from "./Pages/News"
 
 import { Hello } from "./Pages/Hello"
 import ProtectedRoute from "./Pages/protectedRoute"
@@ -24,6 +25,8 @@ function App() {
           <Route path='/browse' element={<ProtectedRoute><Browse /></ProtectedRoute>}></Route>
 
           <Route path='/Hello' element={<ProtectedRoute><Hello /></ProtectedRoute>}></Route>
+
+          <Route path="/news" element={<ProtectedRoute><NewsPage /></ProtectedRoute>}></Route>
 
           
         </Routes>

@@ -6,15 +6,15 @@ import axios from 'axios'
 
 import './WeekCard.css'
 
-import weekFort from '../images/903573.jpg'
-import hogwarts from '../images/Hogwarts_Legacy_Is_Free_on_Epic_Games_Store_caa9eda4d7.webp'
+import weekFort from '../images/860666.jpg'
+import hogwarts from '../images/fatalFury.webp'
 import prowler from '../images/937844.png'
 
 export const WeekCard = () => {
 
     const weeklyCards = [
-        {id: 1, image: weekFort, header: 'This Week in Fortnite', text: "Check out the latest updates in fortnite from classic Battle Royale to Blitz and Delulu. There's always something new in Fortnite!", button: 'Discover Now', link: '/Hello'},
-        {id: 2, image: hogwarts, header: 'Hogwarts Legacy is Free', text: "Play two hours of Hogwarts Legacy by December 18 to unlock the Chocolate Frog Back Bling in Fortnite!", button: 'Get It Free', link: '/Hello'},
+        {id: 1, image: weekFort, header: 'Rocket League', text: "Cartman's Crash Out: The boys from South Park, Colorado cause chaos in Rocket League!", button: 'Discover Now', link: '/Hello'},
+        {id: 2, image: hogwarts, header: 'FATAL FURY: City of the wolves', text: "Season 2 is here! Get the full experience with the Legend Edition, which includes the base game and Season Pass 1 & 2.", button: 'Get It Free', link: '/Hello'},
         {id: 3, image: prowler, header: 'Fortnite', text: 'Just try and keep up! Prowler comes to Fortnite with customizable Outfits and more.', button: "See In Shop", link: '/Hello'},
     ]
 

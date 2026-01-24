@@ -9,7 +9,7 @@ import './WeekCard.css'
 
 import weekFort from '../images/863549.jpg'
 import hogwarts from '../images/1358386.jpeg'
-import prowler from '../images/en-holiday-sale-gifting-breaker-asset-1920x1080-8ca14e3255f3.webp'
+import prowler from '../images/Raven22.jpg'
 
 
 export const WeekCard2 = () => {
@@ -37,7 +37,7 @@ export const WeekCard2 = () => {
             const weeklyCards = [
                     {id: 1, image: weekFort, header: 'Rocket League', text: "Rep your Hogwarts House in Rocket League Frosty Fest 2025", button: 'Read More', link: '/Hello'},
                     {id: 2, image: hogwarts, header: 'Marvel Rivals', text: "Season 5.5 is live now! Rogue has officially joined Marvel Rivals!", button: 'Play For Free', link: '/Hello'},
-                    {id: 3, image: prowler,  header: 'Gifting on the Epic Games Store', text: 'Send games and add-ons to your friends, earn Epic Rewards with every purchase, or use your balance toward the next gift you give. Restrictions apply.', button: "Learn More", link: '/Hello'},
+                    {id: 3, image: prowler,  header: 'RAVEN2', text: 'Join the 100-Day Launch Celebration now and experience the battlefield of RAVEN2 with greater power and richer rewards!', button: "Learn More", link: '/Hello'},
                 ]
 
     return(

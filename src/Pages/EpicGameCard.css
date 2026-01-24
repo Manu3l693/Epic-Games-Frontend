@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.epicGameCard{
+    /* background-color: orange; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 55% 45%;
+}
+.epicGameImage{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+}
+.epicGameImage > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 7px;
+}
+.epicGameContent{
+    /* background-color: brown; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.epicGameContent_1{
+    /* background-color: rgb(208, 255, 0); */
+    width: 100%;
+    height: 89%;
+    display: grid;
+    grid-template-rows: 10% 25% 39% 26%;
+}
+.epicGameContent_1 > .genre{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.epicGameContent_1 > .genre > h4{
+    color: grey;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 11px;
+}
+.epicGameContent_1 > .header{
+    /* background-color: greenyellow; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.epicGameContent_1 > .header > h3{
+    color: #fff;
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 700;
+}
+.epicGameContent_1 > .content{
+    /* background-color: rgb(255, 172, 47); */
+    width: 100%;
+    height: 100%;
+}
+.epicGameContent_1 > .content > .content_1{
+    /* background-color: #000; */
+    width: 97%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.epicGameContent_1 > .content > .content_1 > p{
+    color: grey;
+    font-size: 13px;
+    font-family: Inter;
+    font-weight: 500;
+}
+.epicGameContent_1 > .link{
+    /* background-color: rgb(255, 47, 168); */
+    width: 100%;
+    height: 100%;
+}
+.epicGameContent_1 > .link > a{
+    color: #fff;
+    font-family: Inter;
+    font-size: 12.5px;
+    font-weight: 500;
+    text-decoration: none;
+}

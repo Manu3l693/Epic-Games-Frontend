@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.otherNewsCards{
+    /* background-color: green; */
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgb(73, 73, 73);
+}
+.otherNewsCard_1{
+    /* background-color: gold; */
+    width: 100%;
+    height: 85%;
+    display: grid;
+    grid-template-columns: 24% 76%;
+}
+.otherCard_image{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+}
+.otherCard_image_1{
+    /* background-color: pink; */
+    width: 100%;
+    height: 80%;
+    border-radius: 5px;
+}
+.otherCard_image_1 > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+.otherCard_content{
+    /* background-color: purple; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.otherCard_content_1{
+    /* background-color: yellow; */
+    width: 95%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 50% 20% 20%;
+}
+.otherCard_content_1 > .genreee{
+    /* background-color: pink; */
+    width: 100%;
+    height: 100%;
+}
+.otherCard_content_1 > .genreee > h4{
+    color: grey;
+    font-size: 11px;
+    font-family: Inter;
+    font-family: 100;
+}
+.otherCard_content_1 > .headerrr{
+    /* background-color: brown; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.otherCard_content_1 > .headerrr > h3{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Inter;
+}
+.otherCard_content_1 > .contentt{
+    /* background-color: indigo; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.otherCard_content_1 > .contentt > p{
+    color: grey;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 12.5px;
+    line-height: 1.5;
+}
+.otherCard_content_1 > .linkk{
+    /* background-color: rgb(0, 126, 130); */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.otherCard_content_1 > .linkk > a{
+    color: #fff;
+    text-decoration: none;
+    font-family: Inter;
+}
