@@ -33,7 +33,7 @@ export const TopCont3 = (props) => {
                             <div className="topCont_image3">
                                 <div className="topHidden3" style={{display: display}}>
                                     <div className="topHidden_3">
-                                        <i class="fa-solid fa-plus"></i>
+                                        {/* <i class="fa-solid fa-plus"></i> */}
                                     </div>
                                 </div>
                                 

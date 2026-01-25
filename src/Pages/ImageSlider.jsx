@@ -12,21 +12,21 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './ImageSlider.css'
 
-import fortNiteReloadImage from '../images/1373237.jpeg'
-import fortNiteReloadLogo from '../images/fortnite_reload_logo.png'
-import fortNiteReloadGrid from '../images/fortnite_reload_grid.png'
-import genshinImage from '../images/1242486.jpg'
-import genshinLogo from '../images/genshin_impact_logo.png'
-import genshinGrid from '../images/genshin_impact_grid.jpg'
-import ffcImage from '../images/1366758.jpeg'
-import ffcLogo from '../images/Expedition_logo.png'
-import ffcGrid from '../images/Expedition_grid.jpg'
-import ARCImage from '../images/1401751.jpg'
-import ARCLogo from '../images/arc_raiders_logo.png'
-import ARCGrid from '../images/arc_grid.jpg'
-import DestinyImage from '../images/1399403.jpg'
-import DestinyLogo from '../images/destiny_2_logo.png'
-import DestinyGrid from '../images/Destiny_Grid.jpg'
+import fortNiteReloadImage from '../images/crimsonDesertImage.jpg'
+import fortNiteReloadLogo from '../images/crimsonDesertLogo.png'
+import fortNiteReloadGrid from '../images/crimsonGridGrid.jpg'
+import genshinImage from '../images/egs-out-of-words-flying-carousel-1920x1080-628cc4bda5c8.jpg'
+import genshinLogo from '../images/egs-out-of-words-carousel-logo-350x262-bf5990367df3.png'
+import genshinGrid from '../images/egs-out-of-words-carousel-thumb-1200x1600-ff9f3a241b40.jpg'
+import ffcImage from '../images/epic-savings-desktop-carousel-asset-900f97e5818e.avif'
+import ffcLogo from '../images/en-epic-savings-april-carousel-logo-350x221-2d0e8b1a9d6e.png'
+import ffcGrid from '../images/en-epic-savings-carousel-thumbnail-1200x1600-3fbef56ae063.jpg'
+import ARCImage from '../images/egs-john-carpenters-toxic-commando-carousel-desktop-1920x1080-8f006d060e2c.jpg'
+import ARCLogo from '../images/egs-john-carpenters-toxic-commando-carousel-logo-350x282-9beab33d6497.png'
+import ARCGrid from '../images/egs-john-carpenters-toxic-commando-carousel-thumb-1200x1600-54afb713dc24.jpg'
+import DestinyImage from '../images/egs-fall-guys-crown-jam-carousel-desktop-1920x1080-9c3afd515f8d.jpg'
+import DestinyLogo from '../images/egs-fall-guys-crown-jam-carousel-logo-350x251-e069bcd951fc.png'
+import DestinyGrid from '../images/egs-fall-guys-crown-jam-carousel-thumb-1200x1600-2ec9ae9e6c7b.jpg'
 import CloudheimImage from '../images/1398943.jpg'
 import CloudheimLogo from '../images/battle_field_logo.png'
 import CloudheimGrid from '../images/battle_field_grid.png'
@@ -57,21 +57,21 @@ export const ImageSlider = () => {
 
     const paginationData = [
 
-        {image: fortNiteReloadGrid, texts: 'Fortnite Reload', link: '/login'},
-        {image: genshinGrid, texts: 'Genshin Impact', link: '/login'},
-        {image: ffcGrid, texts: 'Expedition 33', link: '/login'},
-        {image: ARCGrid, texts: 'ARC Raiders', link: '/login'},
-        {image: DestinyGrid, texts: 'Destiny 2', link: '/login'},
+        {image: fortNiteReloadGrid, texts: 'Crimson Desert', link: '/login'},
+        {image: genshinGrid, texts: 'Out of Words', link: '/login'},
+        {image: ffcGrid, texts: 'Epic Savings', link: '/login'},
+        {image: ARCGrid, texts: 'Toxic Commando', link: '/login'},
+        {image: DestinyGrid, texts: 'Fall Guys Crown Jam', link: '/login'},
         {image: CloudheimGrid, texts: 'Battlefield 6', link: '/login'}
 
     ]
 
     const slideContent = [
-        {logo: fortNiteReloadLogo, header: 'out now', text: 'Reload is back with the new Surf City map!', price: '', image: fortNiteReloadImage, grid: fortNiteReloadGrid},
-        {logo: genshinLogo, header: 'new update!', text: 'Genshin Impact Version Luna "III" introduces Durin a dragon with dual forms, and continues the story of Nod-Krai into its next chapter.', price: 'Free', image: genshinImage, grid: genshinGrid},
-        {logo: ffcLogo, header: 'available now', text: 'Join Expedition 33 on their mission to destroy th paintress in this innovative reactive turn-based RPG.', discount: '-20%', stroke: '$34.99', price: '27.99', image: ffcImage, grid: ffcGrid},
-        {logo: ARCLogo, header: 'the surface is calling; your adventure starts now', text: 'Survival is an option, but thriving? That takes courage. Are you ready to build a new home in the ruins?', price: '$39.99', image: ARCImage, grid: ARCGrid},
-        {logo: DestinyLogo, header: 'Out now', text: 'Rule the Lawless Frontier. Navigate a world of Syndicates and become the force that tips the balance.', price: '$35.99', image: DestinyImage, grid: DestinyGrid},
+        {logo: fortNiteReloadLogo, header: 'AVAILABLE MARCH 19, 2026', text: 'Pre-Purchase Crimson Desert and get the Kliff Outfit in Fortnite at launch.', price: '', image: fortNiteReloadImage, grid: fortNiteReloadGrid},
+        {logo: genshinLogo, header: 'COMING 2026', text: "Meet Kurt, Karla and a magical cast of characters as they navigate a crumbling world in a handmade c0-op adventure built for two.", price: 'Free', image: genshinImage, grid: genshinGrid},
+        {logo: ffcLogo, header: 'January 22 - December 5', text: 'Save up to 80% on must-play games and discover new adventures.', discount: '-20%', stroke: '$34.99', price: '27.99', image: ffcImage, grid: ffcGrid},
+        {logo: ARCLogo, header: 'DEEP DIVE', text: 'How the studio behind SnowRunner and Space Marine 2 melded blood, mud, and John Carpenter to craft an entirely new, horrific adventure.', price: '$24.99', image: ARCImage, grid: ARCGrid},
+        {logo: DestinyLogo, header: '3V3 FALL GUYS ARCADE SPORTS', text: 'Jump into Crown Jam - a new 3v3 arcade sport from the Fall Guys universe. Play with your squad, use hype abilities, and dunk your way to glory!', price: 'Free', image: DestinyImage, grid: DestinyGrid},
         {logo: CloudheimLogo, header: 'saving during holiday sale', text: 'Enter the ultimate all out ware-fare experience. Earn 20% back in Epic Rewards with your purchase.', discount: '-10%', stroke: '$13.49', price: '$12.14', image: CloudheimImage, grid: CloudheimGrid}
     ]
 
@@ -153,10 +153,13 @@ export const ImageSlider = () => {
                         </div>
 
                         <div className="swiper_game_content_image">
+                            <div className="swiper_dark_over"></div>
+
                             <img src={slideContent[0].image} alt="" />
                         </div>
-                    </div>
+                    </div>   
                 </SwiperSlide>
+
 
                 <SwiperSlide>
                     <div className="genshin_content">
@@ -218,13 +221,15 @@ export const ImageSlider = () => {
                         </div>
 
                         <div className="genshin_content_image">
+                            <div className="swiper_dark_over"></div>
+
                             <img src={slideContent[1].image} alt="" />
                         </div>
                     </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                     <div className="cloudheim">
+                     {/* <div className="cloudheim">
                         <div className="cloudheim_content_text">
                             <div className="cloudheim_content_text_1">
                                 <div className="cloudheim_logo">
@@ -283,9 +288,60 @@ export const ImageSlider = () => {
                         </div>
 
                         <div className="cloudheim_image_content">
+                            <div className="swiper_dark_over"></div>
+
                             <img src={slideContent[2].image} alt="" />
                         </div>
-                    </div>
+                    </div> */}
+
+                    <div className="swiper_game_content">
+                        <div className="swiper_game_content_texts">
+                            <div className="swiper_game_content_texts_1">
+                                <div className="content_swiper_logo">
+                                    <motion.div 
+                                    key={activeIndex}
+                                    className="content_swiper_logo_1"
+                                    initial={{ x: 100, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{ duration: 1, delay: 2 }}
+                                    >
+                                        <img src={slideContent[2].logo} alt="" />
+                                    </motion.div>
+                                </div>
+
+                                <div className="content_swiper_texts">
+                                    <div className="text_header">
+                                        <h4>{slideContent[2].header}</h4>
+                                    </div>
+
+                                    <div className="texts_note">
+                                        <p>{slideContent[2].text}</p>
+                                    </div>
+                                </div>
+
+                                {isAuthenticated ? (
+                                    <>
+                                        <div className="content_swiper_button">
+                                            <button><Link to='/Hello'>Save Now</Link></button>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="content_swiper_button">
+                                            <button><Link to='/login'>Save Now</Link></button>
+                                        </div>
+                                    </>
+                                )}
+
+                            </div>
+                        </div>
+
+                        <div className="swiper_game_content_image">
+                            <div className="swiper_dark_over"></div>
+
+                            <img src={slideContent[2].image} alt="" />
+                        </div>
+                    </div> 
                 </SwiperSlide>
 
                 <SwiperSlide>
@@ -348,6 +404,8 @@ export const ImageSlider = () => {
                         </div>
 
                         <div className="raiders_content_image">
+                            <div className="swiper_dark_over"></div>
+
                             <img src={slideContent[3].image} alt="" />
                         </div>
                     </div>
@@ -409,6 +467,8 @@ export const ImageSlider = () => {
                         </div>
 
                         <div className="raiders_content_image">
+                            <div className="swiper_dark_over"></div>
+
                             <img src={slideContent[4].image} alt="" />
                         </div>
                     </div>
@@ -474,6 +534,8 @@ export const ImageSlider = () => {
                         </div>
 
                         <div className="cloudheim_image_content">
+                            <div className="swiper_dark_over"></div>
+
                             <img src={slideContent[5].image} alt="" />
                         </div>
                     </div>

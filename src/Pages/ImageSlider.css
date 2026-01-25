@@ -8,6 +8,7 @@
     height: 100%;
     display: grid;
     grid-template-columns: 80% 20%;
+    /* position: relative; */
 }
 .swiper_game_slide{
     /* background-color: blue; */
@@ -26,6 +27,7 @@
     height: 100%;
     position: relative;
 }
+
 .swiper_game_content_texts{
     /* background-color: blue; */
     width: 100%;
@@ -42,6 +44,8 @@
     height: 90%;
     display: grid;
     grid-template-rows: 62% 20% 18%;
+    position: absolute;
+    z-index: 10;
 }
 .content_swiper_logo{
     /* background-color: red; */
@@ -125,11 +129,19 @@
     width: 100%;
     height: 100%;
 }
+
 .swiper_game_content_image > img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+.swiper_dark_over{
+    background: linear-gradient(to left, rgba(0,0,0,.1), rgba(0,0,0,1));
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
 }
 .genshin_content{
     /* background-color: blue; */
@@ -140,8 +152,9 @@
 .genshin_text_content{
     /* background-color: red; */
     width: 100%;
-    height: 60%;
+    height: 85%;
     position: absolute;
+    z-index: 10;
     bottom: 0;
     display: flex;
     align-items: center;
@@ -152,23 +165,25 @@
     width: 95%;
     height: 90%;
     display: grid;
-    grid-template-rows: 20% 60% 20%;
+    grid-template-rows: 51% 34% 15%;
 }
 .genshin_logo{
     /* background-color: yellow; */
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
 }
 .genshin_logo_image{
     /* background-color: #000; */
     width: 37%;
-    height: 100%;
+    height: 95%;
 }
 .genshin_logo_image > img{
     width: 100%;
     height: 100%;
     object-fit: contain;
-    object-position: center;
+    object-position: left;
 }
 .genshin_text_price{
     /* background-color: blue; */
@@ -275,7 +290,7 @@
     font-size: 12px;
 }
 .genshin_content_image{
-    background-color: green;
+    /* background-color: green; */
     width: 100%;
     height: 100%;
 }
@@ -414,8 +429,9 @@
 .raiders_content_text{
     /* background-color: yellow; */
     width: 100%;
-    height: 60%;
+    height: 85%;
     position: absolute;
+    z-index: 10;
     bottom: 0;
     display: flex;
     align-items: center;
@@ -426,23 +442,25 @@
     width: 95%;
     height: 90%;
     display: grid;
-    grid-template-rows: 35% 45% 20%;
+    grid-template-rows: 48% 37% 15%;
 }
 .raider_logo{
     /* background-color: purple; */
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
 }
 .raider_logo_1{
-    /* background-color: #000; */
+    /* background-color: blue; */
     width: 37%;
-    height: 100%;
+    height: 95%;
 }
 .raider_logo_1 > img{
     width: 100%;
     height: 100%;
     object-fit: contain;
-    object-position: center;
+    object-position: left;
 }
 .raider_text_content{
     /* background-color: blue; */
@@ -590,6 +608,7 @@
     width: 100%;
     height: 60%;
     position: absolute;
+    z-index: 10;
     bottom: 0;
     display: flex;
     align-items: center;
@@ -725,7 +744,7 @@
 .vertical-pagination{
     /* background-color: purple; */
     width: 87%;
-    height: 95%;
+    height: 94%;
 }
 .vertical_pagination{
     /* background-color: red; */
@@ -750,7 +769,7 @@
 .vertical_pagination .custom-bullet > img{
     /* background-color: yellow; */
     width: 40px;
-    height: 50px;
+    height: 55px;
     border-radius: 10px;
     margin-left: 5%;
     margin-right: 5%;

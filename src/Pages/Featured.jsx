@@ -7,9 +7,9 @@ import axios from 'axios'
 import {useState, useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 
-import weekFort from '../images/SILENTT.jpg'
-import hogwarts from '../images/WhereWindHero.jpg'
-import prowler from '../images/EGS_SonicRacingCrossWorlds_SonicTeam_S1_2560x1440-6fa12a0e93ef5d4cb81a806a6fd2fbc0.jpg'
+import weekFort from '../images/egs-editorial-beary-arms-breaker-1920x1080-1b92341f3946.jpg'
+import hogwarts from '../images/egs-editorial-2026-preview-breaker-v2-1920x1080-b2d2ca29b9f4.jpg'
+import prowler from '../images/egs-01-22-26-editorial-evergreen-breaker-1920x1080-97831f164635.jpg'
 
 export const Featured = () => {
 
@@ -35,9 +35,9 @@ export const Featured = () => {
                 }
 
     const weeklyCards = [
-        {id: 1, image: weekFort, header: 'SILENT HILL f',            text: "Find the beauty in terror in this new Japanese psychological horror.", button: 'Read More', link: '/Hello'},
-        {id: 2, image: hogwarts, header: 'Where Winds Meet',         text: "Write your own wuxia legend in the winds of a fractured dynasty as you explore an epic open world RPG.", button: 'Play For Free', link: '/Hello'},
-        {id: 3, image: prowler, header: 'Sonic Racing: crossWorlds', text: 'Take your race across dimensions and invite your friends with online crossplay! Sonic Racing: CrossWorlds is out now!', button: "Read More", link: '/Hello'},
+        {id: 1, image: weekFort, header: 'Run and pun',                     text: "Rightfully, Beary Arms blends twin-stick action with deep roguelike systems. And bears.", button: 'Read More', link: '/Hello'},
+        {id: 2, image: hogwarts, header: 'The big 2026 preview!',           text: "From Star Wars and Resident Evil to a plethora of indie darlings the exciting games coming to Epic Games Store.", button: 'Read More', link: '/Hello'},
+        {id: 3, image: prowler, header: 'A wealth of stories',              text: 'Plug into our drip feed of exclusive, features, interviews, and guides.', button: "Read More", link: '/Hello'},
     ]
 
     return(
